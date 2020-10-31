@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>НЕЗАБУДУ-сервис с помощью которого ты легко можешь найти место захоронения ушедших близких, знакомых и значимых людей твоего города, страны и сохранить информацию о месте захоронения и жизни.</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="shortcut icon" href="favicon.ico">
+	
+	<link rel="stylesheet" href="css/styles.min.css">
+		
+	<meta name="description" content="">
+</head>
+<body>
+
+	<div class="reg-bg">
+	    <section class="reg">
+	        <div class="reg__form-bg">
+	            <div class="wrapper reg__main">
+	                <div class="reg__header">
+	                    <!-- <img src="./img/logo.png" alt="logo" class="reg__logo-img"> -->
+	                    <div class="reg__logo">
+	                        <h1 class="reg__logo-title"><a href="../index.html">Незабуду</a></h1>
+	                        <p class="reg__logo-subtitle">онлайн сервис</p>
+	                    </div>
+	                </div>
+	                <h2 class="reg__title">Регистрация</h2>
+	                <form action="registration.php" method="POST" class="reg__form" id="reg-form">
+	                    <label for="reg-form" class="reg__form-label">
+	                        Введите данные
+	                    </label>
+	                    <input id="name" type="text" required placeholder="Имя" class="reg__input">
+	                    <input id="tel" type="number" required placeholder="Телефон" class="reg__input">
+	                    <input id="mail" type="mail" required placeholder="E-mail" class="reg__input">
+	                    <input id="password" type="password" required placeholder="Пароль" class="reg__input">
+	                    <input id="password-correct" type="password" required placeholder="Повторите пароль" class="reg__input">
+	                    <div class="reg__check-wrap">
+	                        <input type="checkbox" name="policity" id="check-me" class="reg__form-check">
+	                        <label class="reg__form-check-text"><a href="#" target="_blank" rel="noopener noreferrer">Пользовательское соглашение</a></label>
+	                    </div>
+	                    <input type="submit" value="Зарегистрироваться" class="reg__btn">
+	                </form>
+	                <div class="reg__link-wrap">
+	                    <span>Уже зарегистрированы?</span>
+	                    <a href="../auth-page/index.html" class="reg__link-reg" rel="noopener noreferrer">Войти</a>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="reg__footer">
+	            <div class="wrapper">
+	                <a href="mailto:info@nezabudu.online">info@nezabudu.online</a>
+	                <a href="#" class="reg__link-conf" target="_blank" rel="noopener noreferrer">Политика конфедициальности</a>
+	            </div>
+	        </div>
+	    </section>
+	</div>
+
+	<!-- контент страницы -->
+	
+	<!-- скрипты -->
+	<script src="js/main.min.js"></script>
+
+</body>
+</html>
