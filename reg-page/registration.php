@@ -10,7 +10,7 @@ if (isset($_POST['name']) && isset($_POST['tel']) && isset($_POST['email']) && i
     $password = $_POST['password'];
 
     // Параметры для подключения
-    $db_host = "127.0.0.1"; 
+    $db_host = "localhost"; 
     $db_user = "root"; // Логин БД
     $db_password = "password"; // Пароль БД
     $db_base = 'nezabudu_db'; // Имя БД
