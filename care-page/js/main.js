@@ -13661,31 +13661,7 @@ jQuery(function($){
 				}
 			]
 		});
-		$('.personality__carusel').slick({
-			dots: true,
-			slidesToShow: 3,
-			infinite: true,
-			speed: 500,
-			arrows: false,
-			autoplay: true,
-			responsive: [ 
-				{ 
-					breakpoint: 1024,
-					settings: {
-						slidesToShow: 2,
-					}
-				},
-				{ 
-					breakpoint: 500,
-					settings: {
-						slidesToShow: 1,
-						arrows: true
-					}
-				}
-			]
-
-		});
-
+		
 
 
 
@@ -13709,9 +13685,6 @@ jQuery(function($){
 			// offset: 20
 		});
 	});
-
-
-
 
 
 	$('.select__options').each(function(){
@@ -13803,50 +13776,13 @@ jQuery(function($){
 		});
 	
 	});
-	$('#helps').each(function(){
-		var $this = $(this), numberOfOptions = $(this).children('option').length;
-	  
-		$this.addClass('select-hidden'); 
-		$this.wrap('<div class="select select--helps"></div>');
-		$this.after('<div class="select-styled"></div>');
+
+
+
+
 	
-		var $styledSelect = $this.next('div.select-styled');
-		$styledSelect.text($this.children('option').eq(0).text());
-	  
-		var $list = $('<ul />', {
-			'class': 'select-options select-options--helps'
-		}).insertAfter($styledSelect);
-	  
-		for (var i = 0; i < numberOfOptions; i++) {
-			$('<li />', {
-				text: $this.children('option').eq(i).text(),
-				rel: $this.children('option').eq(i).val()
-			}).appendTo($list);
-		}
-	  
-		var $listItems = $list.children('li');
-	  
-		$styledSelect.click(function(e) {
-			e.stopPropagation();
-			$('div.select-styled.select-active').not(this).each(function(){
-				$(this).removeClass('select-active').next('ul.select-options').hide().css('height', '0');
-			});
-			$(this).toggleClass('select-active').next('ul.select-options').toggle().css('height', 'auto');
-		});
-	  
-		$listItems.click(function(e) {
-			e.stopPropagation();
-			$styledSelect.text($(this).text()).removeClass('select-active');
-			$this.val($(this).attr('rel'));
-			$list.hide();
-		});
-	  
-		$(document).click(function() {
-			$styledSelect.removeClass('select-active');
-			$list.hide();
-		});
 	
-	});
+	
 
 
 
@@ -13958,72 +13894,5 @@ jQuery(function($){
 // 		$(this).toggleClass('minus');
 // 	});
 
+
 });
-//Range**************************
-var lowerSlider = document.querySelector('#lower'); //Lower value slider
-var upperSlider = document.querySelector('#upper'); //Upper value slider
-
-// var lowerVal = parseInt(lowerSlider.value); //Value of lower slider
-// var upperVal = parseInt(upperSlider.value); // Value of upper slider
-
-var rangeColor = document.querySelector('#range-color'); //Range color
-
-//When the upper value slider is moved.
-upperSlider.oninput = function() {
-lowerVal = parseInt(lowerSlider.value); //Get lower slider value
-upperVal = parseInt(upperSlider.value); //Get upper slider value
-
-//If the upper value slider is LESS THAN the lower value slider plus one.
-if (upperVal < lowerVal + 1) {
-	//The lower slider value is set to equal the upper value slider minus one.
-	lowerSlider.value = upperVal - 1;
-	//If the lower value slider equals its set minimum.
-	if (lowerVal == lowerSlider.min) {
-		//Set the upper slider value to equal 1.
-		upperSlider.value = 1;
-	}
-}
-
-
-//Setting the margin left of the middle range color.
-//Taking the value of the lower value times 10 and then turning it into a percentage.
-rangeColor.style.marginLeft = (lowerSlider.value) + '%';
-
-//Setting the width of the middle range color.
-//Taking the value of the upper value times 10 and subtracting the lower value times 10 and then turning it into a percentage.
-rangeColor.style.width = (upperSlider.value) - (lowerSlider.value) + '%';
-
-
-console.log('upper value: ' + upperSlider.value);
-document.getElementById('upperValue').value = (upperSlider.value +' год'); 
-};
-
-//When the lower value slider is moved.
-lowerSlider.oninput = function() {
-lowerVal = parseInt(lowerSlider.value); //Get lower slider value
-upperVal = parseInt(upperSlider.value); //Get upper slider value
-
-//If the lower value slider is GREATER THAN the upper value slider minus one.
-if (lowerVal > upperVal - 1) {
-	//The upper slider value is set to equal the lower value slider plus one.
-	upperSlider.value = lowerVal + 1;
-	
-	//If the upper value slider equals its set maximum.
-	if (upperVal == upperSlider.max) {
-		//Set the lower slider value to equal the upper value slider's maximum value minus one.
-		lowerSlider.value = parseInt(upperSlider.max) - 1;
-	}
-
-}
-
-//Setting the margin left of the middle range color.
-//Taking the value of the lower value times 10 and then turning it into a percentage.
-rangeColor.style.marginLeft = (lowerSlider.value) + '%';
-
-//Setting the width of the middle range color.
-//Taking the value of the upper value times 10 and subtracting the lower value times 10 and then turning it into a percentage.
-rangeColor.style.width = (upperSlider.value) - (lowerSlider.value) + '%';
-
-console.log('lower value: ' + lowerSlider.value);
-document.getElementById('lowerValue').value = (lowerSlider.value + ' год');
-};
