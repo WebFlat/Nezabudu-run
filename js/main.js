@@ -13820,6 +13820,20 @@ jQuery(function($){
 
 
 
+	//burger
+	$('.burger').click(function() {
+		$('.burger-wrap').toggleClass('open');
+		$('.burger').toggleClass('closed');
+	});
+	$('.nav__link').click(function() {
+		$('.burger-wrap').removeClass('open');
+		$('.burger').removeClass('closed');
+	});
+
+
+
+	//Search
+
 	$('.search__btn-showHide').click(function() {
 		console.log('click');
 		$('.search__more-wrap').toggleClass('show-select');
