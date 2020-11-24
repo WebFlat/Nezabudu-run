@@ -13818,12 +13818,32 @@ jQuery(function($){
 	
 	});
 
+	//tabs forms***********************************************
+	$(".reg__main").not(":first").hide();
+	$(".reg-tab").click(function() {
+	$(".reg-tab").removeClass("active").eq($(this).index()).addClass("active");
+	$(".reg__main").hide().eq($(this).index()).fadeIn();
+	}).eq(0).addClass("active");
+
+	//close forms popup********************************************
+	$('.reg__close').click(function() {
+		$('.reg-bg').hide();
+		$('body').removeClass('no-scroll');
+	})
+
+	//Show forms***************************************************
+	$('.enter').click(function() {
+		$('.reg-bg').show().css('display','flex');
+		$('body').addClass('no-scroll');
+	})
 
 
-	//burger
+
+	//burger***************************************
 	$('.burger').click(function() {
 		$('.burger-wrap').toggleClass('open');
 		$('.burger').toggleClass('closed');
+		$('body').toggleClass('no-scroll');
 	});
 	$('.nav__link').click(function() {
 		$('.burger-wrap').removeClass('open');
@@ -13832,13 +13852,16 @@ jQuery(function($){
 
 
 
-	//Search
+	//Search show***************************************
 
 	$('.search__btn-showHide').click(function() {
 		console.log('click');
 		$('.search__more-wrap').toggleClass('show-select');
 		$('.search__btn-showHide').toggleClass('active-btn');
 	});
+
+
+	
 	
 
  
