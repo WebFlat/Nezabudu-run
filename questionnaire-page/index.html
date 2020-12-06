@@ -253,12 +253,52 @@
 
 	<!-- контент страницы -->
 	<section class="questionnaire">
-	    <div class="wrapper">
 	        <div class="profile">
-	            <div class="profile__title-block">
-	                <h2 class="profile__title">Анкета</h2>
-	                <p class="profile__subtitle">Создай много анкет про своих ушедших близких, запиши максимально информации чтобы история о твоих предках не потерялась для потомков. Отметь место захоронения на карте или укажи известный адрес захоронения.</p>
+	            <div class="wrapper">
+	                <div class="profile__title-block">
+	                    <h2 class="profile__title">Анкета</h2>
+	                    <p class="profile__subtitle">Создай много анкет про своих ушедших близких, запиши максимально информации чтобы история о твоих предках не потерялась для потомков. Отметь место захоронения на карте или укажи известный адрес захоронения.</p>
+	                </div>
 	            </div>
+	            <section class="profile__menu profile__menu--mob">
+	                <div class="menu__items menu__items--mob">
+	                    <button class="about__btn about__btn--mob" id="settings-mob"></button>
+	                    <a href="#" class="menu__item menu__item--mob">
+	                        <img src="./img/book.png" alt="icon" class="menu__img menu__img--mob">
+	                    </a>
+	                    <a href="#" class="menu__item menu__item--mob">
+	                        <img src="./img/glass.png" alt="icon" class="menu__img menu__img--mob">
+	                    </a>
+	                    <a href="#" class="menu__item menu__item--mob">
+	                        <img src="./img/brain.png" alt="icon" class="menu__img menu__img--mob">
+	                    </a>
+	                    <a href="#" class="menu__item menu__item--mob">
+	                        <img src="./img/stars.png" alt="icon" class="menu__img menu__img--mob">
+	                    </a>
+	                    <a href="#" class="menu__item menu__item--mob">
+	                        <img src="./img/chats.png" alt="icon" class="menu__img menu__img--mob">
+	                    </a>
+	                    <a href="#" class="menu__item menu__item--mob">
+	                        <img src="./img/medal.png" alt="icon" class="menu__img menu__img--mob">
+	                    </a>
+	                    <a href="#" class="menu__item menu__item--mob">
+	                        <img src="./img/pensil.png" alt="icon" class="menu__img menu__img--mob">
+	                    </a>
+	                    <a href="#" class="menu__item menu__item--mob">
+	                        <img src="./img/human.png" alt="icon" class="menu__img menu__img--mob">
+	                    </a>
+	                    <a href="#" class="menu__item menu__item--mob">
+	                        <img src="./img/mounts.png" alt="icon" class="menu__img menu__img--mob">
+	                    </a>
+	                    <a href="#" class="menu__item menu__item--mob">
+	                        <img src="./img/menu.png" alt="icon" class="menu__img menu__img--mob">
+	                    </a>
+	                    <a href="#" class="menu__item menu__item--mob">
+	                        <img src="./img/addchat.png" alt="icon" class="menu__img menu__img--mob">
+	                    </a>
+	                </div>
+	            </section>
+	            <div class="wrapper">
 	            <div class="profile__wrap">
 	                <section class="profile__about">
 	                    <div class="about__wrap">
@@ -300,12 +340,12 @@
 	                    <div class="wrapper">
 	                        <form action="POST">
 	                            <select name="user" id="relative" class="data__relative">
-	                                <option value="Кем приходится держателю анкеты">Кем приходится держателю анкеты</option>
+	                                <option value="hide">Кем приходится вам</option>
 	                                <option value="Родственник">Родственник</option>
 	                                <option value="Родственник">Знакомый</option>
-	                                <option value="Родственник">Семья</option>
+	                                <option value="Семья">Семья</option>
 	                                <option value="Родственник">Родственник</option>
-	                                <option value="Родственник">Родственник</option>
+	                                <option value="Друг">Друг</option>
 	                            </select>
 	                            <h6 class="data__title-location">Где покоится</h6>
 	                            <div class="data__locations">
@@ -339,15 +379,17 @@
 	                                <div class="user__lives-data">
 	                                    <div class="user__lives-wrap">
 	                                        <div class="user__inp-wrap">
-	                                        <span class="user__cal"></span>    
-	                                        <input type="text" class="user__both" required placeholder="Дата рождения">
+	                                        <span class="user__cal" id="btn-both">
+	                                            <input type="date" name="calendar1" id="user-both">
+	                                        </span>    
+	                                        <input type="text" class="user__both" required placeholder="Дата рождения" readonly>
 	                                        </div>
 	                                        <div class="user__inp-wrap">
-	                                            <span class="user__cal"></span> 
-	                                            <input type="text" class="user__die" required placeholder="Дата смерти">
+	                                            <span class="user__cal"><input type="date" name="calendar2" id="user-die"></span> 
+	                                            <input type="text" class="user__die" required placeholder="Дата смерти" readonly>
+	                                            <button class="user__remind"></button>
 	                                        </div>
 	                                    </div>
-	                                    <button class="user__remind"></button>
 	                                </div>
 	                                <div class="user__lives-loc">
 	                                    <input type="text" class="user__both-loc" required placeholder="Где родился">
@@ -373,7 +415,7 @@
 	                            <div class="user__die-about">
 	                                    <label for="die-select">Причина смерти</label>
 	                                    <select name="die" id="die-select" class="die__select">
-	                                        <option value="Список">Список</option>
+	                                        <option value="hide">Список</option>
 	                                        <option value="Список">Список</option>
 	                                        <option value="Список">Список</option>
 	                                        <option value="Список">Список</option>
@@ -382,7 +424,7 @@
 	                                    </select>
 	                                    <label for="opinion">Что по вашему мнению могло продлить ему жизнь</label>
 	                                    <select name="die" id="die-opinion" class="die__opinion">
-	                                        <option value="Список">Список</option>
+	                                        <option value="hide">Список</option>
 	                                        <option value="Список">Список</option>
 	                                        <option value="Список">Список</option>
 	                                        <option value="Список">Список</option>
@@ -437,7 +479,6 @@
 	                    </div>
 	                </section>
 	            </div>
-	        </div>
 	    </div>
 	</section>
 	<footer class="footer">

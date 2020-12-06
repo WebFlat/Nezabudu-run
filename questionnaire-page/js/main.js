@@ -13900,9 +13900,20 @@ jQuery(function($){
 	//Search show***************************************
 
 	$('.search__btn-showHide').click(function() {
-		console.log('click');
 		$('.search__more-wrap').toggleClass('show-select');
 		$('.search__btn-showHide').toggleClass('active-btn');
+	});
+
+
+
+	//Set data to input from calendar******************
+	$('#user-both').change(function() {
+		var data = $('#user-both').val();
+		$('.user__both').val(data);
+	});
+	$('#user-die').change(function() {
+		var data = $('#user-die').val();
+		$('.user__die').val(data);
 	});
 
 
