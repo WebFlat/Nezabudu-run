@@ -13998,7 +13998,6 @@ rangeColor.style.marginLeft = (lowerSlider.value) + '%';
 rangeColor.style.width = (upperSlider.value) - (lowerSlider.value) + '%';
 
 
-console.log('upper value: ' + upperSlider.value);
 document.getElementById('upperValue').value = (upperSlider.value +' год'); 
 };
 
@@ -14028,6 +14027,47 @@ rangeColor.style.marginLeft = (lowerSlider.value) + '%';
 //Taking the value of the upper value times 10 and subtracting the lower value times 10 and then turning it into a percentage.
 rangeColor.style.width = (upperSlider.value) - (lowerSlider.value) + '%';
 
-console.log('lower value: ' + lowerSlider.value);
 document.getElementById('lowerValue').value = (lowerSlider.value + ' год');
 };
+
+
+
+//login with facebook****************************************************************************
+   function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+	  console.log('statusChangeCallback');
+	  console.log(response);                   // The current login status of the person.
+	  if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+	  testAPI();  
+	  } else {                                 // Not logged into your webpage or we are unable to tell.
+		  console.log('into this webpage');
+	  }
+  }
+
+
+  function checkLoginState() {               // Called when a person is finished with the Login Button.
+	  FB.getLoginStatus(function(response) {   // See the onlogin handler
+	  statusChangeCallback(response);
+	  });
+  }
+
+
+  window.fbAsyncInit = function() {
+	  FB.init({
+	  appId      : '291576955629944',
+	  cookie     : true,                     // Enable cookies to allow the server to access the session.
+	  xfbml      : true,                     // Parse social plugins on this webpage.
+	  version    : 'v9.0'           // Use this Graph API version for this call.
+	  });
+
+
+	  FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+	  statusChangeCallback(response);        // Returns the login status.
+	  });
+  };
+
+  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+	  console.log('Welcome!  Fetching your information.... ');
+	  FB.api('/me', function(response) {
+	  console.log('Successful login for: ' + response.name);
+	  });
+  }

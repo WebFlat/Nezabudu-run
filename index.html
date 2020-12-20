@@ -21,7 +21,65 @@
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-	
+	<!-- <script>
+		window.fbAsyncInit = function() {
+		  FB.init({
+			appId      : '291576955629944',
+			xfbml      : true,
+			version    : 'v9.0'
+		  });
+		  FB.AppEvents.logPageView();
+		};
+	  
+		(function(d, s, id){
+		   var js, fjs = d.getElementsByTagName(s)[0];
+		   if (d.getElementById(id)) {return;}
+		   js = d.createElement(s); js.id = id;
+		   js.src = "https://connect.facebook.net/en_US/sdk.js";
+		   fjs.parentNode.insertBefore(js, fjs);
+		 }(document, 'script', 'facebook-jssdk'));
+
+
+		 function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+			console.log('statusChangeCallback');
+			console.log(response);                   // The current login status of the person.
+			if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+			testAPI();  
+			} else {                                 // Not logged into your webpage or we are unable to tell.
+				console.log('into this webpage');
+			}
+		}
+
+
+		function checkLoginState() {               // Called when a person is finished with the Login Button.
+			FB.getLoginStatus(function(response) {   // See the onlogin handler
+			statusChangeCallback(response);
+			});
+		}
+
+
+		window.fbAsyncInit = function() {
+			FB.init({
+			appId      : '291576955629944',
+			cookie     : true,                     // Enable cookies to allow the server to access the session.
+			xfbml      : true,                     // Parse social plugins on this webpage.
+			version    : 'v9.0'           // Use this Graph API version for this call.
+			});
+
+
+			FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+			statusChangeCallback(response);        // Returns the login status.
+			});
+		};
+ 
+		function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+			console.log('Welcome!  Fetching your information.... ');
+			FB.api('/me', function(response) {
+			console.log('Successful login for: ' + response.name);
+			});
+		}
+
+	  </script> -->
 
 	<header class="header">
 	    <div class="wrapper">
@@ -257,8 +315,8 @@
 	                <h2 class="welcome__title welcome__title--mob"><span>НЕЗАБУДУ</span> —
 	                    сервис сохранения<br>
 	                    и поиска информации</h2>
-	                <p class="welcome__subtitle">о жизни, месте захоронения ушедших близких, значимых людей и культурно-исторического наследия твоего города</p>
-	                <p class="welcome__description animate__animated animate__fadeInUp animate__delay-1s" style="margin-top: 30px;">
+	                <p class="welcome__subtitle animate__animated animate__fadeInUp animate__delay-1s">о жизни, месте захоронения ушедших близких, значимых людей и культурно-исторического наследия твоего города</p>
+	                <!-- <p class="welcome__description animate__animated animate__fadeInUp animate__delay-1s" style="margin-top: 30px;">
 	                    <span>Расскажи </span> личную историю ушедшего из жизни<br> близкого человека
 	                </p>    
 	                <p class="welcome__description animate__animated animate__fadeInUp animate__delay-2s">    
@@ -266,8 +324,8 @@
 	                </p>    
 	                <p class="welcome__description animate__animated animate__fadeInUp animate__delay-3s">    
 	                    <span>Укажи</span> место захоронения на карте 
-	                </p>
-	                <a href="#" class="welcome__link btn enter">Войти</a>
+	                </p> -->
+	                <span class="welcome__link btn btn--enter enter">Войти</span>
 	            </div>
 	            <div class="welcome__img-wrap animate__animated animate__fadeIn">
 	                <img src="./img/collabs.png" class="welcome__img" alt="photo">
@@ -283,11 +341,9 @@
 	            <div class="questionnaires__form">
 	                <h2 class="questionnaires__title">Стань частью проекта</h2>
 	                <ol class="questionnaires__lists">
-	                    <li class="questionnaires__list">Создай профиль семьи на сайте и заполни простую анкету</li>
+	                    <li class="questionnaires__list">Расскажи личную историю ушедшего из жизни близкого</li>
+	                    <li class="questionnaires__list">укажи место захоронения на карте</li>
 	                    <li class="questionnaires__list">Помоги другим родственникам и знакомым быстро найти могилу и узнать больше об ушедшем близком</li>
-	                    <li class="questionnaires__list">Поделись его историей жизни и ценностями через 
-	                        QR наклейку на памятник</li>
-	                    <li class="questionnaires__list">Отметь на карте место захоронения</li>
 	                    <li class="questionnaires__list">Поставь уведомление на дату поминания</li>
 	                    <li class="questionnaires__list">Напиши статью про исторического деятеля твоего города/региона</li>
 	                </ol>
@@ -655,7 +711,7 @@
 	                    </a>
 	                </nav>
 	                <a href="tel:+380965636858" class="footer__link-tel">+38 (096) 563-68-58</a>
-	                <a href="mailto:nezabudu.ream@gmail.com" class="footer__link-mail">nezabudu.ream@gmail.com</a>
+	                <a href="mailto:nezabudu.ream@gmail.com" class="footer__link-mail">nezabudu.team@gmail.com</a>
 	            </div>
 	            <div class="footer__services">
 	            <h6 class="footer__title">НЕЗАБУДУ
@@ -686,18 +742,10 @@
 	</footer>
 	<!-- скрипты -->
 	<script src="js/main.min.js"></script>
-	<script>
-		window.fbAsyncInit = function() {
-		  FB.init({
-			appId            : '291576955629944',
-			autoLogAppEvents : true,
-			xfbml            : true,
-			version          : 'v9.0'
-		  });
-		};
-	  </script>
-	  <div id="fb-root"></div>
-	  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v9.0&appId=291576955629944&autoLogAppEvents=1" nonce="R8eVTzih"></script>
+	<div id="status">
+	</div>
+	<!-- Load the JS SDK asynchronously -->
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
 </body>
 </html>
