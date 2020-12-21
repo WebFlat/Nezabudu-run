@@ -16,70 +16,11 @@
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	
 	<link rel="stylesheet" href="css/styles.min.css">
-		
-	<meta name="description" content="НЕЗАБУДУ-сервис с помощью которого ты легко можешь найти место захоронения ушедших близких, знакомых и значимых людей твоего города, страны и сохранить информацию о месте захоронения и жизни.">
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	
+	<meta name="description" content="НЕЗАБУДУ-сервис с помощью которого ты легко можешь найти место захоронения ушедших близких, знакомых и значимых людей твоего города, страны и сохранить информацию о месте захоронения и жизни.">
 </head>
 <body>
-	<!-- <script>
-		window.fbAsyncInit = function() {
-		  FB.init({
-			appId      : '291576955629944',
-			xfbml      : true,
-			version    : 'v9.0'
-		  });
-		  FB.AppEvents.logPageView();
-		};
-	  
-		(function(d, s, id){
-		   var js, fjs = d.getElementsByTagName(s)[0];
-		   if (d.getElementById(id)) {return;}
-		   js = d.createElement(s); js.id = id;
-		   js.src = "https://connect.facebook.net/en_US/sdk.js";
-		   fjs.parentNode.insertBefore(js, fjs);
-		 }(document, 'script', 'facebook-jssdk'));
-
-
-		 function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-			console.log('statusChangeCallback');
-			console.log(response);                   // The current login status of the person.
-			if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-			testAPI();  
-			} else {                                 // Not logged into your webpage or we are unable to tell.
-				console.log('into this webpage');
-			}
-		}
-
-
-		function checkLoginState() {               // Called when a person is finished with the Login Button.
-			FB.getLoginStatus(function(response) {   // See the onlogin handler
-			statusChangeCallback(response);
-			});
-		}
-
-
-		window.fbAsyncInit = function() {
-			FB.init({
-			appId      : '291576955629944',
-			cookie     : true,                     // Enable cookies to allow the server to access the session.
-			xfbml      : true,                     // Parse social plugins on this webpage.
-			version    : 'v9.0'           // Use this Graph API version for this call.
-			});
-
-
-			FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
-			statusChangeCallback(response);        // Returns the login status.
-			});
-		};
- 
-		function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-			console.log('Welcome!  Fetching your information.... ');
-			FB.api('/me', function(response) {
-			console.log('Successful login for: ' + response.name);
-			});
-		}
-
-	  </script> -->
 
 	<header class="header">
 	    <div class="wrapper">
@@ -88,62 +29,56 @@
 	            <div class="burger-wrap__links">
 	                <ul>
 	                    <li>
-	                        <div class="div">
+	                        <div class="burger-wrap__wrap-icon">
 	                        
-	                            <img src="./img/persons.png" alt="persons">
+	                            <img class="burger-wrap__icon" src="./img/persons.png" alt="persons">
 	                        </div>
 	                        <a href="#" class="nav__link">Сохранить память</a></li>
 	                    <li>
-	                        <div class="div">
-	                            <img src="./img/star.png" alt="star">
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/star.png" alt="star">
 	                        </div>
-	                        <a href="#" class="nav__link">Читать истории людей</a></li>
+	                        <a href="#" class="nav__link">Смотреть все анкеты</a></li>
 	                    <li>
-	                        <div class="div">
-	                            <img src="./img/like.png" alt="like">
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon"  src="./img/like.png" alt="like">
 	                        </div>
 	                        <a href="#" class="nav__link">Найти место захоронения</a></li>
 	                        <li>
-	                            <div class="div">
+	                            <div class="burger-wrap__wrap-icon">
 	                            
-	                                <img src="./img/persons.png" alt="persons">
+	                                <img class="burger-wrap__icon"  src="./img/persons.png" alt="persons">
 	                            </div>
-	                            <a href="#" class="nav__link">Читать про исторические личности и монументы</a></li>
+	                            <a href="#" class="nav__link">Читать про известные личности и монументы</a></li>
 	                </ul>
 	                <ul class="withBorder">
 	                    <li>
-	                        <div class="div">
-	                            <img src="./img/friendship.png" alt="peace">
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon"  src="./img/friendship.png" alt="peace">
 	                        </div>
 	                        <a href="#" class="nav__link">Уход за захоронениями</a></li>
 	                    <li>
-	                        <div class="div">
+	                        <div class="burger-wrap__wrap-icon">
 	                        
-	                            <img src="./img/persons.png" alt="persons">
-	                        </div>
-	                        <a href="#" class="nav__link">Исторические личности</a></li>
-	                    <li>
-	                        <div class="div">
-	                        
-	                            <img src="./img/qr-icon.png" alt="qr code">
+	                            <img class="burger-wrap__icon"  src="./img/qr-icon.png" alt="qr code">
 	                        </div>
 	                        <a href="#" class="nav__link">Заказать QR код на памятник</a></li>
 	                    <li>
-	                        <div class="div">
+	                        <div class="burger-wrap__wrap-icon">
 	                        
-	                            <img src="./img/all-people.png" alt="people">
+	                            <img class="burger-wrap__icon"  src="./img/all-people.png" alt="people">
 	                        </div>
 	                        <a href="#" class="nav__link">Стать партнером</a></li>
 	                    <li>
-	                        <div class="div">
+	                        <div class="burger-wrap__wrap-icon">
 	                        
-	                            <img src="./img/all-people.png" alt="people">
+	                            <img class="burger-wrap__icon"  src="./img/all-people.png" alt="people">
 	                        </div>
 	                        <a href="#" class="nav__link">Стать волонтером</a></li>
 	                </ul>
-	                <div class="burger__wrap-img">
-	                    <img src="./img/lists-human.png" alt="list">
-	                </div>
+	                <!-- <div class="burger__wrap-img">
+	                    <img class="burger__img" src="./img/lists-human.png" alt="list">
+	                </div> -->
 	                <!-- <a href="#" class="btn burger__btn">Заполнить анкету</a> -->
 	            </div>
 	        </div>
@@ -251,16 +186,16 @@
 	                    </div>
 	                </div>
 	                <span class="reg__title">или</span>
-	                <form action="registration.php" method="POST" class="reg__form" id="reg-form">
+	                <form action="core/registration.php" method="POST" class="reg__form" id="reg-form">
 	                    <div class="reg__wrap-names">
-	                        <input id="soname" type="text" required placeholder="Фамилия" class="reg__input btn-form">
-	                        <input id="name" type="text" required placeholder="Имя" class="reg__input btn-form">
+	                        <input id="soname" type="text" name='soname' required placeholder="Фамилия" class="reg__input btn-form">
+	                        <input id="name" type="text" name='name' required placeholder="Имя" class="reg__input btn-form">
 	                    </div>
-	                    <input id="name2" type="text" required placeholder="Отчество" class="reg__input">
-	                    <input id="tel" type="number" required placeholder="Телефон" class="reg__input">
-	                    <input id="mail" type="mail" required placeholder="E-mail" class="reg__input">
-	                    <input id="password" type="password" required placeholder="Пароль" class="reg__input">
-	                    <input type="submit" value="Зарегистрироваться" class="reg__btn">
+	                    <input id="name2" type="text" name="name2" required placeholder="Отчество" class="reg__input">
+	                    <input id="tel" type="number" name="tel" required placeholder="Телефон" class="reg__input">
+	                    <input id="mail" type="mail" name="mail" required placeholder="E-mail" class="reg__input">
+	                    <input id="password" type="password" name="password" required placeholder="Пароль" class="reg__input">
+	                    <input type="submit" value="Зарегистрироваться" class="reg__btn" name="registr">
 	                </form>
 	                <div class="reg__link-wrap reg-tab">
 	                    <!-- <span class="link-to-enter">Уже есть аккаунт?</span> -->
@@ -287,14 +222,14 @@
 	                    </div>
 	                </div>
 	                <span class="reg__title">или</span>
-	                <form action="auth.php" method="POST" class="reg__form" id="auth-form">
-	                    <input id="name-tel" type="text" required placeholder="Телефон или почту" class="reg__input">
-	                    <input id="password-auth" type="password" required placeholder="Пароль" class="reg__input">
+	                <form action="core/auth.php" method="POST" class="reg__form" id="auth-form">
+	                    <input id="name-tel" type="text" name="name-tel" required placeholder="Телефон или почту" class="reg__input">
+	                    <input id="password-auth" type="password" name="password" required placeholder="Пароль" class="reg__input">
 	                    <!-- <div class="captcha">
 	                        <img src="./img/Фигура3.jpg" alt="">
 	                    </div> -->
 	                    <div class="g-recaptcha captcha" data-sitekey="6Le-nP0ZAAAAAIVD_XVU_oC54rpo9yRmXqPnBjou"></div>
-	                    <input type="submit" value="Войти" class="reg__btn">
+	                    <input type="submit" value="Войти" class="reg__btn" name="auth">
 	                </form>
 	                <div class="reg__link-wrap">
 	                    <span>Забы ли пароль?</span>
@@ -342,18 +277,18 @@
 	                <h2 class="questionnaires__title">Стань частью проекта</h2>
 	                <ol class="questionnaires__lists">
 	                    <li class="questionnaires__list">Расскажи личную историю ушедшего из жизни близкого</li>
-	                    <li class="questionnaires__list">укажи место захоронения на карте</li>
+	                    <li class="questionnaires__list">Укажи место захоронения на карте</li>
 	                    <li class="questionnaires__list">Помоги другим родственникам и знакомым быстро найти могилу и узнать больше об ушедшем близком</li>
 	                    <li class="questionnaires__list">Поставь уведомление на дату поминания</li>
 	                    <li class="questionnaires__list">Напиши статью про исторического деятеля твоего города/региона</li>
 	                </ol>
 	                <div class="questionnaires__btns">
-	                    <a href="#" class="questionnaires__link btn">Сохрани память</a>
-	                    <a href="#" class="questionnaires__link btn btn--light">Читать истории</a>
+	                    <a href="#" class="questionnaires__link btn">Сохранить память</a>
+	                    <a href="#" class="questionnaires__link btn btn--light">Все анкеты</a>
 	                </div>
 	            </div>
 	            <div class="questionnaires__img-wrap">
-	                <img class="questionnaires__img" src="./img/questionnaire.png" alt="questionnaire">
+	                <img class="questionnaires__img" src="./img/card-2.png" alt="questionnaire">
 	            </div>
 	        </div>
 	    </div>
@@ -380,7 +315,7 @@
 	</section>
 	<section class="posibility">
 	    <div class="wrapper">
-	        <h2 class="posibility__title"><span>НУЗАБУДУ</span> поможет:</h2>
+	        <h2 class="posibility__title"><span>НEЗАБУДУ</span> поможет:</h2>
 	        <div class="posibility__content">
 	            <a href="questionnaire-page/index.html" class="posibility__item">
 	                <div class="posibility__img-wrap">
@@ -462,7 +397,7 @@
 	                </div>
 	                <div class="posibility__link">
 	                    <div class="posibility__link-wrap">
-	                        <h6 class="posibility__subtitle">Узнать истории<br> других </h6>
+	                        <h6 class="posibility__subtitle">Все анкеты</h6>
 	                        <p class="posibility__text">Их жизнь была интересной.  Все люди – личности, каждая история важна и достойна внимания</p>
 	                    </div>
 	                </div>
@@ -472,7 +407,7 @@
 	</section>
 	<section class="search" id="search">
 	    <div class="wrapper" style="text-align: center;">
-	        <h2 class="search__title">Найди место захоронения и истории их жизни</h2>
+	        <h2 class="search__title">Найти место захоронения</h2>
 	        <form action="POST" class="search__form">
 	            <div class="search__block-input">
 	                <div class="search__name">
@@ -535,7 +470,7 @@
 	            </div>
 	            <div class="search__btn-block">
 	                <input type="submit" class="btn search__btn" value="Поиск">
-	                <a href="questionnaire-page/index.html" class="search__link btn">Заполнить анкету</a>
+	                <a href="questionnaire-page/index.html" class="search__link btn">Сохранить память</a>
 	            </div>  
 	        </form>
 	        <p class="search__subtitle">Мы запускаем проект. Если вы не нашли информацию<br> 
@@ -545,7 +480,7 @@
 	<section class="personality">
 	    <div class="wrapper">
 	        <div class="personality__wrap">
-	            <h2 class="personality__title">Исторические личности и монументы</h2>
+	            <h2 class="personality__title">Известные личности и монументы</h2>
 	            <p class="personality__subtitle">Люди, которые вошли в историю.</p>
 	            <div class="personality__carusel">
 	                <a href="#" class="personality__item">
@@ -591,31 +526,31 @@
 	</section>
 	<section class="partners">
 	    <div class="wrapper">
-	        <h2 class="partners__title">Партнеры проекта</h2>
+	        <h2 class="partners__title">О нас пишут</h2>
 	        <div class="partners__items">
 	            <div class="partners__logo-wrap">
 	                <!-- <img src="" alt="photo" class="partners__img"> -->
-	                <span>Наш<br> партнер</span>
+	                <a href="#">0629</a>
 	            </div>
 	            <div class="partners__logo-wrap">
 	                <!-- <img src="" alt="" class="partners__img"> -->
-	                <span>Наш<br> партнер</span>
+	                <a href="#">Бабель</a>
 	            </div>
 	            <div class="partners__logo-wrap">
 	                <!-- <img src="" alt="" class="partners__img"> -->
-	                <span>Наш<br> партнер</span>
+	                <a href="#">Приазовский<br> рабочий</a>
 	            </div>
 	            <div class="partners__logo-wrap">
 	                <!-- <img src="" alt="" class="partners__img"> -->
-	                <span>Наш<br> партнер</span>
+	                <a href="#">Донбасс</a>
 	            </div>
 	            <div class="partners__logo-wrap">
 	                <!-- <img src="" alt="" class="partners__img"> -->
-	                <span>Наш<br> партнер</span>
+	                <a href="#">Ссылка на<br> статью</a>
 	            </div>
 	            <div class="partners__logo-wrap">
 	                <!-- <img src="" alt="" class="partners__img"> -->
-	                <span>Наш<br> партнер</span>
+	                <a href="#">Ссылка на<br> статью</a>
 	            </div>
 	        </div>
 	    </div>
@@ -742,8 +677,8 @@
 	</footer>
 	<!-- скрипты -->
 	<script src="js/main.min.js"></script>
-	<div id="status">
-	</div>
+	<!-- <div id="status">
+	</div> -->
 	<!-- Load the JS SDK asynchronously -->
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 

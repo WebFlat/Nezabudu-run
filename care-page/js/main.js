@@ -13687,7 +13687,7 @@ jQuery(function($){
 	});
 
 
-	$('.select__options').each(function(){
+	$('.cards__cites').each(function(){
 		var $this = $(this), numberOfOptions = $(this).children('option').length;
 	  
 		$this.addClass('select-hidden'); 
