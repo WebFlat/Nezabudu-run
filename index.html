@@ -17,10 +17,69 @@
 	
 	<link rel="stylesheet" href="css/styles.min.css">
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-	
+		
 	<meta name="description" content="НЕЗАБУДУ-сервис с помощью которого ты легко можешь найти место захоронения ушедших близких, знакомых и значимых людей твоего города, страны и сохранить информацию о месте захоронения и жизни.">
 </head>
 <body>
+	<!-- <script>
+		window.fbAsyncInit = function() {
+		  FB.init({
+			appId      : '291576955629944',
+			xfbml      : true,
+			version    : 'v9.0'
+		  });
+		  FB.AppEvents.logPageView();
+		};
+	  
+		(function(d, s, id){
+		   var js, fjs = d.getElementsByTagName(s)[0];
+		   if (d.getElementById(id)) {return;}
+		   js = d.createElement(s); js.id = id;
+		   js.src = "https://connect.facebook.net/en_US/sdk.js";
+		   fjs.parentNode.insertBefore(js, fjs);
+		 }(document, 'script', 'facebook-jssdk'));
+
+
+		 function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+			console.log('statusChangeCallback');
+			console.log(response);                   // The current login status of the person.
+			if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+			testAPI();  
+			} else {                                 // Not logged into your webpage or we are unable to tell.
+				console.log('into this webpage');
+			}
+		}
+
+
+		function checkLoginState() {               // Called when a person is finished with the Login Button.
+			FB.getLoginStatus(function(response) {   // See the onlogin handler
+			statusChangeCallback(response);
+			});
+		}
+
+
+		window.fbAsyncInit = function() {
+			FB.init({
+			appId      : '291576955629944',
+			cookie     : true,                     // Enable cookies to allow the server to access the session.
+			xfbml      : true,                     // Parse social plugins on this webpage.
+			version    : 'v9.0'           // Use this Graph API version for this call.
+			});
+
+
+			FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+			statusChangeCallback(response);        // Returns the login status.
+			});
+		};
+ 
+		function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+			console.log('Welcome!  Fetching your information.... ');
+			FB.api('/me', function(response) {
+			console.log('Successful login for: ' + response.name);
+			});
+		}
+
+	  </script> -->
 
 	<header class="header">
 	    <div class="wrapper">
@@ -382,7 +441,7 @@
 	                </div>
 	                <div class="posibility__link">
 	                    <div class="posibility__link-wrap">
-	                        <h6 class="posibility__subtitle">Заказать<br> уход удаленно </h6>
+	                        <h6 class="posibility__subtitle">Заказать уход<br> за захоронениями </h6>
 	                        <p class="posibility__text">Теперь можно совершать уборку, уход за могилой и возложение цветов</p>
 	                    </div>
 	                </div>
@@ -477,33 +536,234 @@
 	            о человеке, заполните анкету и расскажите о нем.</p>
 	    </div>
 	</section>
-	<section class="personality">
+	<section class="personality">   
 	    <div class="wrapper">
 	        <div class="personality__wrap">
 	            <h2 class="personality__title">Известные личности и монументы</h2>
 	            <p class="personality__subtitle">Люди, которые вошли в историю.</p>
 	            <div class="personality__carusel">
-	                <a href="#" class="personality__item">
-	                    <img src="./img/card.png" class="personality__img" alt="card">
-	                </a>
-	                <a href="#" class="personality__item">
-	                    <img src="./img/card.png" alt="">
-	                </a>
-	                <a href="#" class="personality__item">
-	                    <img src="./img/card.png" alt="card">
-	                </a>
-	                <a href="#" class="personality__item">
-	                    <img src="./img/card.png" alt="card">
-	                </a>
-	                <a href="#" class="personality__item">
-	                    <img src="./img/card.png" alt="card">
-	                </a>
-	                <a href="#" class="personality__item">
-	                    <img src="./img/card.png" alt="card">
-	                </a>
-	                <a href="#" class="personality__item">
-	                    <img src="./img/card.png" alt="card">
-	                </a>
+	                <div class="user item">
+	                    <div class="user__info">
+	                        <img src="./img/famous.png" alt="icon star" class="user__isPubl">
+	                        <div class="user__avatar-wrap">
+	                            <img src="./img/user-def.png" alt="face" class="user__avatar">
+	                        </div>
+	                        <div class="user__title">
+	                            <span class="user__surname">Гонда</span>
+	                            <span>  </span>
+	                            <span class="user__name">Михаил
+	                            </span>
+	                            <span class="user__patronymic">Степанович</span>
+	                        </div>
+	                        <div class="user__lives">
+	                            <span class="user__both">1920</span>
+	                            <span> - </span>
+	                            <span class="user__die">2000</span>
+	                            <span>  гг</span>
+	                        </div>
+	                        <div class="user__text">
+	                            <p class="user__about">У 1948 році закінчив школу фабрично-заводського учнівства. В 1948–1971 роках працював підручним сталевара, згодом сталеваром мартенівського цеху комбінату імені Ілліча. Починав на п'ятій мартенівської печі під керівництвом сталевара Івана Лута. В 1950 році очолив бригаду.</p>
+	                           
+	                        </div>
+	                        <a href="#" class="user__link-more">Читать дальше</a>
+	                    </div>
+	                    <div class="user__btns">
+	                        <div class="user__btn">
+	                            <img src="./img/bookmark.png" alt="icon" class="user__icon">
+	                        </div>
+	                        <div class="user__btn">
+	                            <img src="./img/likes.png" alt="icon" class="user__icon">
+	                        </div>
+	                        <div class="user__btn">
+	                            <img src="./img/loc-user.png" alt="icon" class="user__icon">
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="user item">
+	                    <div class="user__info">
+	                        <img src="./img/famous.png" alt="icon star" class="user__isPubl">
+	                        <div class="user__avatar-wrap">
+	                            <img src="./img/user-def.png" alt="face" class="user__avatar">
+	                        </div>
+	                        <div class="user__title">
+	                            <span class="user__surname">Гонда</span>
+	                            <span>  </span>
+	                            <span class="user__name">Михаил
+	                            </span>
+	                            <span class="user__patronymic">Степанович</span>
+	                        </div>
+	                        <div class="user__lives">
+	                            <span class="user__both">1920</span>
+	                            <span> - </span>
+	                            <span class="user__die">2000</span>
+	                            <span>  гг</span>
+	                        </div>
+	                        <div class="user__text">
+	                            <p class="user__about">У 1948 році закінчив школу фабрично-заводського учнівства. В 1948–1971 роках працював підручним сталевара, згодом сталеваром мартенівського цеху комбінату імені Ілліча. Починав на п'ятій мартенівської печі під керівництвом сталевара Івана Лута. В 1950 році очолив бригаду.</p>
+	                           
+	                        </div>
+	                        <a href="#" class="user__link-more">Читать дальше</a>
+	                    </div>
+	                    <div class="user__btns">
+	                        <div class="user__btn">
+	                            <img src="./img/bookmark.png" alt="icon" class="user__icon">
+	                        </div>
+	                        <div class="user__btn">
+	                            <img src="./img/likes.png" alt="icon" class="user__icon">
+	                        </div>
+	                        <div class="user__btn">
+	                            <img src="./img/loc-user.png" alt="icon" class="user__icon">
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="user item">
+	                    <div class="user__info">
+	                        <img src="./img/famous.png" alt="icon star" class="user__isPubl">
+	                        <div class="user__avatar-wrap">
+	                            <img src="./img/user-def.png" alt="face" class="user__avatar">
+	                        </div>
+	                        <div class="user__title">
+	                            <span class="user__surname">Гонда</span>
+	                            <span>  </span>
+	                            <span class="user__name">Михаил
+	                            </span>
+	                            <span class="user__patronymic">Степанович</span>
+	                        </div>
+	                        <div class="user__lives">
+	                            <span class="user__both">1920</span>
+	                            <span> - </span>
+	                            <span class="user__die">2000</span>
+	                            <span>  гг</span>
+	                        </div>
+	                        <div class="user__text">
+	                            <p class="user__about">У 1948 році закінчив школу фабрично-заводського учнівства. В 1948–1971 роках працював підручним сталевара, згодом сталеваром мартенівського цеху комбінату імені Ілліча. Починав на п'ятій мартенівської печі під керівництвом сталевара Івана Лута. В 1950 році очолив бригаду.</p>
+	                           
+	                        </div>
+	                        <a href="#" class="user__link-more">Читать дальше</a>
+	                    </div>
+	                    <div class="user__btns">
+	                        <div class="user__btn">
+	                            <img src="./img/bookmark.png" alt="icon" class="user__icon">
+	                        </div>
+	                        <div class="user__btn">
+	                            <img src="./img/likes.png" alt="icon" class="user__icon">
+	                        </div>
+	                        <div class="user__btn">
+	                            <img src="./img/loc-user.png" alt="icon" class="user__icon">
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="user item">
+	                    <div class="user__info">
+	                        <img src="./img/famous.png" alt="icon star" class="user__isPubl">
+	                        <div class="user__avatar-wrap">
+	                            <img src="./img/user-def.png" alt="face" class="user__avatar">
+	                        </div>
+	                        <div class="user__title">
+	                            <span class="user__surname">Гонда</span>
+	                            <span>  </span>
+	                            <span class="user__name">Михаил
+	                            </span>
+	                            <span class="user__patronymic">Степанович</span>
+	                        </div>
+	                        <div class="user__lives">
+	                            <span class="user__both">1920</span>
+	                            <span> - </span>
+	                            <span class="user__die">2000</span>
+	                            <span>  гг</span>
+	                        </div>
+	                        <div class="user__text">
+	                            <p class="user__about">У 1948 році закінчив школу фабрично-заводського учнівства. В 1948–1971 роках працював підручним сталевара, згодом сталеваром мартенівського цеху комбінату імені Ілліча. Починав на п'ятій мартенівської печі під керівництвом сталевара Івана Лута. В 1950 році очолив бригаду.</p>
+	                           
+	                        </div>
+	                        <a href="#" class="user__link-more">Читать дальше</a>
+	                    </div>
+	                    <div class="user__btns">
+	                        <div class="user__btn">
+	                            <img src="./img/bookmark.png" alt="icon" class="user__icon">
+	                        </div>
+	                        <div class="user__btn">
+	                            <img src="./img/likes.png" alt="icon" class="user__icon">
+	                        </div>
+	                        <div class="user__btn">
+	                            <img src="./img/loc-user.png" alt="icon" class="user__icon">
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="user item">
+	                    <div class="user__info">
+	                        <img src="./img/famous.png" alt="icon star" class="user__isPubl">
+	                        <div class="user__avatar-wrap">
+	                            <img src="./img/user-def.png" alt="face" class="user__avatar">
+	                        </div>
+	                        <div class="user__title">
+	                            <span class="user__surname">Гонда</span>
+	                            <span>  </span>
+	                            <span class="user__name">Михаил
+	                            </span>
+	                            <span class="user__patronymic">Степанович</span>
+	                        </div>
+	                        <div class="user__lives">
+	                            <span class="user__both">1920</span>
+	                            <span> - </span>
+	                            <span class="user__die">2000</span>
+	                            <span>  гг</span>
+	                        </div>
+	                        <div class="user__text">
+	                            <p class="user__about">У 1948 році закінчив школу фабрично-заводського учнівства. В 1948–1971 роках працював підручним сталевара, згодом сталеваром мартенівського цеху комбінату імені Ілліча. Починав на п'ятій мартенівської печі під керівництвом сталевара Івана Лута. В 1950 році очолив бригаду.</p>
+	                           
+	                        </div>
+	                        <a href="#" class="user__link-more">Читать дальше</a>
+	                    </div>
+	                    <div class="user__btns">
+	                        <div class="user__btn">
+	                            <img src="./img/bookmark.png" alt="icon" class="user__icon">
+	                        </div>
+	                        <div class="user__btn">
+	                            <img src="./img/likes.png" alt="icon" class="user__icon">
+	                        </div>
+	                        <div class="user__btn">
+	                            <img src="./img/loc-user.png" alt="icon" class="user__icon">
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="user item">
+	                    <div class="user__info">
+	                        <img src="./img/famous.png" alt="icon star" class="user__isPubl">
+	                        <div class="user__avatar-wrap">
+	                            <img src="./img/user-def.png" alt="face" class="user__avatar">
+	                        </div>
+	                        <div class="user__title">
+	                            <span class="user__surname">Гонда</span>
+	                            <span>  </span>
+	                            <span class="user__name">Михаил
+	                            </span>
+	                            <span class="user__patronymic">Степанович</span>
+	                        </div>
+	                        <div class="user__lives">
+	                            <span class="user__both">1920</span>
+	                            <span> - </span>
+	                            <span class="user__die">2000</span>
+	                            <span>  гг</span>
+	                        </div>
+	                        <div class="user__text">
+	                            <p class="user__about">У 1948 році закінчив школу фабрично-заводського учнівства. В 1948–1971 роках працював підручним сталевара, згодом сталеваром мартенівського цеху комбінату імені Ілліча. Починав на п'ятій мартенівської печі під керівництвом сталевара Івана Лута. В 1950 році очолив бригаду.</p>
+	                           
+	                        </div>
+	                        <a href="#" class="user__link-more">Читать дальше</a>
+	                    </div>
+	                    <div class="user__btns">
+	                        <div class="user__btn">
+	                            <img src="./img/bookmark.png" alt="icon" class="user__icon">
+	                        </div>
+	                        <div class="user__btn">
+	                            <img src="./img/likes.png" alt="icon" class="user__icon">
+	                        </div>
+	                        <div class="user__btn">
+	                            <img src="./img/loc-user.png" alt="icon" class="user__icon">
+	                        </div>
+	                    </div>
+	                </div>
 	            </div>
 	            <a href="person-page/index.html" class="personality__link btn">Все анкеты</a>
 	        </div>
@@ -511,15 +771,27 @@
 	</section>
 	<section class="reviews">
 	    <div class="wrapper">
-	        <div class="reviews__content">
-	            <div class="reviews__text">
-	                <h2 class="reviews__title">Ваше мнение нам важно!</h2>
-	                <p class="reviews__subtitle">Мы стартап проект и просим тебя дать обратную связь по функционалу сайта</p>
-	                <p class="reviews__subtitle">Было ли вам комфортно пользоваться сайтом?</p>
-	                <a href="#" class="reviews__link btn">Уход за вашими близкими</a>
+	        <div class="reviews__contents">
+	            <div class="reviews__content1">
+	                <div class="reviews__img-wrap">
+	                    <picture class="reviews__img">
+	                        <source srcset="./img/grid-xs.png" media="(max-width: 411px)">
+	                        <source srcset="./img/grid.png">
+	                        <img src="./img/grid.png" alt="grid">
+	                    </picture>
+	                </div>
+	                <a href="#" class="reviews__link-care btn">Заказать уход<br> за захоронениями</a>
 	            </div>
-	            <div class="reviews__img-wrap">
-	                <img src="./img/grid.jpg" alt="photo from dron" class="reviews__img">
+	            <div class="reviews__content2">
+	                <div class="reviews__img-wrap reviews__img-wrap--qr">
+	                    <!-- <img src="./img/qr-link.png" alt="qr" class="reviews__img"> -->
+	                    <picture style="max-width: 100%;" class="reviews__img">
+	                        <source srcset="./img/qr-link-xs.png" media="(max-width: 411px)">
+	                        <source srcset="./img/qr-link.png">
+	                        <img src="./img/qr-link.png" alt="qr">
+	                    </picture>
+	                </div>
+	                <a style="position: relative;z-index: 5;" href="#" class="reviews__link-qr btn">Узнать про QR-код</a>
 	            </div>
 	        </div>
 	    </div>
@@ -648,7 +920,7 @@
 	                <a href="tel:+380965636858" class="footer__link-tel">+38 (096) 563-68-58</a>
 	                <a href="mailto:nezabudu.ream@gmail.com" class="footer__link-mail">nezabudu.team@gmail.com</a>
 	            </div>
-	            <div class="footer__services">
+	            <!-- <div class="footer__services">
 	            <h6 class="footer__title">НЕЗАБУДУ
 	            </h6>
 	            <a href="#" class="footer__service">Благоустройство</a>
@@ -662,7 +934,7 @@
 	                <a href="#" class="footer__cabinet-link">Рейтинг</a>
 	                <a href="#" class="footer__cabinet-link">Организации</a>
 	                <a href="#" class="footer__cabinet-link">Профили ушедших</a>
-	            </div>
+	            </div> -->
 	            <div class="footer__docs">
 	                <h6 class="footer__title">Документы</h6>
 	                <a href="#" class="footer__doc-link">Политика конфиденциальности</a>
@@ -677,8 +949,8 @@
 	</footer>
 	<!-- скрипты -->
 	<script src="js/main.min.js"></script>
-	<!-- <div id="status">
-	</div> -->
+	<div id="status">
+	</div>
 	<!-- Load the JS SDK asynchronously -->
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 

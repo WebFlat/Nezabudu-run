@@ -13617,7 +13617,7 @@ jQuery(function($){
 			slidesToShow: 4,
 			infinite: true,
 			speed: 500,
-			// arrows: true,
+			arrows: false,
 			autoplay: true,
 			responsive: [ 
 				{ 
@@ -13636,7 +13636,6 @@ jQuery(function($){
 					breakpoint: 470,
 					settings: {
 						slidesToShow: 1,
-						arrows: false
 					}
 				}
 			]
@@ -13644,13 +13643,9 @@ jQuery(function($){
 		$('.personality__carusel').slick({
 			dots: true,
 			slidesToShow: 3,
-			slidesToScroll: 1,
 			infinite: true,
 			speed: 500,
-			pauseOnHover: true,
-			appendArrows: $('.carusel-arrow'),
-            prevArrow: '<button id="prev" type="button" class="btn btn-juliet"><i class="fa fa-chevron-left" aria-hidden="true"></i> Туда</button>',
-            nextArrow: '<button id="next" type="button" class="btn btn-juliet">Сюда <i class="fa fa-chevron-right" aria-hidden="true"></i></button>',
+			arrows: false,
 			autoplay: true,
 			responsive: [ 
 				{ 
@@ -13663,19 +13658,12 @@ jQuery(function($){
 					breakpoint: 500,
 					settings: {
 						slidesToShow: 1,
-						arrows: false
+						arrows: true
 					}
 				}
 			]
 
 		});
-
-
-
-
-
-
-
 		$('.about__subtitle').addClass("hidden").viewportChecker({
 			classToAdd: 'visible animate__fadeInRight',
 			// offset: 20
@@ -13693,9 +13681,6 @@ jQuery(function($){
 			// offset: 20
 		});
 	});
-
-
-
 
 	$('.select__options').each(function(){
 		var $this = $(this), numberOfOptions = $(this).children('option').length;
@@ -13870,6 +13855,7 @@ jQuery(function($){
 	//Search show***************************************
 
 	$('.search__btn-showHide').click(function() {
+		console.log('click');
 		$('.search__more-wrap').toggleClass('show-select');
 		$('.search__btn-showHide').toggleClass('active-btn');
 	});
@@ -14048,8 +14034,8 @@ document.getElementById('lowerValue').value = (lowerSlider.value + ' год');
 
 //login with facebook****************************************************************************
    function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-	//   console.log('statusChangeCallback');
-	//   console.log(response);                   // The current login status of the person.
+	  console.log('statusChangeCallback');
+	  console.log(response);                   // The current login status of the person.
 	  if (response.status === 'connected') {   // Logged into your webpage and Facebook.
 	  testAPI();  
 	  } else {                                 // Not logged into your webpage or we are unable to tell.
