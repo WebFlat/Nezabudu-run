@@ -333,6 +333,7 @@
 	                                Заказать QR на мемориал и поделится этой анкетой для посетителей кладбища с полным или ограниченным доступом посетителей кладбища к информации
 	                            </p>
 	                            <a href="#" class="about__qr-buy btn">Заказать QR</a>
+	                            <a href="#" class="about__qr-buy-care btn">Заказать уход<br> за захоронением</a>
 	                        </div>
 	                    </div>
 	                </section>
@@ -374,8 +375,12 @@
 	                            
 	                            <div class="data__user">
 	                                <h6 class="user__title">Данные о личности</h6>
-	                                <input type="text" class="user__name" required placeholder="ФИО">
-	                                <input type="text" class="user__soname-girl" placeholder="Девичья фамилия">
+	                                <div class="user__inp-wrap">
+	                                    <input type="text" class="user__surname" required placeholder="Фамилия">
+	                                    <input type="text" class="user__name" required placeholder="Имя">
+	                                    <input type="text" class="user__patronymic" required placeholder="Отчество">
+	                                    <input type="text" class="user__soname-girl" placeholder="Девичья фамилия">
+	                                </div>
 	                                <div class="user__lives-data">
 	                                    <div class="user__lives-wrap">
 	                                        <div class="user__inp-wrap">
@@ -392,25 +397,38 @@
 	                                    </div>
 	                                </div>
 	                                <div class="user__lives-loc">
-	                                    <input type="text" class="user__both-loc" required placeholder="Где родился">
-	                                    <input type="text" class="user__die-loc" required placeholder="Где умер">
+	                                    <input type="text" class="user__both-loc" required placeholder="Где родился(ась)">
+	                                    <input type="text" class="user__die-loc" required placeholder="Где умер(ла)">
 	                                </div>
 	                                <label class="user__title-second" for="area-lives">
-	                                    Где проживал в разные периоды времени
+	                                    Где проживал(а) в разные периоды времени
 	                                </label>
-	                                <textarea name="" id="area-lives" rows="3" placeholder="Где-то"></textarea>
+	                                <textarea name="" id="area-lives" rows="3"></textarea>
 	                            </div>
 	                            <div class="user__general">
-	                                <label for="education">Образование:</label>
+	                                <label for="education">Где учился(ась)?:</label>
 	                                <textarea type="text" class="general__education" id="education" rows="4" placeholder="Школа, университет, другое"></textarea>
+	                                <label for="work">Род деятельности(выбрать из списка)</label>
+	                                    <select name="die" id="work" class="die__opinion">
+	                                        <option value="hide">Список</option>
+	                                        <option value="Список">Список</option>
+	                                        <option value="Список">Список</option>
+	                                        <option value="Список">Список</option>
+	                                        <option value="Список">Список</option>
+	                                        <option value="Список">Список</option>
+	                                    </select>
 	                                <label for="work">Последнее место работы или основное место работы</label>
-	                                <textarea type="text" class="general__education" id="work" rows="4" placeholder="Запорожье"></textarea>
+	                                <textarea type="text" class="general__education" id="work-city" rows="4" placeholder="Запорожье"></textarea>
 	                                <label for="hobbies">Хобби, увлечения, спорт, заслуги</label>
-	                                <textarea type="text" class="general__education" id="hobbies" rows="4" placeholder="Хобби, увлечения, спорт, заслуги  "></textarea>
+	                                <textarea type="text" class="general__education" id="hobbies" rows="4" placeholder="Хобби, увлечения, спорт, заслуги "></textarea>
 	                            </div>
 	                            <div class="user__memories">
 	                                <label for="memories">Расскажите кем был этот человек, его черты характера,теплые воспоминания о его жизни</label>
-	                                <textarea name="memories" id="memories" rows="15" placeholder="Расскажите что бы вы хотели чтобы другие узнали про этого человека"></textarea>    
+	                                <textarea name="memories" id="memories" rows="15" placeholder="Расскажите что бы вы хотели чтобы другие узнали про этого человека"></textarea>
+	                                <label>Ссылки на социальные сети, которые вел при жизни человек:</label>
+	                                <input class="user__soclink" type="text" name="facebook" id="facebook-link" placeholder="Фейсбук">   <input class="user__soclink" type="text" name="VK" id="VK-link" placeholder="Вконтакте">
+	                                <input class="user__soclink" type="text" name="odnoclasniki" id="odnoclasniki-link" placeholder="Одноклассники">
+	                                <input class="user__soclink" type="text" name="instagram" id="instagram-link" placeholder="Инстаграм">
 	                            </div>
 	                            <div class="user__die-about">
 	                                    <label for="die-select">Причина смерти</label>
@@ -422,20 +440,11 @@
 	                                        <option value="Список">Список</option>
 	                                        <option value="Список">Список</option>
 	                                    </select>
-	                                    <label for="opinion">Что по вашему мнению могло продлить ему жизнь</label>
-	                                    <select name="die" id="die-opinion" class="die__opinion">
-	                                        <option value="hide">Список</option>
-	                                        <option value="Список">Список</option>
-	                                        <option value="Список">Список</option>
-	                                        <option value="Список">Список</option>
-	                                        <option value="Список">Список</option>
-	                                        <option value="Список">Список</option>
-	                                    </select>
 	                            </div>
 	                            <p class="data__title">Можно продолжить заполнять информацию о вашем  близком и рассказать о нем  чуть больше. Данная информация может быть как доступна другим так и скрыта от всех</p>
 	                            <div class="data__btns">
-	                                <button class="btn data__btn-close">Отменить</button>
-	                                <input type="text" class="btn data__btn-save" value="Сохранить">
+	                                <button class="btn data__btn-close"> Сохранить</button>
+	                                <button class="btn data__btn-save">Продолжить</button>
 	                            </div>
 	                            <button class="data__save">Скачать анкету</button>
 	                        </form>
@@ -444,36 +453,69 @@
 	                <section class="profile__menu">
 	                    <div class="menu__items">
 	                        <a href="#" class="menu__item">
+	                            <div class="menu__description">
+	                                <span>Родственники</span>
+	                            </div>
 	                            <img src="./img/book.png" alt="icon" class="menu__img">
 	                        </a>
 	                        <a href="#" class="menu__item">
+	                            <div class="menu__description">
+	                                <span>Главные увлечения в жизни</span>
+	                            </div>
 	                            <img src="./img/glass.png" alt="icon" class="menu__img">
 	                        </a>
 	                        <a href="#" class="menu__item">
+	                            <div class="menu__description">
+	                                <span>Характер,каким был для семьи</span>
+	                            </div>
 	                            <img src="./img/brain.png" alt="icon" class="menu__img">
 	                        </a>
 	                        <a href="#" class="menu__item">
+	                            <div class="menu__description">
+	                                <span>Какие ценности нес и чему научил</span>
+	                            </div>
 	                            <img src="./img/stars.png" alt="icon" class="menu__img">
 	                        </a>
 	                        <a href="#" class="menu__item">
+	                            <div class="menu__description">
+	                                <span>Интересные истории,что запомнилось</span>
+	                            </div>
 	                            <img src="./img/chats.png" alt="icon" class="menu__img">
 	                        </a>
 	                        <a href="#" class="menu__item">
+	                            <div class="menu__description">
+	                                <span>Чем гордитесь</span>
+	                            </div>
 	                            <img src="./img/medal.png" alt="icon" class="menu__img">
 	                        </a>
 	                        <a href="#" class="menu__item">
+	                            <div class="menu__description">
+	                                <span>Что бы могли рассказать о нем другие люди</span>
+	                            </div>
 	                            <img src="./img/pensil.png" alt="icon" class="menu__img">
 	                        </a>
 	                        <a href="#" class="menu__item">
+	                            <div class="menu__description">
+	                                <span>Опишите жизнь в юности, молодости, зрелости и т.д.</span>
+	                            </div>
 	                            <img src="./img/human.png" alt="icon" class="menu__img">
 	                        </a>
 	                        <a href="#" class="menu__item">
+	                            <div class="menu__description">
+	                                <span>Где побывал,что видел</span>
+	                            </div>
 	                            <img src="./img/mounts.png" alt="icon" class="menu__img">
 	                        </a>
 	                        <a href="#" class="menu__item">
+	                            <div class="menu__description">
+	                                <span>Трудовая и общественная деятельность</span>
+	                            </div>
 	                            <img src="./img/menu.png" alt="icon" class="menu__img">
 	                        </a>
 	                        <a href="#" class="menu__item">
+	                            <div class="menu__description">
+	                                <span>+ добавь сам</span>
+	                            </div>
 	                            <img src="./img/addchat.png" alt="icon" class="menu__img">
 	                        </a>
 	                    </div>
