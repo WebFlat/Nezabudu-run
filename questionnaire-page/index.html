@@ -303,19 +303,31 @@
 	                <section class="profile__about">
 	                    <div class="about__wrap">
 	                        <div class="about__img-wrap">
-	                            <img src="./img/dad.jpg" alt="" class="about__img">
+	                            <img src="./img/dad.jpg" alt="foto" class="about__img">
 	                        </div>
 	                        <div class="about__settings">
 	                            <div class="about__publ">
 	                                <input id="publ" type="checkbox" class="about__publ-check">   
 	                                <label for="publ" class="about__publ-text">Публичная личность</label>
 	                            </div>
-	                            <button class="about__btn"></button>
+	                            <button class="about__btn" id="settings"></button>
 	                        </div>
 	                        <div class="about__upload">
 	                            <div class="about__upload-icon"></div>
 	                            <input class="about__upload-inpt" type="file" size="1" name="upload" id="fileUpload">
 	                            <span class="about__upload-text">Загрузить документ подтвержающий публичность личности</span>
+	                        </div>
+	                        <div class="about__subsettings">
+	                            <div class="about__upload about__upload--foto" style="width: 100%;">
+	                                <input class="about__upload-inpt" type="file" size="1" name="upload" id="fotoUpload" style="width: 100%;">
+	                                <span class="about__uploads-text about__upload-text--foto">Загрузить фотографию</span>
+	                            </div>
+	                            <div class="about__show">
+	                                <p class="about__show-title">Настройки отображения</p>
+	                                <span class="about__show-item">Отображать всем всю анкету </span>
+	                                <span class="about__show-item active">Отображать частично</span>
+	                                <span class="about__show-item">Полностью скрытая</span>
+	                            </div>
 	                        </div>
 	                        <div class="about__gallery">
 	                            <div class="about__gal-wrap"><img src="./img/man.jpg" alt="foto" class="about__foto"></div>
@@ -376,8 +388,12 @@
 	                            <div class="data__user">
 	                                <h6 class="user__title">Данные о личности</h6>
 	                                <div class="user__inp-wrap">
-	                                    <input type="text" class="user__surname" required placeholder="Фамилия">
-	                                    <input type="text" class="user__name" required placeholder="Имя">
+	                                    <div class="user__names">
+	                                        <input type="text" class="user__surname" required placeholder="Фамилия">
+	                                    </div>
+	                                    <div class="user__names">
+	                                        <input type="text" class="user__name" required placeholder="Имя">
+	                                    </div>
 	                                    <input type="text" class="user__patronymic" required placeholder="Отчество">
 	                                    <input type="text" class="user__soname-girl" placeholder="Девичья фамилия">
 	                                </div>

@@ -13917,7 +13917,23 @@ jQuery(function($){
 	});
 
 
+
+
+	//Show ssettings user***********************************
+	$('#settings').click(function() {
+		$('.about__subsettings').toggleClass('show-settings');
+	})
 	
+	$('#settings-mob').click(function() {
+		$('.profile__about').toggleClass('settings');
+	})
+
+	$('.about__show-item').click(function(event){
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
+		// console.log('click');
+	});
+
 	
 
  
