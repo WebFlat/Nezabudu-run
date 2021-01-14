@@ -303,7 +303,13 @@
 	                <section class="profile__about">
 	                    <div class="about__wrap">
 	                        <div class="about__img-wrap">
-	                            <img src="./img/dad.jpg" alt="foto" class="about__img">
+	                            <img src="./img/default-foto.png" alt="foto" class="about__img">
+	                        </div>
+	                        <div class="about__upload about__upload--ava">
+	                            <input class="about__upload-inpt about__upload-inpt--ava" type="file" size="1" name="upload" id="fileFotoAvatar">
+	                            <span class="about__upload-text about__upload-text--ava">
+	                                Добавить фото
+	                            </span>
 	                        </div>
 	                        <div class="about__settings">
 	                            <div class="about__publ">
@@ -351,8 +357,9 @@
 	                </section>
 	                <section class="profile__data">
 	                    <div class="wrapper">
-	                        <form action="POST">
-	                            <select name="user" id="relative" class="data__relative">
+	                        
+	                        <form action="" method="POST" class="data__form-default">
+	                            <select name="user" id="relative-data" class="data__relative">
 	                                <option value="hide">Кем приходится вам</option>
 	                                <option value="Родственник">Родственник</option>
 	                                <option value="Родственник">Знакомый</option>
@@ -464,6 +471,130 @@
 	                            </div>
 	                            <button class="data__save">Скачать анкету</button>
 	                        </form>
+	                        <div class="data__form-tabs">
+	                            <form action="" class="data__form" method="POST">
+	                                <h6 class="data__form-title">Заметки о родственниках</h6>
+	                                <p class="data__form-subtitle">Запишите информацию о родственниках, которые связывают вас с умершим, чтобы сохранить семейные связи.</p>
+	                                <textarea class="data__form-text" name="info" id="relatives" rows="30" placeholder="Голубев Иван Иванович (1972г.) +380678783523"></textarea>
+	                                <p class="data__title">Можно продолжить заполнять информацию о вашем  близком и рассказать о нем  чуть больше. Данная информация может быть как доступна другим так и скрыта от всех</p>
+	                                <div class="data__btns">
+	                                    <button class="btn data__btn-close">Сохранить</button>
+	                                    <button class="btn data__btn-save">Продолжить</button>
+	                                </div>
+	                                <button class="data__save">Скачать анкету</button>
+	                            </form>
+	                            <form action="" class="data__form">
+	                                <h6 class="data__form-title">Увлечения в жизни</h6>
+	                                <p class="data__form-subtitle">Запишите главные увлечения в жизни ушедшего. Как проводил свободное время? Чем увлекался?</p>
+	                                <textarea class="data__form-text" name="info" id="interest" rows="30"></textarea>
+	                                <p class="data__title">Можно продолжить заполнять информацию о вашем  близком и рассказать о нем  чуть больше. Данная информация может быть как доступна другим так и скрыта от всех</p>
+	                                <div class="data__btns">
+	                                    <button class="btn data__btn-close">Сохранить</button>
+	                                    <button class="btn data__btn-save">Продолжить</button>
+	                                </div>
+	                                <button class="data__save">Скачать анкету</button>
+	                            </form>
+	                            <form action="" class="data__form">
+	                                <h6 class="data__form-title">Опишите его характер</h6>
+	                                <p class="data__form-subtitle">Какие черты характера ушедшего близкого? Веселый и открытый? Или строгий и консервативный? 
+	                                    Описав черты характера можно лучше предствавить образ человека.</p>
+	                                <textarea class="data__form-text" name="info" id="character" rows="30"></textarea>
+	                                <p class="data__title">Можно продолжить заполнять информацию о вашем  близком и рассказать о нем  чуть больше. Данная информация может быть как доступна другим так и скрыта от всех</p>
+	                                <div class="data__btns">
+	                                    <button class="btn data__btn-close">Сохранить</button>
+	                                    <button class="btn data__btn-save">Продолжить</button>
+	                                </div>
+	                                <button class="data__save">Скачать анкету</button>
+	                            </form>
+	                            <form action="" class="data__form">
+	                                <h6 class="data__form-title">Какие ценности нес и чему научил</h6>
+	                                <p class="data__form-subtitle">Например: любить семью, беречь свое здоровье, заботиться о животных, читать книги, печь пирожки, колядавать, ходить в церковь и другое.</p>
+	                                <textarea class="data__form-text" name="info" id="value-person" rows="30"></textarea>
+	                                <p class="data__title">Можно продолжить заполнять информацию о вашем  близком и рассказать о нем  чуть больше. Данная информация может быть как доступна другим так и скрыта от всех</p>
+	                                <div class="data__btns">
+	                                    <button class="btn data__btn-close">Сохранить</button>
+	                                    <button class="btn data__btn-save">Продолжить</button>
+	                                </div>
+	                                <button class="data__save">Скачать анкету</button>
+	                            </form>
+	                            <form action="" class="data__form">
+	                                <h6 class="data__form-title">Интересные истории</h6>
+	                                <p class="data__form-subtitle">Расскажите истории, которые остались у вас в памяти чтобы сохранить для потомков.</p>
+	                                <textarea class="data__form-text" name="info" id="histories" rows="30"></textarea>
+	                                <p class="data__title">Можно продолжить заполнять информацию о вашем  близком и рассказать о нем  чуть больше. Данная информация может быть как доступна другим так и скрыта от всех</p>
+	                                <div class="data__btns">
+	                                    <button class="btn data__btn-close">Сохранить</button>
+	                                    <button class="btn data__btn-save">Продолжить</button>
+	                                </div>
+	                                <button class="data__save">Скачать анкету</button>
+	                            </form>
+	                            <form action="" class="data__form">
+	                                <h6 class="data__form-title">Чем вы гордитесь?</h6>
+	                                <p class="data__form-subtitle">Расскажите о заслугах, поступках или черте характера ушедшего, которыми вы гордитесь.</p>
+	                                <textarea class="data__form-text" name="info" id="pride" rows="30"></textarea>
+	                                <p class="data__title">Можно продолжить заполнять информацию о вашем  близком и рассказать о нем  чуть больше. Данная информация может быть как доступна другим так и скрыта от всех</p>
+	                                <div class="data__btns">
+	                                    <button class="btn data__btn-close">Сохранить</button>
+	                                    <button class="btn data__btn-save">Продолжить</button>
+	                                </div>
+	                                <button class="data__save">Скачать анкету</button>
+	                            </form>
+	                            <form action="" class="data__form">
+	                                <h6 class="data__form-title">В какое время и где он жил?</h6>
+	                                <p class="data__form-subtitle">Расскажите о том, как жил этот человек, опишите его дом, быт. Какие события происходили в период жизни?</p>
+	                                <textarea class="data__form-text" name="info" id="lives" rows="30"></textarea>
+	                                <p class="data__title">Можно продолжить заполнять информацию о вашем  близком и рассказать о нем  чуть больше. Данная информация может быть как доступна другим так и скрыта от всех</p>
+	                                <div class="data__btns">
+	                                    <button class="btn data__btn-close">Сохранить</button>
+	                                    <button class="btn data__btn-save">Продолжить</button>
+	                                </div>
+	                                <button class="data__save">Скачать анкету</button>
+	                            </form>
+	                            <form action="" class="data__form">
+	                                <h6 class="data__form-title">Опишите жизнь в молодости, юности,зрелости</h6>
+	                                <p class="data__form-subtitle">Расскажите каким был ушедший в разные периоды своей жизни.</p>
+	                                <textarea class="data__form-text" name="info" id="youth" rows="30"></textarea>
+	                                <p class="data__title">Можно продолжить заполнять информацию о вашем  близком и рассказать о нем  чуть больше. Данная информация может быть как доступна другим так и скрыта от всех</p>
+	                                <div class="data__btns">
+	                                    <button class="btn data__btn-close">Сохранить</button>
+	                                    <button class="btn data__btn-save">Продолжить</button>
+	                                </div>
+	                                <button class="data__save">Скачать анкету</button>
+	                            </form>
+	                            <form action="" class="data__form">
+	                                <h6 class="data__form-title">Путешествия</h6>
+	                                <p class="data__form-subtitle">Расскажите о поездках ушедшего. В какой стране/городе/ памятных местах побывал?</p>
+	                                <textarea class="data__form-text" name="info" id="travel" rows="30"></textarea>
+	                                <p class="data__title">Можно продолжить заполнять информацию о вашем  близком и рассказать о нем  чуть больше. Данная информация может быть как доступна другим так и скрыта от всех</p>
+	                                <div class="data__btns">
+	                                    <button class="btn data__btn-close">Сохранить</button>
+	                                    <button class="btn data__btn-save">Продолжить</button>
+	                                </div>
+	                                <button class="data__save">Скачать анкету</button>
+	                            </form>
+	                            <form action="" class="data__form">
+	                                <h6 class="data__form-title">Трудовая и общественная деятельность</h6>
+	                                <p class="data__form-subtitle">В какой сфере работал? Где? Участвовал ли в общественной деятельности? </p>
+	                                <textarea class="data__form-text" name="info" id="works" rows="30"></textarea>
+	                                <p class="data__title">Можно продолжить заполнять информацию о вашем  близком и рассказать о нем  чуть больше. Данная информация может быть как доступна другим так и скрыта от всех</p>
+	                                <div class="data__btns">
+	                                    <button class="btn data__btn-close">Сохранить</button>
+	                                    <button class="btn data__btn-save">Продолжить</button>
+	                                </div>
+	                                <button class="data__save">Скачать анкету</button>
+	                            </form>
+	                            <form action="" class="data__form">
+	                                <h6 class="data__form-title">Мои воспоминания</h6>
+	                                <p class="data__form-subtitle">Запиши свои чувства и воспоминания о нем.</p>
+	                                <textarea class="data__form-text" name="info" id="remember" rows="30"></textarea>
+	                                <p class="data__title">Можно продолжить заполнять информацию о вашем  близком и рассказать о нем  чуть больше. Данная информация может быть как доступна другим так и скрыта от всех</p>
+	                                <div class="data__btns">
+	                                    <button class="btn data__btn-close">Сохранить</button>
+	                                    <button class="btn data__btn-save">Продолжить</button>
+	                                </div>
+	                                <button class="data__save">Скачать анкету</button>
+	                            </form>
+	                        </div>
 	                    </div>
 	                </section>
 	                <section class="profile__menu">
@@ -506,7 +637,7 @@
 	                        </a>
 	                        <a href="#" class="menu__item">
 	                            <div class="menu__description">
-	                                <span>Что бы могли рассказать о нем другие люди</span>
+	                                <span>В какое время и где он жил?</span>
 	                            </div>
 	                            <img src="./img/pensil.png" alt="icon" class="menu__img">
 	                        </a>

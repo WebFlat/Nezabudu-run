@@ -13934,6 +13934,19 @@ jQuery(function($){
 		// console.log('click');
 	});
 
+
+
+
+
+	//show questionnarie item menu right********************
+	$(".data__form").hide();
+	$('.menu__item').click(function() {
+		$(".data__form-default").hide();
+		$(this).addClass("active-items").siblings().removeClass("active-items");
+		$(".data__form").hide().eq($(this).index()).fadeIn();
+
+	});
+
 	
 
  
