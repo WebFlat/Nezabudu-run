@@ -89,33 +89,32 @@
 	                <ul>
 	                    <li>
 	                        <div class="burger-wrap__wrap-icon">
-	                        
 	                            <img class="burger-wrap__icon" src="./img/persons.png" alt="persons">
 	                        </div>
-	                        <a href="#" class="nav__link">Сохранить память</a></li>
+	                        <a href="#" class="nav__link enter">Сохранить память</a></li>
 	                    <li>
 	                        <div class="burger-wrap__wrap-icon">
 	                            <img class="burger-wrap__icon" src="./img/star.png" alt="star">
 	                        </div>
-	                        <a href="#" class="nav__link">Смотреть все анкеты</a></li>
+	                        <a href="all-person-page/index.html" class="nav__link">Смотреть все анкеты</a></li>
 	                    <li>
 	                        <div class="burger-wrap__wrap-icon">
 	                            <img class="burger-wrap__icon"  src="./img/like.png" alt="like">
 	                        </div>
-	                        <a href="#" class="nav__link">Найти место захоронения</a></li>
+	                        <a href="#search" class="nav__link">Найти место захоронения</a></li>
 	                        <li>
 	                            <div class="burger-wrap__wrap-icon">
 	                            
 	                                <img class="burger-wrap__icon"  src="./img/persons.png" alt="persons">
 	                            </div>
-	                            <a href="#" class="nav__link">Читать про известные личности и монументы</a></li>
+	                            <a href="person-page/index.html" class="nav__link">Читать про известные личности и монументы</a></li>
 	                </ul>
 	                <ul class="withBorder">
 	                    <li>
 	                        <div class="burger-wrap__wrap-icon">
 	                            <img class="burger-wrap__icon"  src="./img/friendship.png" alt="peace">
 	                        </div>
-	                        <a href="#" class="nav__link">Уход за захоронениями</a></li>
+	                        <a href="care-page/index.html" class="nav__link">Уход за захоронениями</a></li>
 	                    <li>
 	                        <div class="burger-wrap__wrap-icon">
 	                        
@@ -127,13 +126,13 @@
 	                        
 	                            <img class="burger-wrap__icon"  src="./img/all-people.png" alt="people">
 	                        </div>
-	                        <a href="#" class="nav__link">Стать партнером</a></li>
+	                        <a href="#volunteers" class="nav__link">Стать партнером</a></li>
 	                    <li>
 	                        <div class="burger-wrap__wrap-icon">
 	                        
 	                            <img class="burger-wrap__icon"  src="./img/all-people.png" alt="people">
 	                        </div>
-	                        <a href="#" class="nav__link">Стать волонтером</a></li>
+	                        <a href="#volunteers" class="nav__link">Стать волонтером</a></li>
 	                </ul>
 	                <!-- <div class="burger__wrap-img">
 	                    <img class="burger__img" src="./img/lists-human.png" alt="list">
@@ -342,7 +341,7 @@
 	                    <li class="questionnaires__list">Напиши статью про исторического деятеля твоего города/региона</li>
 	                </ol>
 	                <div class="questionnaires__btns">
-	                    <a href="#" class="questionnaires__link btn">Сохранить память</a>
+	                    <a href="#" class="questionnaires__link btn enter">Сохранить память</a>
 	                    <a href="all-person-page/index.html" class="questionnaires__link btn btn--light">Все анкеты</a>
 	                </div>
 	            </div>
@@ -376,7 +375,8 @@
 	    <div class="wrapper">
 	        <h2 class="posibility__title"><span>НEЗАБУДУ</span> поможет:</h2>
 	        <div class="posibility__content">
-	            <a href="questionnaire-page/index.html" class="posibility__item">
+	            <!-- <a href="questionnaire-page/index.shtml" class="posibility__item"> -->
+	            <a href="#" class="posibility__item enter">
 	                <div class="posibility__img-wrap">
 	                    <!-- <img src="./img/about4.jpg" alt="photo" class="posibility__img"> -->
 	                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="116" height="116" viewBox="0 0 116 116" class="posibility__img"> -->
@@ -404,17 +404,18 @@
 	                    </div>
 	                </div>
 	            </a>
-	            <a href="#" class="posibility__item">
+	            <a href="#" class="posibility__item" style="pointer-events: none;">
 	                <div class="posibility__img-wrap">
 	                    <!-- <img src="./img/about5.jpg" alt="photo" class="posibility__img"> -->
 	                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="134" height="83" viewBox="0 0 134 83">
 	                        <image id="ico2" width="134" height="83" xlink:href="data:img/png;base64,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"/>
 	                      </svg>
 	                </div>
-	                <div class="posibility__link">
+	                <div class="posibility__link" style="opacity: .3;">
 	                    <div class="posibility__link-wrap">
 	                        <h6 class="posibility__subtitle">Создать фотоархив  в облаке </h6>
 	                        <p class="posibility__text">Сохрани фотографии ушедших близких от утери, порчи, выцветания и неполадок с техникой</p>
+	                        <p class="posibility__text" style="line-height: .1;">Скоро будет доступно</p>
 	                    </div>
 	                </div>
 	            </a>
@@ -529,7 +530,7 @@
 	            </div>
 	            <div class="search__btn-block">
 	                <input type="submit" class="btn search__btn" value="Поиск">
-	                <a href="questionnaire-page/index.html" class="search__link btn">Сохранить память</a>
+	                <a href="#" class="search__link btn enter">Сохранить память</a>
 	            </div>  
 	        </form>
 	        <p class="search__subtitle">Мы запускаем проект. Если вы не нашли информацию<br> 
@@ -827,7 +828,7 @@
 	        </div>
 	    </div>
 	</section>
-	<section class="volunteers">
+	<section class="volunteers" id="volunteers">
 	    <div class="wrapper">
 	        <h2 class="volunteers__title volunteers__title--mob">Стань партнером или волонтером</h2>
 	        <div class="volunteers__content">
@@ -835,18 +836,45 @@
 	                <h2 class="volunteers__title">Стань партнером или волонтером</h2>
 	                <p class="volunteers__subtitle">Мы ищем варианты для сотрудничества - оставьте заявку,<br>
 	                присоединяйтесь к сообществу в социальных сетях.</p>
-	                <form action="POST" class="volunteers__form">
-	                    <input type="text" class="volunteers__name" required placeholder="Иванов Иван">
-	                    <input type="tel" class="volunteers__tel" required placeholder="+38 (050) 123-45-67">
+	                <form action="sendEmail.php" method="POST" class="volunteers__form">
+	                    <input type="text" class="volunteers__name" required placeholder="Иванов Иван" name="name">
+	                    <input type="tel" name="tel" class="volunteers__tel" required placeholder="+380501234567" pattern="[\+]\d{12}" minlength="13" maxlength="13">
+	                    <input type="text" name="helps" class="volunteers__helps" required>
 	                    <select class="select__options--helps" id="helps">
 	                        <option value="hide">Чем вы можете нам помочь</option>
-	                        <option value="Помощь в отцифровке" rel="icon-temperature">Помощь в отцифровке</option>
-	                        <option value="Спонсорство">Спонсорство</option>
-	                        <option value="Помощь в гос.учреждениях">Помощь в гос.учреждениях</option>
-	                        <option value="Помощь в рекламе">Помощь в рекламе</option>
-	                        <option value="Партнерство">Партнерство</option>
+	                        <option value="Работа с музеями
+	                        " rel="icon-temperature">Работа с музеями
+	                        </option>
+	                        <option value="Написание статей о личностях
+	                        ">Написание статей о личностях
+	                    </option>
+	                        <option value="Интервьюирование ветеранов                  ">Интервьюирование ветеранов
+	                        </option>
+	                        <option value="Уборка захоронений ветеранов
+	                        ">Уборка захоронений ветеранов
+	                        </option>
+	                        <option value="Возложение цветов ветеранам
+	                        ">Возложение цветов ветеранам
+	                        </option>
+	                        <option value="Сотрудничество с гос. организациями
+	                        ">Сотрудничество с гос. организациями
+	                        </option>
+	                        <option value="Сотрудничество с общинами
+	                        ">Сотрудничество с общинами
+	                        </option>
+	                        <option value="Работа на кладбище по уборке
+	                        ">Работа на кладбище по уборке
+	                    </option>
+	                        <option value="Оцифровка архивов
+	                        ">Оцифровка архивов
+	                    </option>
+	                        <option value="Оцифровка данных с памятников
+	                        ">Оцифровка данных с памятников
+	                    </option>
+	                        <option value="Партнерство по установке памятников">Партнерство по установке памятников</option>
+	                        <option value="Партнерство по уходу за захоронениями">Партнерство по уходу за захоронениями</option>
 	                    </select>
-	                    <input type="submit" class="volunteers__btn btn" value="Отправить заявку">
+	                    <input type="submit" name="submit" class="volunteers__btn btn" value="Отправить заявку">
 	                </form>
 	            </div>
 	            <div class="volunteers__img-wrap">
@@ -918,7 +946,7 @@
 	                    </a>
 	                </nav>
 	                <a href="tel:+380965636858" class="footer__link-tel">+38 (096) 563-68-58</a>
-	                <a href="mailto:nezabudu.ream@gmail.com" class="footer__link-mail">nezabudu.team@gmail.com</a>
+	                <a href="mailto:nezabudu.team@gmail.com" class="footer__link-mail">nezabudu.team@gmail.com</a>
 	            </div>
 	            <!-- <div class="footer__services">
 	            <h6 class="footer__title">НЕЗАБУДУ
@@ -937,7 +965,7 @@
 	            </div> -->
 	            <div class="footer__docs">
 	                <h6 class="footer__title">Документы</h6>
-	                <a href="#" class="footer__doc-link">Политика конфиденциальности</a>
+	                <a href="ПОЛИТИКА_КОНФИДЕНЦИАЛЬНОСТИ.docx" class="footer__doc-link">Политика конфиденциальности</a>
 	                <a href="#" class="footer__doc-link">Пользовательское соглашение</a>
 	                <a href="#" class="footer__doc-link">Этика заполения анкет</a>
 	            </div>

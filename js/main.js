@@ -13808,7 +13808,8 @@ jQuery(function($){
 			$styledSelect.text($(this).text()).removeClass('select-active');
 			$this.val($(this).attr('rel'));
 			$list.hide();
-			//console.log($this.val());
+			$('.volunteers__helps').val($this.val());
+			// console.log($('.volunteers__helps').val());
 		});
 	  
 		$(document).click(function() {
@@ -13847,6 +13848,7 @@ jQuery(function($){
 	});
 	$('.nav__link').click(function() {
 		$('.burger-wrap').removeClass('open');
+		$('body').toggleClass('no-scroll');
 		$('.burger').removeClass('closed');
 	});
 
@@ -13864,6 +13866,9 @@ jQuery(function($){
 		alert("grecaptcha is ready!");
 	  };
 
+
+
+	
 
 
 
