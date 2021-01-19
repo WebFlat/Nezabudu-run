@@ -13718,6 +13718,8 @@ jQuery(function($){
 			$styledSelect.text($(this).text()).removeClass('select-active');
 			$this.val($(this).attr('rel'));
 			$list.hide();
+			$('#input__val').focus();
+			$('#input__val').blur();
 			//console.log($this.val());
 		});
 	  
