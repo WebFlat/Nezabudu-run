@@ -13718,6 +13718,7 @@ jQuery(function($){
 			$styledSelect.text($(this).text()).removeClass('select-active');
 			$this.val($(this).attr('rel'));
 			$list.hide();
+			//refocus on this select
 			$('#input__val').focus();
 			$('#input__val').blur();
 			//console.log($this.val());
@@ -13843,15 +13844,18 @@ jQuery(function($){
 
 
 	//burger***************************************
-	$('.burger').click(function() {
+	function burgerShow() {
 		$('.burger-wrap').toggleClass('open');
 		$('.burger').toggleClass('closed');
-		$('body').toggleClass('no-scroll');
+		$('body').toggleClass('no-scroll');		
+		$('.burger__bg-body').toggleClass('show-bgBody');
+	}
+	$('.burger').click(function() {
+		burgerShow();
+
 	});
 	$('.nav__link').click(function() {
-		$('.burger-wrap').removeClass('open');
-		$('body').toggleClass('no-scroll');
-		$('.burger').removeClass('closed');
+		burgerShow();
 	});
 
 
@@ -14078,3 +14082,91 @@ document.getElementById('lowerValue').value = (lowerSlider.value + ' год');
 	  console.log('Successful login for: ' + response.name);
 	  });
   }
+$(document).ready(function() {
+     
+
+    function validateMail(ourForm,email) {
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        var email = $('#reg-email').val();
+        if(reg.test(email) == false) {
+           alert('Введите корректный e-mail');
+           return false;
+        }
+     }
+    function validateSoname(ourForm,soname) {
+        var reg = /^[А-Яа-яЁё\s]+$/;
+        var soname = $('#reg-soname').val();
+        if(reg.test(soname) == false) {
+           alert('Введите корректную фамилию');
+           return false;
+        }
+     }
+    function validateName(ourForm,name) {
+        var reg = /^[А-Яа-яЁё\s]+$/;
+        var name = $('#reg-name').val();
+        if(reg.test(name) == false) {
+           alert('Введите корректное имя');
+           return false;
+        }
+     }
+    function validatePatronymic(ourForm,patronymic) {
+        var reg = /^[А-Яа-яЁё\s]+$/;
+        var patronymic = $('#reg-patronymic').val();
+        if(reg.test(patronymic) == false) {
+           alert('Введите корректное отчество');
+           return false;
+        }
+     }
+    function validateTel(ourForm, tel) {
+        var reg = /^\+\d{2}\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
+        var tel = $('#reg-tel').val();
+        if(reg.test(tel) == false) {
+           alert('Введите корректный телефон');
+           return false;
+        }
+     }
+
+
+    var sendQuery = $('#sendReg');
+
+    
+
+    sendQuery.click(function(e) {
+        e.preventDefault();
+        var userName = $('#reg-name');
+        var userSoname = $('#reg-soname');
+        var userPatronymic = $('#reg-patronymic');
+        var userTel = $('#reg-tel');
+        var userEmail = $('#reg-email');
+        var userPassword = $('#reg-password');
+        var data = $(this).parents('form').serialize();    
+         if (userName.val() == '' || validateName() == false || userPatronymic.val() == '' || validatePatronymic() == false || userSoname.val() == '' || validateSoname() == false || userTel.val() == '' || validateTel() == false || userEmail.val() == '' || validateMail() == false || userPassword.val() == '') {
+              alert("Заполните все поля");
+            } else {
+                $.ajax({
+                    url: 'registration.php',
+                    type: "POST",
+                    contentType: "application/x-www-form-urlencoded;charset=ISO-8859-5",
+                    // cache: false,
+                    data: {
+                        name: userName.val(),
+                        patronymic: userPatronymic.val(),
+                        soname: userSoname.val(),
+                        tel: userTel.val(),
+                        email: userEmail.val(),
+                        password: userPassword.val()
+                    },
+                    success: function(data) {
+                        if (data) {
+                            console.log(data);
+                            $('#error').text("Вы успешно зарегистрировались").removeClass('error').addClass('success').show().delay(4000).fadeOut(300);
+                            // window.location.reload();
+                        } else {
+                            $('#error').text("Ошибка, повторите еще раз").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
+                        }
+                    }
+                });
+            }
+    })
+
+ });

@@ -83,7 +83,7 @@
 
 	<header class="header">
 	    <div class="wrapper">
-	       
+	       <div class="burger__bg-body"></div>
 	        <div class="burger-wrap">
 	            <div class="burger-wrap__links">
 	                <ul>
@@ -244,16 +244,16 @@
 	                    </div>
 	                </div>
 	                <span class="reg__title">или</span>
-	                <form action="core/registration.php" method="POST" class="reg__form" id="reg-form">
+	                <form method="POST" class="reg__form" id="reg-form">
 	                    <div class="reg__wrap-names">
-	                        <input id="soname" type="text" name='soname' required placeholder="Фамилия" class="reg__input btn-form">
-	                        <input id="name" type="text" name='name' required placeholder="Имя" class="reg__input btn-form">
+	                        <input id="reg-soname" type="text" name='soname' required placeholder="Фамилия" class="reg__input btn-form">
+	                        <input id="reg-name" type="text" name='name' required placeholder="Имя" class="reg__input btn-form">
 	                    </div>
-	                    <input id="name2" type="text" name="name2" required placeholder="Отчество" class="reg__input">
-	                    <input id="tel" type="number" name="tel" required placeholder="Телефон" class="reg__input">
-	                    <input id="mail" type="mail" name="mail" required placeholder="E-mail" class="reg__input">
-	                    <input id="password" type="password" name="password" required placeholder="Пароль" class="reg__input">
-	                    <input type="submit" value="Зарегистрироваться" class="reg__btn" name="registr">
+	                    <input id="reg-patronymic" type="text" name="patronymic" required placeholder="Отчество" class="reg__input">
+	                    <input id="reg-tel" type="text" name="tel" required placeholder="Телефон: (+380507777777)" class="reg__input" pattern="[\+]\d{12}">
+	                    <input id="reg-email" type="text" name="mail" required placeholder="E-mail: (example@mail.com)" class="reg__input">
+	                    <input id="reg-password" type="password" name="password" required placeholder="Пароль" class="reg__input">
+	                    <input type="submit" value="Зарегистрироваться" class="reg__btn" name="registr" id="sendReg">
 	                </form>
 	                <div class="reg__link-wrap reg-tab">
 	                    <!-- <span class="link-to-enter">Уже есть аккаунт?</span> -->
@@ -261,7 +261,7 @@
 	                <div class="reg__footer">
 	                    <p>Регистрируясь на этом веб-сайте,<br>ты принимаешь наши
 	                    <a href="#" class="reg__link-conf" target="_blank" rel="noopener noreferrer">Условия использования</a> и 
-	                    <a href="#" class="reg__link-conf" target="_blank" rel="noopener noreferrer">Политику конфедициальности</a>
+	                    <a href="ПОЛИТИКА_КОНФИДЕНЦИАЛЬНОСТИ.docx" target="_blank" class="reg__link-conf" target="_blank" rel="noopener noreferrer">Политику конфедициальности</a>
 	                    </p>
 	                </div>
 	            </div>
@@ -280,20 +280,18 @@
 	                    </div>
 	                </div>
 	                <span class="reg__title">или</span>
-	                <form action="core/auth.php" method="POST" class="reg__form" id="auth-form">
-	                    <input id="name-tel" type="text" name="name-tel" required placeholder="Телефон или почту" class="reg__input">
-	                    <input id="password-auth" type="password" name="password" required placeholder="Пароль" class="reg__input">
-	                    <!-- <div class="captcha">
-	                        <img src="./img/Фигура3.jpg" alt="">
-	                    </div> -->
+	                <form method="POST" class="reg__form" id="auth-form">
+	                    <input id="auth-tel" type="text" name="tel" required placeholder="Телефон или почту" class="reg__input">
+	                    <input id="auth-password" type="password" name="password" required placeholder="Пароль" class="reg__input">
 	                    <div class="g-recaptcha captcha" data-sitekey="6Le-nP0ZAAAAAIVD_XVU_oC54rpo9yRmXqPnBjou"></div>
-	                    <input type="submit" value="Войти" class="reg__btn" name="auth">
+	                    <input type="submit" value="Войти" class="reg__btn" name="auth" id="authSend">
 	                </form>
 	                <div class="reg__link-wrap">
-	                    <span>Забы ли пароль?</span>
+	                    <span>Забыли пароль?</span>
 	                </div>
 	            </div>
 	        </div>
+	        <span id="error"></span>
 	    </section>
 	</div>
 
@@ -1005,7 +1003,7 @@
 	            </div> -->
 	            <div class="footer__docs">
 	                <h6 class="footer__title">Документы</h6>
-	                <a href="ПОЛИТИКА_КОНФИДЕНЦИАЛЬНОСТИ.docx" class="footer__doc-link">Политика конфиденциальности</a>
+	                <a href="ПОЛИТИКА_КОНФИДЕНЦИАЛЬНОСТИ.docx" target="_blank" class="footer__doc-link">Политика конфиденциальности</a>
 	                <a href="#" class="footer__doc-link">Пользовательское соглашение</a>
 	                <a href="#" class="footer__doc-link">Этика заполения анкет</a>
 	            </div>
