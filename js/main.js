@@ -14158,15 +14158,121 @@ $(document).ready(function() {
                     },
                     success: function(data) {
                         if (data) {
-                            console.log(data);
                             $('#error').text("Вы успешно зарегистрировались").removeClass('error').addClass('success').show().delay(4000).fadeOut(300);
-                            // window.location.reload();
+                            $('.reg__btn-enter').addClass('active');
                         } else {
                             $('#error').text("Ошибка, повторите еще раз").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
                         }
+                    }, error: function() {
+                        $('#error').text("Ошибка, повторите еще раз").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
                     }
                 });
             }
     })
 
  });
+$(document).ready(function(){
+
+    function validateTel(ourForm, authTel) {
+        var reg = /^\+\d{2}\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
+        if(reg.test(authTel) == false) {
+           alert('Введите корректный телефон');
+           return false;
+        }
+     }
+
+    $('#authSend').click(function(e){
+        e.preventDefault();
+        var authTel = $('#auth-tel').val();
+        var authPassword = $('#auth-password').val();
+        
+
+
+        if(authTel != '' && validateTel() == true && authPassword != '') {
+            $.ajax({
+                url: "auth.php",
+                method: "POST",
+                dataType: "json",
+                data:{
+                    tel: authTel, 
+                    password: authPassword, 
+                },
+                success: function(data){
+                    var response = JSON.parse(data);
+                    if(response.status == 1){
+                        $('#error').text("Вы успешно авторизировались").removeClass('error').addClass('success').show().delay(4000).fadeOut(300);
+                    }else{
+                        $('#error').text("Ошибка, повторите еще раз").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
+                    }
+                }
+            })
+        }
+        else{
+            $('#error').text("Заполните все поля").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
+        }
+
+    })
+
+
+})
+ 
+
+
+    function validateName(ourForm,name) {
+        var reg = /^[А-Яа-яЁё\s]+$/;
+        var name = $('.volunteers__name').val();
+        if(reg.test(name) == false) {
+        alert('Введите корректное имя');
+        return false;
+        }
+    }
+    function validateTel(ourForm, tel) {
+        var reg = /^\+\d{2}\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
+        var tel = $('.volunteers__tel').val();
+        if(reg.test(tel) == false) {
+           alert('Введите корректный телефон');
+           return false;
+        }
+     }
+
+
+  $('#volunteers').submit(function(e) {
+        e.preventDefault();
+        var form = $('#volunteers');
+        var name = $('.volunteers__name');
+        var tel = $('.volunteers__tel');
+        var helps = $('.volunteers__helps');
+        var message = $('.volunteers__mess');
+        var btn = $('.volunteers__btn');
+
+        if (name.val() == '' || validateName() == false || tel.val() == '' || validateTel() == false) {
+            message.html('<p class="volunteers__mess-text">Данные введены не верно!</p>').show().delay(4000).fadeOut(300);
+            tel.val('');
+            return false;
+        } else {
+            $.ajax({
+                type: "POST",
+                url: "sendEmail.php",
+                data: {
+                    name: name.val(),
+                    helps: helps.val(),
+                    tel: tel.val(),
+                },
+                success: function(data) {
+                    if (data) {
+                        message.html('<p class="volunteers__mess-text">Сообщение отправлено. Спасибо Вам, мы скоро свяжемся с Вами.</p>').show().delay(4000).fadeOut(300);
+                        name.val('');
+                        tel.val('');     
+                    } else {
+                        message.html('<p class="volunteers__mess-text">Данные введены не верно!</p>').show().delay(4000).fadeOut(300);
+                        tel.val('');
+                        return false;
+                    }               
+                }, error: function() {
+                    message.html('<p class="volunteers__mess-text">Ошибка отправки!</p>').show().delay(4000).fadeOut(300);
+                    name.val('');
+                    tel.val('');
+                }
+            })
+        }    
+    })

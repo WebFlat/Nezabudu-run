@@ -874,9 +874,9 @@
 	                <h2 class="volunteers__title">Стань партнером или волонтером</h2>
 	                <p class="volunteers__subtitle">Мы ищем варианты для сотрудничества - оставьте заявку,<br>
 	                присоединяйтесь к сообществу в социальных сетях.</p>
-	                <form action="sendEmail.php" method="POST" class="volunteers__form">
+	                <form class="volunteers__form" id="volunteers">
 	                    <input type="text" class="volunteers__name" required placeholder="Иванов Иван" name="name">
-	                    <input type="tel" name="tel" class="volunteers__tel" required placeholder="+380501234567" pattern="[\+]\d{12}" minlength="13" maxlength="13">
+	                    <input type="tel" name="tel" class="volunteers__tel" required placeholder="+380501234567">
 	                    <input type="text" name="helps" class="volunteers__helps" required>
 	                    <select class="select__options--helps" id="helps">
 	                        <option value="hide">Чем вы можете нам помочь</option>
@@ -912,8 +912,10 @@
 	                        <option value="Партнерство по установке памятников">Партнерство по установке памятников</option>
 	                        <option value="Партнерство по уходу за захоронениями">Партнерство по уходу за захоронениями</option>
 	                    </select>
-	                    <input type="submit" name="submit" class="volunteers__btn btn" value="Отправить заявку">
+	                    <input type="submit" class="volunteers__btn btn" value="Отправить заявку">
 	                </form>
+	                <div class="volunteers__mess">
+	                </div>
 	            </div>
 	            <div class="volunteers__img-wrap">
 	                <img src="./img/iphone.png" class="volunteers__img" alt="iphone">
