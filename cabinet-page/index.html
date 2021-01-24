@@ -26,7 +26,7 @@
 	        <div class="burger-wrap">
 	            <div class="burger__user">
 	                <div class="burger__icon-wrap">
-	                    <img class="burger__icon" src="./img/user-foto.jpg" alt="foto">
+	                    <img class="burger__icon" src="./img/user-def-black.png" alt="foto">
 	                </div>
 	                <div class="burger__names">
 	                    <span class="burger__surname">Илларионов</span>
@@ -40,7 +40,7 @@
 	                        <div class="div">
 	                            <img src="./img/star.png" alt="star">
 	                        </div>
-	                        <a href="#" class="nav__link nav-tab nav-tab1">Анкеты в закладках</a></li>
+	                        <a href="#" class="nav__link nav-tab nav-tab1 active-tab">Мои анкеты</a></li>
 	                    <li>
 	                        <div class="div">
 	                            <img src="./img/like.png"  alt="like">
@@ -94,7 +94,7 @@
 	                        
 	                            <img src="./img/security.png" alt="security">
 	                        </div>
-	                        <a href="#" class="nav__link">Сменить пароль</a></li>
+	                        <a href="#" class="nav__link" id="passChange">Сменить пароль</a></li>
 	                    <li>
 	                        <div class="div">
 	                            <img alt="enter" src="./img/enter.png">
@@ -170,92 +170,35 @@
 	                <option value="Український" rel="icon-temperature"><a href="#">UKR</a></option>
 	                <option value="Русский">RU</option>
 	            </select>
-	            <span class="header__enter-link enter">
-	                <span>Вход</span>
-	                <img alt="enter" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzg0Ljk3IDM4NC45NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzg0Ljk3IDM4NC45NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGcgaWQ9IlNpZ25fSW4iPg0KCQk8cGF0aCBkPSJNMzcyLjkzOSwwSDIwNC41MTVjLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE1Ni4zOTR2MzM2Ljg0OEgyMDQuNTE1DQoJCQljLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE2OC40MjRjNi42NDEsMCwxMi4wMy01LjM5LDEyLjAzLTEyLjAzVjEyLjAzDQoJCQlDMzg0Ljk3LDUuMzksMzc5LjU4LDAsMzcyLjkzOSwweiIvPg0KCQk8cGF0aCBkPSJNMTk3LjIxMywyNjguMjc2Yy00LjcwNCw0Ljc1Mi00LjcwNCwxMi40MzksMCwxNy4xNzljNC43MDQsNC43NTIsMTIuMzE5LDQuNzUyLDE3LjAxMSwwbDgyLjk5Ny04NC4yDQoJCQljNC42MzItNC42OCw0LjY4LTEyLjUxMiwwLTE3LjE5MWwtODMuMDA5LTg0LjJjLTQuNzA0LTQuNzUyLTEyLjMxOS00Ljc0LTE3LjAxMSwwYy00LjcwNCw0Ljc0LTQuNzA0LDEyLjQzOSwwLDE3LjE3OQ0KCQkJbDYyLjU1OCw2My40NkgxMi4wM0M1LjM5LDE4MC41MDMsMCwxODUuOTQsMCwxOTIuNjUzYzAsNi43MTMsNS4zOSwxMi4xNTEsMTIuMDMsMTIuMTUxaDI0Ny43NEwxOTcuMjEzLDI2OC4yNzZ6Ii8+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
+	            <span class="header__enter-link">
+	                <div class="header__user-wrap">
+	                    <img class="header__user" src="./img/user-def-black.png" alt="user">
+	                </div>
 	            </span>
 	        </div>
 	    </div>
 	</header>
-	<div class="reg-bg">
-	    <section class="reg">
-	        <span class="reg__close">
-	            <img src="./img/close.png" alt="close">
-	        </span>
-	        <div class="reg__form-bg">
-	            <div class="reg__header">
-	                <span class="reg__btn-reg reg-tab">Регистрация</span>
-	                <span class="reg__btn-enter reg-tab">Войти</span>
-	            </div>
-	            <div class="wrapper wrapper--reg reg__main">
-	                <h6 class="reg__title">Через социальные сети</h6>
-	                <div class="reg__wrap-soc">
-	                    <div class="reg__google btn-form">
-	                        <img src="./img/google.png" alt="google">
-	                        <span class="reg__soc-title">Google</span>
-	                    </div>
-	                    <div class="reg__facebook btn-form">
-	                        <img src="./img/facebook.png" alt="facebook">
-	                        <span class="reg__soc-title">Facebook</span>
-	                    </div>
-	                </div>
-	                <span class="reg__title">или</span>
-	                <form action="registration.php" method="POST" class="reg__form" id="reg-form">
-	                    <div class="reg__wrap-names">
-	                        <input id="soname" type="text" required placeholder="Фамилия" class="reg__input btn-form">
-	                        <input id="name" type="text" required placeholder="Имя" class="reg__input btn-form">
-	                    </div>
-	                    <input id="name2" type="text" required placeholder="Отчество" class="reg__input">
-	                    <input id="tel" type="number" required placeholder="Телефон" class="reg__input">
-	                    <input id="mail" type="mail" required placeholder="E-mail" class="reg__input">
-	                    <input id="password" type="password" required placeholder="Пароль" class="reg__input">
-	                    <input type="submit" value="Зарегистрироваться" class="reg__btn">
-	                </form>
-	                <div class="reg__link-wrap reg-tab">
-	                    <!-- <span class="link-to-enter">Уже есть аккаунт?</span> -->
-	                </div>
-	                <div class="reg__footer">
-	                    <p>Регистрируясь на этом веб-сайте,<br>ты принимаешь наши
-	                    <a href="#" class="reg__link-conf" target="_blank" rel="noopener noreferrer">Условия использования</a> и 
-	                    <a href="#" class="reg__link-conf" target="_blank" rel="noopener noreferrer">Политику конфедициальности</a>
-	                    </p>
-	                </div>
-	            </div>
-	            <div class="wrapper wrapper--reg reg__main">
-	                <h6 class="reg__title">Через социальные сети</h6>
-	                <div class="reg__wrap-soc">
-	                    <div class="reg__google btn-form">
-	                        <img src="./img/google.png" alt="google">
-	                        <span class="reg__soc-title">Google</span>
-	                    </div>
-	                    <div class="reg__facebook btn-form">
-	                        <img src="./img/facebook.png" alt="facebook">
-	                        <span class="reg__soc-title">Facebook</span>
-	                    </div>
-	                </div>
-	                <span class="reg__title">или</span>
-	                <form action="auth.php" method="POST" class="reg__form" id="auth-form">
-	                    <input id="name-tel" type="text" required placeholder="Телефон или почту" class="reg__input">
-	                    <input id="password-auth" type="password" required placeholder="Пароль" class="reg__input">
-	                    <div class="captcha">
-	                        <img src="./img/Фигура3.jpg" alt="">
-	                    </div>
-	                    <input type="submit" value="Войти" class="reg__btn">
-	                </form>
-	                <div class="reg__link-wrap">
-	                    <span>Забили пароль?</span>
-	                </div>
-	            </div>
-	        </div>
-	    </section>
-	</div>
 
 	<!-- контент страницы -->
 	<section class="questionnaire">
-	    <div class="questionnaire__tabs tab0">
+	    <div class="questionnaire__bg"></div>
+	    <div class="password">
+	        <div class="password__close">X</div>
+	        <h6 class="password__title">Изменение пароля</h6>
+	        <div class="password__wrap">
+	            <label for="passOld" class="password__label">Текущий пароль</label>
+	            <input type="password" name="passOld" id="passOld">
+	            <label for="passNew" class="password__label">Новый пароль</label>
+	            <input type="password" name="passNew" id="passNew">
+	            <label for="passConfirm" class="password__label">Новый пароль еще раз</label>
+	            <input type="password" name="passConfirm" id="passConfirm">
+	        </div>
+	        <button class="btn password__btn">Сохранить</button>
+	    </div>
+	    <div class="questionnaire__tabs tab1">
 	        <div class="wrapper">
 	            <div class="questionnaire__title-block">
-	                <h2 class="questionnaire__title">Личный кабинет</h2>
+	                <h2 class="questionnaire__title">Мои анкеты</h2>
 	                <p class="questionnaire__subtitle">Создай много анкет своих ушедших близких, запиши воспоминания.</p>
 	            </div>
 	        </div>
@@ -270,7 +213,7 @@
 	            </p>
 	        </div>    
 	    </div>
-	    <div class="questionnaire__tabs tab1">
+	    <!-- <div class="questionnaire__tabs tab1">
 	        <div class="wrapper">
 	            <div class="questionnaire__title-block">
 	                <h2 class="questionnaire__title">Анкеты в закладках</h2>
@@ -283,7 +226,7 @@
 	                </a>
 	            </div> 
 	        </div> 
-	    </div>
+	    </div> -->
 	    <div class="questionnaire__tabs tab2">
 	        <div class="wrapper">
 	            <div class="questionnaire__title-block">
@@ -390,7 +333,7 @@
 	                </div> -->
 	                <div class="footer__docs">
 	                    <h6 class="footer__title">Документы</h6>
-	                    <a href="#" class="footer__doc-link">Политика конфиденциальности</a>
+	                    <a href="../privacy.html" class="footer__doc-link">Политика конфиденциальности</a>
 	                    <a href="#" class="footer__doc-link">Пользовательское соглашение</a>
 	                    <a href="#" class="footer__doc-link">Этика заполения анкет</a>
 	                </div>

@@ -13947,7 +13947,19 @@ jQuery(function($){
 
 	});
 
+	//upload avatar*************************************
+	$('.about__upload-inpt--ava').change(function(e) {
+		var input = e.target;
 	
+		var reader = new FileReader();
+		reader.onload = function(){
+		  var dataURL = reader.result;
+		  var output = $('#output');
+		  output.attr("src", dataURL);
+		};
+		reader.readAsDataURL(input.files[0]);
+	})
+
 
  
 	

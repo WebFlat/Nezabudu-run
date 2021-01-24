@@ -13666,21 +13666,23 @@ jQuery(function($){
 		$(".reg__main").hide().eq($(this).index()).fadeIn();
 	}).eq(0).addClass("active");
 
-	//close forms popup********************************************
-	$('.reg__close').click(function() {
-		$('.reg-bg').hide();
+	//close popup change password********************************************
+	$('.password__close').click(function() {
+		$('.questionnaire__bg').hide();
+		$('.password').hide();
 		$('body').removeClass('no-scroll');
 	})
 
-	//Show forms***************************************************
-	$('.enter').click(function() {
-		$('.reg-bg').show().css('display','flex');
+	//Show popup change password***************************************************
+	$('#passChange').click(function() {
+		$('.questionnaire__bg').show();
+		$('.password').show().css('display','flex');
 		$('body').addClass('no-scroll');
 	})
 
 	//show tabs in menu cabinet******************************
 	$(".questionnaire__tabs").not(":first").hide();
-	$(".nav-tab").removeClass("active-tab");
+	$(".nav-tab").not(":first").removeClass("active-tab");
 
 	$(".nav-tab1").click(function() {
 		$(".nav-tab").removeClass("active-tab");
