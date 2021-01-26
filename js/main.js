@@ -14088,7 +14088,7 @@ $(document).ready(function() {
     function validateMail(ourForm,email) {
         var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
         var email = $('#reg-email').val();
-        if(reg.test(email) == false) {
+        if(reg.test(email) == false || email == '') {
            alert('Введите корректный e-mail');
            return false;
         }
@@ -14096,7 +14096,7 @@ $(document).ready(function() {
     function validateSoname(ourForm,soname) {
         var reg = /^[А-Яа-яЁё\s]+$/;
         var soname = $('#reg-soname').val();
-        if(reg.test(soname) == false) {
+        if(reg.test(soname) == false || soname == '') {
            alert('Введите корректную фамилию');
            return false;
         }
@@ -14104,7 +14104,7 @@ $(document).ready(function() {
     function validateName(ourForm,name) {
         var reg = /^[А-Яа-яЁё\s]+$/;
         var name = $('#reg-name').val();
-        if(reg.test(name) == false) {
+        if(reg.test(name) == false || name == '') {
            alert('Введите корректное имя');
            return false;
         }
@@ -14112,15 +14112,15 @@ $(document).ready(function() {
     function validatePatronymic(ourForm,patronymic) {
         var reg = /^[А-Яа-яЁё\s]+$/;
         var patronymic = $('#reg-patronymic').val();
-        if(reg.test(patronymic) == false) {
+        if(reg.test(patronymic) == false || patronymic == '') {
            alert('Введите корректное отчество');
            return false;
         }
      }
     function validateTel(ourForm, tel) {
-        var reg = /^\+\d{2}\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
+        var reg = /^\+\d{2}\d{3}\d{3}-\d{2}-\d{2}$/;
         var tel = $('#reg-tel').val();
-        if(reg.test(tel) == false) {
+        if(reg.test(tel) == false || tel == '') {
            alert('Введите корректный телефон');
            return false;
         }
@@ -14139,15 +14139,15 @@ $(document).ready(function() {
         var userTel = $('#reg-tel');
         var userEmail = $('#reg-email');
         var userPassword = $('#reg-password');
-        var data = $(this).parents('form').serialize();    
-         if (userName.val() == '' || validateName() == false || userPatronymic.val() == '' || validatePatronymic() == false || userSoname.val() == '' || validateSoname() == false || userTel.val() == '' || validateTel() == false || userEmail.val() == '' || validateMail() == false || userPassword.val() == '') {
-              alert("Заполните все поля");
+        // var data = $(this).parents('form').serialize();    
+         if (validateName() == false || validatePatronymic() == false || validateSoname() == false || validateTel() == false || validateMail() == false) {
+            //   alert("Заполните все поля");
             } else {
                 $.ajax({
                     url: 'registration.php',
                     type: "POST",
                     contentType: "application/x-www-form-urlencoded;charset=ISO-8859-5",
-                    // cache: false,
+                    cache: false,
                     data: {
                         name: userName.val(),
                         patronymic: userPatronymic.val(),
@@ -14159,7 +14159,7 @@ $(document).ready(function() {
                     success: function(data) {
                         if (data) {
                             $('#error').text("Вы успешно зарегистрировались").removeClass('error').addClass('success').show().delay(4000).fadeOut(300);
-                            $('.reg__btn-enter').addClass('active');
+                            $('.reg__btn-enter').addClass('active').click();
                         } else {
                             $('#error').text("Ошибка, повторите еще раз").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
                         }
