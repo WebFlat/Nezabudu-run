@@ -80,7 +80,14 @@
 		}
 
 	  </script> -->
-
+	<div id="p_prldr">
+	    <div class="contpre">
+	        <span class="contpre__logo">НЕЗАБУДУ</span></br>
+	        <span class="svg_anm"></span>
+	        <br>Подождите<br>
+	        <small>идет загрузка</small>
+	    </div>
+	</div>
 	<header class="header">
 	    <div class="wrapper">
 	       <div class="burger__bg-body"></div>
@@ -245,13 +252,13 @@
 	                <span class="reg__title">или</span>
 	                <form method="POST" class="reg__form" id="reg-form">
 	                    <div class="reg__wrap-names">
-	                        <input id="reg-soname" type="text" name='soname' required placeholder="Фамилия" class="reg__input btn-form">
-	                        <input id="reg-name" type="text" name='name' required placeholder="Имя" class="reg__input btn-form">
+	                        <input id="reg-soname" type="text" name='soname' required placeholder="Фамилия" class="reg__input btn-form" autocomplete="username">
+	                        <input id="reg-name" type="text" name='name' required placeholder="Имя" class="reg__input btn-form" autocomplete="username">
 	                    </div>
-	                    <input id="reg-patronymic" type="text" name="patronymic" required placeholder="Отчество" class="reg__input">
-	                    <input id="reg-tel" type="text" name="tel" required placeholder="Телефон: (+380507777777)" class="reg__input">
-	                    <input id="reg-email" type="email" name="mail" required placeholder="E-mail: (example@mail.com)" class="reg__input">
-	                    <input id="reg-password" type="password" name="password" required placeholder="Пароль" class="reg__input">
+	                    <input id="reg-patronymic" type="text" name="patronymic" required placeholder="Отчество" class="reg__input" autocomplete="username">
+	                    <input id="reg-tel" type="text" name="tel" required placeholder="Телефон: (+380507777777)" class="reg__input" autocomplete="username">
+	                    <input id="reg-email" type="email" name="mail" required placeholder="E-mail: (example@mail.com)" class="reg__input" autocomplete="username">
+	                    <input id="reg-password" type="password" name="password" required placeholder="Пароль" class="reg__input" autocomplete="current-password">
 	                    <input type="submit" value="Зарегистрироваться" class="reg__btn" name="registr" id="sendReg">
 	                </form>
 	                <div class="reg__link-wrap reg-tab">
@@ -259,7 +266,7 @@
 	                </div>
 	                <div class="reg__footer">
 	                    <p>Регистрируясь на этом веб-сайте,<br>ты принимаешь наши
-	                    <a href="#" class="reg__link-conf" target="_blank" rel="noopener noreferrer">Условия использования</a> и 
+	                    <a href="terms.html" class="reg__link-conf" target="_blank" rel="noopener noreferrer">Пользовательское соглашение</a> и 
 	                    <a href="privacy.html" target="_blank" class="reg__link-conf" rel="noopener noreferrer">Политику конфедициальности</a>
 	                    </p>
 	                </div>
@@ -280,8 +287,8 @@
 	                </div>
 	                <span class="reg__title">или</span>
 	                <form method="POST" class="reg__form" id="auth-form">
-	                    <input id="auth-tel" type="text" name="tel" required placeholder="Телефон или почту" class="reg__input">
-	                    <input id="auth-password" type="password" name="password" required placeholder="Пароль" class="reg__input">
+	                    <input id="auth-tel" type="text" name="tel" required placeholder="Телефон или почту" class="reg__input" autocomplete="username">
+	                    <input id="auth-password" type="password" name="password" required placeholder="Пароль" class="reg__input" autocomplete="current-password">
 	                    <div class="g-recaptcha captcha" data-sitekey="6Le-nP0ZAAAAAIVD_XVU_oC54rpo9yRmXqPnBjou"></div>
 	                    <input type="submit" value="Войти" class="reg__btn" name="auth" id="authSend">
 	                </form>
@@ -580,16 +587,17 @@
 	            <h2 class="personality__title">Известные личности и монументы</h2>
 	            <p class="personality__subtitle">Люди, которые вошли в историю.</p>
 	            <div class="personality__carusel">
-	                <div class="user item">
+	                <!-- <div class="user item">
 	                    <div class="user__info">
-	                        <img src="./img/famous.png" alt="icon star" class="user__isPubl">
+	                        <img src="./img/famous.png" alt="icon" class="user__isPubl">
 	                        <div class="user__avatar-wrap">
-	                            <img src="./img/user-def.png" alt="face" class="user__avatar">
+	                            <img src="./img/user-def.svg" alt="face" class="user__avatar">
 	                        </div>
 	                        <div class="user__title">
 	                            <span class="user__surname">Гонда</span>
 	                            <span>  </span>
 	                            <span class="user__name">Михаил
+	                                Михаил
 	                            </span>
 	                            <span class="user__patronymic">Степанович</span>
 	                        </div>
@@ -603,30 +611,28 @@
 	                            <p class="user__about">У 1948 році закінчив школу фабрично-заводського учнівства. В 1948–1971 роках працював підручним сталевара, згодом сталеваром мартенівського цеху комбінату імені Ілліча. Починав на п'ятій мартенівської печі під керівництвом сталевара Івана Лута. В 1950 році очолив бригаду.</p>
 	                           
 	                        </div>
-	                        <a href="#" class="user__link-more">Читать дальше</a>
-	                    </div>
-	                    <div class="user__btns">
-	                        <div class="user__btn">
-	                            <img src="./img/bookmark.png" alt="icon" class="user__icon">
-	                        </div>
-	                        <div class="user__btn">
-	                            <img src="./img/likes.png" alt="icon" class="user__icon">
-	                        </div>
-	                        <div class="user__btn">
-	                            <img src="./img/loc-user.png" alt="icon" class="user__icon">
+	                        <div class="user__btns">
+	                            <div class="user__likes">
+	                                <img class="user__like-icon"
+	                                src="./img/heart.svg" alt="heart">
+	                                <span class="user__likeCount">0</span>
+	                            </div>
+	                            <a href="#" class="user__link-more">Читать дальше...</a>
+	                            <img class="user__bookmark" src="./img/bookmark.svg" alt="bookmark">
 	                        </div>
 	                    </div>
 	                </div>
 	                <div class="user item">
 	                    <div class="user__info">
-	                        <img src="./img/famous.png" alt="icon star" class="user__isPubl">
+	                        <img src="./img/famous.png" alt="icon" class="user__isPubl">
 	                        <div class="user__avatar-wrap">
-	                            <img src="./img/user-def.png" alt="face" class="user__avatar">
+	                            <img src="./img/user-def.svg" alt="face" class="user__avatar">
 	                        </div>
 	                        <div class="user__title">
 	                            <span class="user__surname">Гонда</span>
 	                            <span>  </span>
 	                            <span class="user__name">Михаил
+	                                Михаил
 	                            </span>
 	                            <span class="user__patronymic">Степанович</span>
 	                        </div>
@@ -640,30 +646,28 @@
 	                            <p class="user__about">У 1948 році закінчив школу фабрично-заводського учнівства. В 1948–1971 роках працював підручним сталевара, згодом сталеваром мартенівського цеху комбінату імені Ілліча. Починав на п'ятій мартенівської печі під керівництвом сталевара Івана Лута. В 1950 році очолив бригаду.</p>
 	                           
 	                        </div>
-	                        <a href="#" class="user__link-more">Читать дальше</a>
-	                    </div>
-	                    <div class="user__btns">
-	                        <div class="user__btn">
-	                            <img src="./img/bookmark.png" alt="icon" class="user__icon">
-	                        </div>
-	                        <div class="user__btn">
-	                            <img src="./img/likes.png" alt="icon" class="user__icon">
-	                        </div>
-	                        <div class="user__btn">
-	                            <img src="./img/loc-user.png" alt="icon" class="user__icon">
+	                        <div class="user__btns">
+	                            <div class="user__likes">
+	                                <img class="user__like-icon"
+	                                src="./img/heart.svg" alt="heart">
+	                                <span class="user__likeCount">0</span>
+	                            </div>
+	                            <a href="#" class="user__link-more">Читать дальше...</a>
+	                            <img class="user__bookmark" src="./img/bookmark.svg" alt="bookmark">
 	                        </div>
 	                    </div>
 	                </div>
 	                <div class="user item">
 	                    <div class="user__info">
-	                        <img src="./img/famous.png" alt="icon star" class="user__isPubl">
+	                        <img src="./img/famous.png" alt="icon" class="user__isPubl">
 	                        <div class="user__avatar-wrap">
-	                            <img src="./img/user-def.png" alt="face" class="user__avatar">
+	                            <img src="./img/user-def.svg" alt="face" class="user__avatar">
 	                        </div>
 	                        <div class="user__title">
 	                            <span class="user__surname">Гонда</span>
 	                            <span>  </span>
 	                            <span class="user__name">Михаил
+	                                Михаил
 	                            </span>
 	                            <span class="user__patronymic">Степанович</span>
 	                        </div>
@@ -677,30 +681,28 @@
 	                            <p class="user__about">У 1948 році закінчив школу фабрично-заводського учнівства. В 1948–1971 роках працював підручним сталевара, згодом сталеваром мартенівського цеху комбінату імені Ілліча. Починав на п'ятій мартенівської печі під керівництвом сталевара Івана Лута. В 1950 році очолив бригаду.</p>
 	                           
 	                        </div>
-	                        <a href="#" class="user__link-more">Читать дальше</a>
-	                    </div>
-	                    <div class="user__btns">
-	                        <div class="user__btn">
-	                            <img src="./img/bookmark.png" alt="icon" class="user__icon">
-	                        </div>
-	                        <div class="user__btn">
-	                            <img src="./img/likes.png" alt="icon" class="user__icon">
-	                        </div>
-	                        <div class="user__btn">
-	                            <img src="./img/loc-user.png" alt="icon" class="user__icon">
+	                        <div class="user__btns">
+	                            <div class="user__likes">
+	                                <img class="user__like-icon"
+	                                src="./img/heart.svg" alt="heart">
+	                                <span class="user__likeCount">0</span>
+	                            </div>
+	                            <a href="#" class="user__link-more">Читать дальше...</a>
+	                            <img class="user__bookmark" src="./img/bookmark.svg" alt="bookmark">
 	                        </div>
 	                    </div>
 	                </div>
 	                <div class="user item">
 	                    <div class="user__info">
-	                        <img src="./img/famous.png" alt="icon star" class="user__isPubl">
+	                        <img src="./img/famous.png" alt="icon" class="user__isPubl">
 	                        <div class="user__avatar-wrap">
-	                            <img src="./img/user-def.png" alt="face" class="user__avatar">
+	                            <img src="./img/user-def.svg" alt="face" class="user__avatar">
 	                        </div>
 	                        <div class="user__title">
 	                            <span class="user__surname">Гонда</span>
 	                            <span>  </span>
 	                            <span class="user__name">Михаил
+	                                Михаил
 	                            </span>
 	                            <span class="user__patronymic">Степанович</span>
 	                        </div>
@@ -714,94 +716,17 @@
 	                            <p class="user__about">У 1948 році закінчив школу фабрично-заводського учнівства. В 1948–1971 роках працював підручним сталевара, згодом сталеваром мартенівського цеху комбінату імені Ілліча. Починав на п'ятій мартенівської печі під керівництвом сталевара Івана Лута. В 1950 році очолив бригаду.</p>
 	                           
 	                        </div>
-	                        <a href="#" class="user__link-more">Читать дальше</a>
-	                    </div>
-	                    <div class="user__btns">
-	                        <div class="user__btn">
-	                            <img src="./img/bookmark.png" alt="icon" class="user__icon">
-	                        </div>
-	                        <div class="user__btn">
-	                            <img src="./img/likes.png" alt="icon" class="user__icon">
-	                        </div>
-	                        <div class="user__btn">
-	                            <img src="./img/loc-user.png" alt="icon" class="user__icon">
+	                        <div class="user__btns">
+	                            <div class="user__likes">
+	                                <img class="user__like-icon"
+	                                src="./img/heart.svg" alt="heart">
+	                                <span class="user__likeCount">0</span>
+	                            </div>
+	                            <a href="#" class="user__link-more">Читать дальше...</a>
+	                            <img class="user__bookmark" src="./img/bookmark.svg" alt="bookmark">
 	                        </div>
 	                    </div>
-	                </div>
-	                <div class="user item">
-	                    <div class="user__info">
-	                        <img src="./img/famous.png" alt="icon star" class="user__isPubl">
-	                        <div class="user__avatar-wrap">
-	                            <img src="./img/user-def.png" alt="face" class="user__avatar">
-	                        </div>
-	                        <div class="user__title">
-	                            <span class="user__surname">Гонда</span>
-	                            <span>  </span>
-	                            <span class="user__name">Михаил
-	                            </span>
-	                            <span class="user__patronymic">Степанович</span>
-	                        </div>
-	                        <div class="user__lives">
-	                            <span class="user__both">1920</span>
-	                            <span> - </span>
-	                            <span class="user__die">2000</span>
-	                            <span>  гг</span>
-	                        </div>
-	                        <div class="user__text">
-	                            <p class="user__about">У 1948 році закінчив школу фабрично-заводського учнівства. В 1948–1971 роках працював підручним сталевара, згодом сталеваром мартенівського цеху комбінату імені Ілліча. Починав на п'ятій мартенівської печі під керівництвом сталевара Івана Лута. В 1950 році очолив бригаду.</p>
-	                           
-	                        </div>
-	                        <a href="#" class="user__link-more">Читать дальше</a>
-	                    </div>
-	                    <div class="user__btns">
-	                        <div class="user__btn">
-	                            <img src="./img/bookmark.png" alt="icon" class="user__icon">
-	                        </div>
-	                        <div class="user__btn">
-	                            <img src="./img/likes.png" alt="icon" class="user__icon">
-	                        </div>
-	                        <div class="user__btn">
-	                            <img src="./img/loc-user.png" alt="icon" class="user__icon">
-	                        </div>
-	                    </div>
-	                </div>
-	                <div class="user item">
-	                    <div class="user__info">
-	                        <img src="./img/famous.png" alt="icon star" class="user__isPubl">
-	                        <div class="user__avatar-wrap">
-	                            <img src="./img/user-def.png" alt="face" class="user__avatar">
-	                        </div>
-	                        <div class="user__title">
-	                            <span class="user__surname">Гонда</span>
-	                            <span>  </span>
-	                            <span class="user__name">Михаил
-	                            </span>
-	                            <span class="user__patronymic">Степанович</span>
-	                        </div>
-	                        <div class="user__lives">
-	                            <span class="user__both">1920</span>
-	                            <span> - </span>
-	                            <span class="user__die">2000</span>
-	                            <span>  гг</span>
-	                        </div>
-	                        <div class="user__text">
-	                            <p class="user__about">У 1948 році закінчив школу фабрично-заводського учнівства. В 1948–1971 роках працював підручним сталевара, згодом сталеваром мартенівського цеху комбінату імені Ілліча. Починав на п'ятій мартенівської печі під керівництвом сталевара Івана Лута. В 1950 році очолив бригаду.</p>
-	                           
-	                        </div>
-	                        <a href="#" class="user__link-more">Читать дальше</a>
-	                    </div>
-	                    <div class="user__btns">
-	                        <div class="user__btn">
-	                            <img src="./img/bookmark.png" alt="icon" class="user__icon">
-	                        </div>
-	                        <div class="user__btn">
-	                            <img src="./img/likes.png" alt="icon" class="user__icon">
-	                        </div>
-	                        <div class="user__btn">
-	                            <img src="./img/loc-user.png" alt="icon" class="user__icon">
-	                        </div>
-	                    </div>
-	                </div>
+	                </div> -->
 	            </div>
 	            <a href="person-page/index.html" class="personality__link btn">Все анкеты</a>
 	        </div>
@@ -1020,10 +945,18 @@
 	        </div>
 	    </div>
 	</footer>
-	<!-- скрипты -->
-	<script src="js/main.min.js"></script>
 	<div id="status">
 	</div>
+	<!-- скрипты -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(window).on('load', function () {
+	    var $preloader = $('#p_prldr'),
+	    $svg_anm   = $preloader.find('.svg_anm');
+	    // $svg_anm.fadeOut();
+	    $preloader.delay(1000).fadeOut('slow');
+	});</script>
+	<script defer src="js/main.min.js"></script>
 	<!-- Load the JS SDK asynchronously -->
 	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
