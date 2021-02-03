@@ -3701,12 +3701,12 @@ jQuery(function($){
 
     function startSlider() {
                 $('.personality__carusel').slick({
-                    dots: true,
+                    dots: false,
                     slidesToShow: 3,
                     infinite: true,
-                    speed: 500,
+                    speed: 1000,
                     arrows: true,
-                    autoplay: false,
+                    autoplay: true,
                     responsive: [ 
                         { 
                             breakpoint: 1025,
@@ -3718,7 +3718,6 @@ jQuery(function($){
                             breakpoint: 500,
                             settings: {
                                 slidesToShow: 1,
-                                arrows: true
                             }
                         }
                     ]
