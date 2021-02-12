@@ -1,3 +1,501 @@
+jQuery(function($){
+	'use strict';
+	
+	$(document).ready(function(){
+		$('.partners__items').slick({
+			dots: true,
+			slidesToShow: 4,
+			infinite: true,
+			speed: 500,
+			arrows: false,
+			autoplay: true,
+			responsive: [ 
+				{ 
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 3,
+					}
+				},
+				{ 
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 2,
+					}
+				},
+				{ 
+					breakpoint: 470,
+					settings: {
+						slidesToShow: 1,
+					}
+				}
+			]
+		});
+		
+		$('.about__subtitle').addClass("hidden").viewportChecker({
+			classToAdd: 'visible animate__fadeInRight',
+			// offset: 20
+		});
+		$('.questionnaires').addClass("hidden").viewportChecker({
+			classToAdd: 'animate__animated visible animate__fadeIn',
+			// offset: 20
+		});
+		$('.reviews').addClass("hidden").viewportChecker({
+			classToAdd: 'animate__animated visible animate__fadeIn',
+			// offset: 20
+		});
+		$('.posibility__item').addClass("hidden").viewportChecker({
+			classToAdd: 'animate__animated visible animate__fadeIn',
+			// offset: 20
+		});
+	});
+
+	$('.select__options').each(function(){
+		var $this = $(this), numberOfOptions = $(this).children('option').length;
+	  
+		$this.addClass('select-hidden'); 
+		$this.wrap('<div class="select"></div>');
+		$this.after('<div class="select-styled"></div>');
+	
+		var $styledSelect = $this.next('div.select-styled');
+		$styledSelect.text($this.children('option').eq(0).text());
+	  
+		var $list = $('<ul />', {
+			'class': 'select-options'
+		}).insertAfter($styledSelect);
+	  
+		for (var i = 0; i < numberOfOptions; i++) {
+			$('<li />', {
+				text: $this.children('option').eq(i).text(),
+				rel: $this.children('option').eq(i).val()
+			}).appendTo($list);
+		}
+	  
+		var $listItems = $list.children('li');
+	  
+		$styledSelect.click(function(e) {
+			e.stopPropagation();
+			$('div.select-styled.select-active').not(this).each(function(){
+				$(this).removeClass('select-active').next('ul.select-options').hide().css('height', '0');
+			});
+			$(this).toggleClass('select-active').next('ul.select-options').toggle().css('height', 'auto');
+		});
+	  
+		$listItems.click(function(e) {
+			e.stopPropagation();
+			$styledSelect.text($(this).text()).removeClass('select-active');
+			$this.val($(this).attr('rel'));
+			$list.hide();
+			//refocus on this select
+			$('#input__val').focus();
+			$('#input__val').blur();
+			//console.log($this.val());
+		});
+	  
+		$(document).click(function() {
+			$styledSelect.removeClass('select-active');
+			$list.hide();
+		});
+	
+	});
+	$('#lang').each(function(){
+		var $this = $(this), numberOfOptions = $(this).children('option').length;
+	  
+		$this.addClass('select-hidden'); 
+		$this.wrap('<div class="select select--lang"></div>');
+		$this.after('<div class="select-styled"></div>');
+	
+		var $styledSelect = $this.next('div.select-styled');
+		$styledSelect.text($this.children('option').eq(0).text());
+	  
+		var $list = $('<ul />', {
+			'class': 'select-options select-options--lang'
+		}).insertAfter($styledSelect);
+	  
+		for (var i = 0; i < numberOfOptions; i++) {
+			$('<li />', {
+				text: $this.children('option').eq(i).text(),
+				rel: $this.children('option').eq(i).val()
+			}).appendTo($list);
+		}
+	  
+		var $listItems = $list.children('li');
+	  
+		$styledSelect.click(function(e) {
+			e.stopPropagation();
+			$('div.select-styled.select-active').not(this).each(function(){
+				$(this).removeClass('select-active').next('ul.select-options').hide().css('height', '0');
+			});
+			$(this).toggleClass('select-active').next('ul.select-options').toggle().css('height', 'auto');
+		});
+	  
+		$listItems.click(function(e) {
+			e.stopPropagation();
+			$styledSelect.text($(this).text()).removeClass('select-active');
+			$this.val($(this).attr('rel'));
+			$list.hide();
+			//console.log($this.val());
+		});
+	  
+		$(document).click(function() {
+			$styledSelect.removeClass('select-active');
+			$list.hide();
+		});
+	
+	});
+	$('#helps').each(function(){
+		var $this = $(this), numberOfOptions = $(this).children('option').length;
+	  
+		$this.addClass('select-hidden'); 
+		$this.wrap('<div class="select select--helps"></div>');
+		$this.after('<div class="select-styled"></div>');
+	
+		var $styledSelect = $this.next('div.select-styled');
+		$styledSelect.text($this.children('option').eq(0).text());
+	  
+		var $list = $('<ul />', {
+			'class': 'select-options select-options--helps'
+		}).insertAfter($styledSelect);
+	  
+		for (var i = 0; i < numberOfOptions; i++) {
+			$('<li />', {
+				text: $this.children('option').eq(i).text(),
+				rel: $this.children('option').eq(i).val()
+			}).appendTo($list);
+		}
+	  
+		var $listItems = $list.children('li');
+	  
+		$styledSelect.click(function(e) {
+			e.stopPropagation();
+			$('div.select-styled.select-active').not(this).each(function(){
+				$(this).removeClass('select-active').next('ul.select-options').hide().css('height', '0');
+			});
+			$(this).toggleClass('select-active').next('ul.select-options').toggle().css('height', 'auto');
+		});
+	  
+		$listItems.click(function(e) {
+			e.stopPropagation();
+			$styledSelect.text($(this).text()).removeClass('select-active');
+			$this.val($(this).attr('rel'));
+			$list.hide();
+			$('.volunteers__helps').val($this.val());
+			// console.log($('.volunteers__helps').val());
+		});
+	  
+		$(document).click(function() {
+			$styledSelect.removeClass('select-active');
+			$list.hide();
+		});
+	
+	});
+
+	//tabs forms***********************************************
+	$(".reg__main").not(":first").hide();
+	$(".reg-tab").click(function() {
+	$(".reg-tab").removeClass("active").eq($(this).index()).addClass("active");
+	$(".reg__main").hide().eq($(this).index()).fadeIn();
+	}).eq(0).addClass("active");
+
+	//close forms popup********************************************
+	$('.reg__close').click(function() {
+		$('.reg-bg').hide();
+		$('body').removeClass('no-scroll');
+	})
+
+	//Show forms***************************************************
+	$('.enter').click(function() {
+		$('.reg-bg').show().css('display','flex');
+		$('body').addClass('no-scroll');
+	})
+
+
+
+	//burger***************************************
+	function burgerShow() {
+		$('.burger-wrap').toggleClass('open');
+		$('.burger').toggleClass('closed');
+		$('body').toggleClass('no-scroll');		
+		$('.burger__bg-body').toggleClass('show-bgBody');
+	}
+	$('.burger').click(function() {
+		burgerShow();
+
+	});
+	$('.nav__link').click(function() {
+		burgerShow();
+	});
+	$('.burger__bg-body').click(function (e) {
+		var container = $('.burger-wrap');
+		if (container.has(e.target).length === 0){
+			burgerShow();
+		}
+	});
+
+
+
+	 //change icon like anb bookmarks when click*********
+	 $('.personality__carusel').on('click', '.user__bookmark', function() {
+		if ($(this).hasClass('active')) {
+			$(this).toggleClass('active');
+			$(this).attr('src', './img/bookmark.svg');
+		} else {
+			$(this).attr('src', './img/bookmark-black.svg');
+			$(this).toggleClass('active');
+
+		}
+	})
+	$('.personality__carusel').on('click', '.user__like-icon' ,function() {
+		var countNum = $(this).next('.user__likeCount');
+		var count = countNum.text();
+		count = parseInt(count);
+		if ($(this).hasClass('active')) {
+			$(this).toggleClass('active');
+			$(this).attr('src', './img/heart.svg');
+			if (count > 0) {
+				count = count - 1;
+				countNum.html(count);
+			}
+		} else {
+			$(this).attr('src', './img/heart-black.svg');
+			$(this).toggleClass('active');
+			count = count + 1;
+			countNum.html(count);
+		}
+    })
+
+
+	//Search show***************************************
+
+	$('.search__btn-showHide').click(function() {
+		console.log('click');
+		$('.search__more-wrap').toggleClass('show-select');
+		$('.search__btn-showHide').toggleClass('active-btn');
+	});
+
+
+
+	//G-recaptcha*************************************
+	var onloadCallback = function() {
+		alert("grecaptcha is ready!");
+	  };
+
+
+
+	
+
+
+
+
+
+	
+	
+
+ 
+	
+
+
+	
+		
+
+	
+
+// 	$(document).mouseup(function(e){ 
+// 		var main= $('.nav')
+// 		var div = $('.burger');
+// 		var div2=  $('.burger-wrap');
+// 		if (!main.is(e.target) && main.has(e.target).length === 0) { 
+// 			div2.removeClass('open');
+// 			div.removeClass('closed');
+// 		}
+// 	});
+// 	$('.burger').click(function() {
+// 		$('.burger-wrap').toggleClass('open');
+// 		$('.burger').toggleClass('closed');
+// 	});
+// 	$('.nav__link').click(function() {
+// 		$('.burger-wrap').removeClass('open');
+// 		$('.burger').removeClass('closed');
+// 	});
+
+// //change background nav when scroll************************
+// 	$(window).scroll(function() {
+// 		if ($(this).scrollTop() >= 600) { 
+// 			$('.nav').css('background-color', 'rgba(25,25,25, 1)');
+// 		} else if ($(this).scrollTop() < 600 && $(this).scrollTop() > 100) {
+// 			$('.nav').css('background-color', 'rgba(25,25,25, .75)');
+// 		}
+// 	});
+	
+	
+	
+// 	//Show-hide submunu registration*****************************
+// 	$('#registration-btn').click(function() {
+// 		$('#submenu').addClass('showMenu');
+// 		$('.nav__popup-menu').show();
+// 		$('html').css('overflow', 'hidden');
+// 	});
+
+// 	function show() {
+// 		$('#submenu').addClass('showMenu');
+// 		$('.nav__popup-menu').hide();
+// 		$('html').css('overflow', 'hidden');
+
+// 	}
+// 	//show-hide form************************************************
+// 	$('.showDoc1').click(function() {
+// 		show();
+// 		$('#popup1').show('fast', 'linear');
+// 	});
+// 	$('.showDoc2').click(function() {
+// 		show();	
+// 		$('#popup2').show('fast', 'linear');
+// 	});
+// 	$('.showDoc3').click(function() {
+// 		show();
+// 		$('#popup3').show('fast', 'linear');
+		
+// 	});
+// 	$('.btn-close').click(function() {
+// 		$('.popup1').hide();
+// 		$('html').css('overflow', 'visible');
+// 		$('#submenu').removeClass('showMenu');
+
+// 	});
+
+	
+	
+		
+// 	//Accardion submenu**************************************  
+// 	$('.burger-wrap__submenu').click(function(event){
+// 		$(this).toggleClass('active');
+// 		$(this).next().slideToggle(300);
+// 	});  
+
+
+
+// 	//Accardion text show*************************************
+// 	$('.questions__item').click(function(event){
+// 		// $(this).toggleClass('active');
+// 		$(this).next().slideToggle();
+// 		$(this).toggleClass('minus');
+// 	});
+
+});
+//Range**************************
+var lowerSlider = document.querySelector('#lower'); //Lower value slider
+var upperSlider = document.querySelector('#upper'); //Upper value slider
+
+// var lowerVal = parseInt(lowerSlider.value); //Value of lower slider
+// var upperVal = parseInt(upperSlider.value); // Value of upper slider
+
+var rangeColor = document.querySelector('#range-color'); //Range color
+
+//When the upper value slider is moved.
+upperSlider.oninput = function() {
+lowerVal = parseInt(lowerSlider.value); //Get lower slider value
+upperVal = parseInt(upperSlider.value); //Get upper slider value
+
+//If the upper value slider is LESS THAN the lower value slider plus one.
+if (upperVal < lowerVal + 1) {
+	//The lower slider value is set to equal the upper value slider minus one.
+	lowerSlider.value = upperVal - 1;
+	//If the lower value slider equals its set minimum.
+	if (lowerVal == lowerSlider.min) {
+		//Set the upper slider value to equal 1.
+		upperSlider.value = 1;
+	}
+}
+
+
+//Setting the margin left of the middle range color.
+//Taking the value of the lower value times 10 and then turning it into a percentage.
+rangeColor.style.marginLeft = (lowerSlider.value) + '%';
+
+//Setting the width of the middle range color.
+//Taking the value of the upper value times 10 and subtracting the lower value times 10 and then turning it into a percentage.
+rangeColor.style.width = (upperSlider.value) - (lowerSlider.value) + '%';
+
+
+document.getElementById('upperValue').value = (upperSlider.value +' год'); 
+};
+
+//When the lower value slider is moved.
+lowerSlider.oninput = function() {
+lowerVal = parseInt(lowerSlider.value); //Get lower slider value
+upperVal = parseInt(upperSlider.value); //Get upper slider value
+
+//If the lower value slider is GREATER THAN the upper value slider minus one.
+if (lowerVal > upperVal - 1) {
+	//The upper slider value is set to equal the lower value slider plus one.
+	upperSlider.value = lowerVal + 1;
+	
+	//If the upper value slider equals its set maximum.
+	if (upperVal == upperSlider.max) {
+		//Set the lower slider value to equal the upper value slider's maximum value minus one.
+		lowerSlider.value = parseInt(upperSlider.max) - 1;
+	}
+
+}
+
+//Setting the margin left of the middle range color.
+//Taking the value of the lower value times 10 and then turning it into a percentage.
+rangeColor.style.marginLeft = (lowerSlider.value) + '%';
+
+//Setting the width of the middle range color.
+//Taking the value of the upper value times 10 and subtracting the lower value times 10 and then turning it into a percentage.
+rangeColor.style.width = (upperSlider.value) - (lowerSlider.value) + '%';
+
+document.getElementById('lowerValue').value = (lowerSlider.value + ' год');
+};
+
+
+
+
+
+
+
+
+
+
+//login with facebook****************************************************************************
+   function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+	  console.log('statusChangeCallback');
+	  console.log(response);                   // The current login status of the person.
+	  if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+	  testAPI();  
+	  } else {                                 // Not logged into your webpage or we are unable to tell.
+		  console.log('into this webpage');
+	  }
+  }
+
+
+  function checkLoginState() {               // Called when a person is finished with the Login Button.
+	  FB.getLoginStatus(function(response) {   // See the onlogin handler
+	  statusChangeCallback(response);
+	  });
+  }
+
+
+  window.fbAsyncInit = function() {
+	  FB.init({
+	  appId      : '291576955629944',
+	  cookie     : true,                     // Enable cookies to allow the server to access the session.
+	  xfbml      : true,                     // Parse social plugins on this webpage.
+	  version    : 'v9.0'           // Use this Graph API version for this call.
+	  });
+
+
+	  FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+	  statusChangeCallback(response);        // Returns the login status.
+	  });
+  };
+
+  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+	  console.log('Welcome!  Fetching your information.... ');
+	  FB.api('/me', function(response) {
+	  console.log('Successful login for: ' + response.name);
+	  });
+  }
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
@@ -3010,631 +3508,6 @@
 
 }));
 !function(a){a.fn.viewportChecker=function(b){var c={classToAdd:"visible",classToRemove:"invisible",classToAddForFullView:"full-visible",removeClassAfterAnimation:!1,offset:100,repeat:!1,invertBottomOffset:!0,callbackFunction:function(a,b){},scrollHorizontal:!1,scrollBox:window};a.extend(c,b);var d=this,e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()};return this.checkElements=function(){var b,f;c.scrollHorizontal?(b=Math.max(a("html").scrollLeft(),a("body").scrollLeft(),a(window).scrollLeft()),f=b+e.width):(b=Math.max(a("html").scrollTop(),a("body").scrollTop(),a(window).scrollTop()),f=b+e.height),d.each(function(){var d=a(this),g={},h={};if(d.data("vp-add-class")&&(h.classToAdd=d.data("vp-add-class")),d.data("vp-remove-class")&&(h.classToRemove=d.data("vp-remove-class")),d.data("vp-add-class-full-view")&&(h.classToAddForFullView=d.data("vp-add-class-full-view")),d.data("vp-keep-add-class")&&(h.removeClassAfterAnimation=d.data("vp-remove-after-animation")),d.data("vp-offset")&&(h.offset=d.data("vp-offset")),d.data("vp-repeat")&&(h.repeat=d.data("vp-repeat")),d.data("vp-scrollHorizontal")&&(h.scrollHorizontal=d.data("vp-scrollHorizontal")),d.data("vp-invertBottomOffset")&&(h.scrollHorizontal=d.data("vp-invertBottomOffset")),a.extend(g,c),a.extend(g,h),!d.data("vp-animated")||g.repeat){String(g.offset).indexOf("%")>0&&(g.offset=parseInt(g.offset)/100*e.height);var i=g.scrollHorizontal?d.offset().left:d.offset().top,j=g.scrollHorizontal?i+d.width():i+d.height(),k=Math.round(i)+g.offset,l=g.scrollHorizontal?k+d.width():k+d.height();g.invertBottomOffset&&(l-=2*g.offset),k<f&&l>b?(d.removeClass(g.classToRemove),d.addClass(g.classToAdd),g.callbackFunction(d,"add"),j<=f&&i>=b?d.addClass(g.classToAddForFullView):d.removeClass(g.classToAddForFullView),d.data("vp-animated",!0),g.removeClassAfterAnimation&&d.one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){d.removeClass(g.classToAdd)})):d.hasClass(g.classToAdd)&&g.repeat&&(d.removeClass(g.classToAdd+" "+g.classToAddForFullView),g.callbackFunction(d,"remove"),d.data("vp-animated",!1))}})},("ontouchstart"in window||"onmsgesturechange"in window)&&a(document).bind("touchmove MSPointerMove pointermove",this.checkElements),a(c.scrollBox).bind("load scroll",this.checkElements),a(window).resize(function(b){e={height:a(c.scrollBox).height(),width:a(c.scrollBox).width()},d.checkElements()}),this.checkElements(),this}}(jQuery);
-jQuery(function($){
-	'use strict';
-	
-	$(document).ready(function(){
-		$('.partners__items').slick({
-			dots: true,
-			slidesToShow: 4,
-			infinite: true,
-			speed: 500,
-			arrows: false,
-			autoplay: true,
-			responsive: [ 
-				{ 
-					breakpoint: 1024,
-					settings: {
-						slidesToShow: 3,
-					}
-				},
-				{ 
-					breakpoint: 768,
-					settings: {
-						slidesToShow: 2,
-					}
-				},
-				{ 
-					breakpoint: 470,
-					settings: {
-						slidesToShow: 1,
-					}
-				}
-			]
-		});
-		
-		$('.about__subtitle').addClass("hidden").viewportChecker({
-			classToAdd: 'visible animate__fadeInRight',
-			// offset: 20
-		});
-		$('.questionnaires').addClass("hidden").viewportChecker({
-			classToAdd: 'animate__animated visible animate__fadeIn',
-			// offset: 20
-		});
-		$('.reviews').addClass("hidden").viewportChecker({
-			classToAdd: 'animate__animated visible animate__fadeIn',
-			// offset: 20
-		});
-		$('.posibility__item').addClass("hidden").viewportChecker({
-			classToAdd: 'animate__animated visible animate__fadeIn',
-			// offset: 20
-		});
-	});
-
-	$('.select__options').each(function(){
-		var $this = $(this), numberOfOptions = $(this).children('option').length;
-	  
-		$this.addClass('select-hidden'); 
-		$this.wrap('<div class="select"></div>');
-		$this.after('<div class="select-styled"></div>');
-	
-		var $styledSelect = $this.next('div.select-styled');
-		$styledSelect.text($this.children('option').eq(0).text());
-	  
-		var $list = $('<ul />', {
-			'class': 'select-options'
-		}).insertAfter($styledSelect);
-	  
-		for (var i = 0; i < numberOfOptions; i++) {
-			$('<li />', {
-				text: $this.children('option').eq(i).text(),
-				rel: $this.children('option').eq(i).val()
-			}).appendTo($list);
-		}
-	  
-		var $listItems = $list.children('li');
-	  
-		$styledSelect.click(function(e) {
-			e.stopPropagation();
-			$('div.select-styled.select-active').not(this).each(function(){
-				$(this).removeClass('select-active').next('ul.select-options').hide().css('height', '0');
-			});
-			$(this).toggleClass('select-active').next('ul.select-options').toggle().css('height', 'auto');
-		});
-	  
-		$listItems.click(function(e) {
-			e.stopPropagation();
-			$styledSelect.text($(this).text()).removeClass('select-active');
-			$this.val($(this).attr('rel'));
-			$list.hide();
-			//refocus on this select
-			$('#input__val').focus();
-			$('#input__val').blur();
-			//console.log($this.val());
-		});
-	  
-		$(document).click(function() {
-			$styledSelect.removeClass('select-active');
-			$list.hide();
-		});
-	
-	});
-	$('#lang').each(function(){
-		var $this = $(this), numberOfOptions = $(this).children('option').length;
-	  
-		$this.addClass('select-hidden'); 
-		$this.wrap('<div class="select select--lang"></div>');
-		$this.after('<div class="select-styled"></div>');
-	
-		var $styledSelect = $this.next('div.select-styled');
-		$styledSelect.text($this.children('option').eq(0).text());
-	  
-		var $list = $('<ul />', {
-			'class': 'select-options select-options--lang'
-		}).insertAfter($styledSelect);
-	  
-		for (var i = 0; i < numberOfOptions; i++) {
-			$('<li />', {
-				text: $this.children('option').eq(i).text(),
-				rel: $this.children('option').eq(i).val()
-			}).appendTo($list);
-		}
-	  
-		var $listItems = $list.children('li');
-	  
-		$styledSelect.click(function(e) {
-			e.stopPropagation();
-			$('div.select-styled.select-active').not(this).each(function(){
-				$(this).removeClass('select-active').next('ul.select-options').hide().css('height', '0');
-			});
-			$(this).toggleClass('select-active').next('ul.select-options').toggle().css('height', 'auto');
-		});
-	  
-		$listItems.click(function(e) {
-			e.stopPropagation();
-			$styledSelect.text($(this).text()).removeClass('select-active');
-			$this.val($(this).attr('rel'));
-			$list.hide();
-			//console.log($this.val());
-		});
-	  
-		$(document).click(function() {
-			$styledSelect.removeClass('select-active');
-			$list.hide();
-		});
-	
-	});
-	$('#helps').each(function(){
-		var $this = $(this), numberOfOptions = $(this).children('option').length;
-	  
-		$this.addClass('select-hidden'); 
-		$this.wrap('<div class="select select--helps"></div>');
-		$this.after('<div class="select-styled"></div>');
-	
-		var $styledSelect = $this.next('div.select-styled');
-		$styledSelect.text($this.children('option').eq(0).text());
-	  
-		var $list = $('<ul />', {
-			'class': 'select-options select-options--helps'
-		}).insertAfter($styledSelect);
-	  
-		for (var i = 0; i < numberOfOptions; i++) {
-			$('<li />', {
-				text: $this.children('option').eq(i).text(),
-				rel: $this.children('option').eq(i).val()
-			}).appendTo($list);
-		}
-	  
-		var $listItems = $list.children('li');
-	  
-		$styledSelect.click(function(e) {
-			e.stopPropagation();
-			$('div.select-styled.select-active').not(this).each(function(){
-				$(this).removeClass('select-active').next('ul.select-options').hide().css('height', '0');
-			});
-			$(this).toggleClass('select-active').next('ul.select-options').toggle().css('height', 'auto');
-		});
-	  
-		$listItems.click(function(e) {
-			e.stopPropagation();
-			$styledSelect.text($(this).text()).removeClass('select-active');
-			$this.val($(this).attr('rel'));
-			$list.hide();
-			$('.volunteers__helps').val($this.val());
-			// console.log($('.volunteers__helps').val());
-		});
-	  
-		$(document).click(function() {
-			$styledSelect.removeClass('select-active');
-			$list.hide();
-		});
-	
-	});
-
-	//tabs forms***********************************************
-	$(".reg__main").not(":first").hide();
-	$(".reg-tab").click(function() {
-	$(".reg-tab").removeClass("active").eq($(this).index()).addClass("active");
-	$(".reg__main").hide().eq($(this).index()).fadeIn();
-	}).eq(0).addClass("active");
-
-	//close forms popup********************************************
-	$('.reg__close').click(function() {
-		$('.reg-bg').hide();
-		$('body').removeClass('no-scroll');
-	})
-
-	//Show forms***************************************************
-	$('.enter').click(function() {
-		$('.reg-bg').show().css('display','flex');
-		$('body').addClass('no-scroll');
-	})
-
-
-
-	//burger***************************************
-	function burgerShow() {
-		$('.burger-wrap').toggleClass('open');
-		$('.burger').toggleClass('closed');
-		$('body').toggleClass('no-scroll');		
-		$('.burger__bg-body').toggleClass('show-bgBody');
-	}
-	$('.burger').click(function() {
-		burgerShow();
-
-	});
-	$('.nav__link').click(function() {
-		burgerShow();
-	});
-
-
-
-	 //change icon like anb bookmarks when click*********
-	 $('.personality__carusel').on('click', '.user__bookmark', function() {
-		if ($(this).hasClass('active')) {
-			$(this).toggleClass('active');
-			$(this).attr('src', './img/bookmark.svg');
-		} else {
-			$(this).attr('src', './img/bookmark-black.svg');
-			$(this).toggleClass('active');
-
-		}
-	})
-	$('.personality__carusel').on('click', '.user__like-icon' ,function() {
-		var countNum = $(this).next('.user__likeCount');
-		var count = countNum.text();
-		count = parseInt(count);
-		if ($(this).hasClass('active')) {
-			$(this).toggleClass('active');
-			$(this).attr('src', './img/heart.svg');
-			if (count > 0) {
-				count = count - 1;
-				countNum.html(count);
-			}
-		} else {
-			$(this).attr('src', './img/heart-black.svg');
-			$(this).toggleClass('active');
-			count = count + 1;
-			countNum.html(count);
-		}
-    })
-
-
-	//Search show***************************************
-
-	$('.search__btn-showHide').click(function() {
-		console.log('click');
-		$('.search__more-wrap').toggleClass('show-select');
-		$('.search__btn-showHide').toggleClass('active-btn');
-	});
-
-
-
-	//G-recaptcha*************************************
-	var onloadCallback = function() {
-		alert("grecaptcha is ready!");
-	  };
-
-
-
-	
-
-
-
-
-
-	
-	
-
- 
-	
-
-
-	
-		
-
-	
-
-// 	$(document).mouseup(function(e){ 
-// 		var main= $('.nav')
-// 		var div = $('.burger');
-// 		var div2=  $('.burger-wrap');
-// 		if (!main.is(e.target) && main.has(e.target).length === 0) { 
-// 			div2.removeClass('open');
-// 			div.removeClass('closed');
-// 		}
-// 	});
-// 	$('.burger').click(function() {
-// 		$('.burger-wrap').toggleClass('open');
-// 		$('.burger').toggleClass('closed');
-// 	});
-// 	$('.nav__link').click(function() {
-// 		$('.burger-wrap').removeClass('open');
-// 		$('.burger').removeClass('closed');
-// 	});
-
-// //change background nav when scroll************************
-// 	$(window).scroll(function() {
-// 		if ($(this).scrollTop() >= 600) { 
-// 			$('.nav').css('background-color', 'rgba(25,25,25, 1)');
-// 		} else if ($(this).scrollTop() < 600 && $(this).scrollTop() > 100) {
-// 			$('.nav').css('background-color', 'rgba(25,25,25, .75)');
-// 		}
-// 	});
-	
-	
-	
-// 	//Show-hide submunu registration*****************************
-// 	$('#registration-btn').click(function() {
-// 		$('#submenu').addClass('showMenu');
-// 		$('.nav__popup-menu').show();
-// 		$('html').css('overflow', 'hidden');
-// 	});
-
-// 	function show() {
-// 		$('#submenu').addClass('showMenu');
-// 		$('.nav__popup-menu').hide();
-// 		$('html').css('overflow', 'hidden');
-
-// 	}
-// 	//show-hide form************************************************
-// 	$('.showDoc1').click(function() {
-// 		show();
-// 		$('#popup1').show('fast', 'linear');
-// 	});
-// 	$('.showDoc2').click(function() {
-// 		show();	
-// 		$('#popup2').show('fast', 'linear');
-// 	});
-// 	$('.showDoc3').click(function() {
-// 		show();
-// 		$('#popup3').show('fast', 'linear');
-		
-// 	});
-// 	$('.btn-close').click(function() {
-// 		$('.popup1').hide();
-// 		$('html').css('overflow', 'visible');
-// 		$('#submenu').removeClass('showMenu');
-
-// 	});
-
-	
-	
-		
-// 	//Accardion submenu**************************************  
-// 	$('.burger-wrap__submenu').click(function(event){
-// 		$(this).toggleClass('active');
-// 		$(this).next().slideToggle(300);
-// 	});  
-
-
-
-// 	//Accardion text show*************************************
-// 	$('.questions__item').click(function(event){
-// 		// $(this).toggleClass('active');
-// 		$(this).next().slideToggle();
-// 		$(this).toggleClass('minus');
-// 	});
-
-});
-//Range**************************
-var lowerSlider = document.querySelector('#lower'); //Lower value slider
-var upperSlider = document.querySelector('#upper'); //Upper value slider
-
-// var lowerVal = parseInt(lowerSlider.value); //Value of lower slider
-// var upperVal = parseInt(upperSlider.value); // Value of upper slider
-
-var rangeColor = document.querySelector('#range-color'); //Range color
-
-//When the upper value slider is moved.
-upperSlider.oninput = function() {
-lowerVal = parseInt(lowerSlider.value); //Get lower slider value
-upperVal = parseInt(upperSlider.value); //Get upper slider value
-
-//If the upper value slider is LESS THAN the lower value slider plus one.
-if (upperVal < lowerVal + 1) {
-	//The lower slider value is set to equal the upper value slider minus one.
-	lowerSlider.value = upperVal - 1;
-	//If the lower value slider equals its set minimum.
-	if (lowerVal == lowerSlider.min) {
-		//Set the upper slider value to equal 1.
-		upperSlider.value = 1;
-	}
-}
-
-
-//Setting the margin left of the middle range color.
-//Taking the value of the lower value times 10 and then turning it into a percentage.
-rangeColor.style.marginLeft = (lowerSlider.value) + '%';
-
-//Setting the width of the middle range color.
-//Taking the value of the upper value times 10 and subtracting the lower value times 10 and then turning it into a percentage.
-rangeColor.style.width = (upperSlider.value) - (lowerSlider.value) + '%';
-
-
-document.getElementById('upperValue').value = (upperSlider.value +' год'); 
-};
-
-//When the lower value slider is moved.
-lowerSlider.oninput = function() {
-lowerVal = parseInt(lowerSlider.value); //Get lower slider value
-upperVal = parseInt(upperSlider.value); //Get upper slider value
-
-//If the lower value slider is GREATER THAN the upper value slider minus one.
-if (lowerVal > upperVal - 1) {
-	//The upper slider value is set to equal the lower value slider plus one.
-	upperSlider.value = lowerVal + 1;
-	
-	//If the upper value slider equals its set maximum.
-	if (upperVal == upperSlider.max) {
-		//Set the lower slider value to equal the upper value slider's maximum value minus one.
-		lowerSlider.value = parseInt(upperSlider.max) - 1;
-	}
-
-}
-
-//Setting the margin left of the middle range color.
-//Taking the value of the lower value times 10 and then turning it into a percentage.
-rangeColor.style.marginLeft = (lowerSlider.value) + '%';
-
-//Setting the width of the middle range color.
-//Taking the value of the upper value times 10 and subtracting the lower value times 10 and then turning it into a percentage.
-rangeColor.style.width = (upperSlider.value) - (lowerSlider.value) + '%';
-
-document.getElementById('lowerValue').value = (lowerSlider.value + ' год');
-};
-
-
-
-
-
-
-
-
-
-
-//login with facebook****************************************************************************
-   function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-	  console.log('statusChangeCallback');
-	  console.log(response);                   // The current login status of the person.
-	  if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-	  testAPI();  
-	  } else {                                 // Not logged into your webpage or we are unable to tell.
-		  console.log('into this webpage');
-	  }
-  }
-
-
-  function checkLoginState() {               // Called when a person is finished with the Login Button.
-	  FB.getLoginStatus(function(response) {   // See the onlogin handler
-	  statusChangeCallback(response);
-	  });
-  }
-
-
-  window.fbAsyncInit = function() {
-	  FB.init({
-	  appId      : '291576955629944',
-	  cookie     : true,                     // Enable cookies to allow the server to access the session.
-	  xfbml      : true,                     // Parse social plugins on this webpage.
-	  version    : 'v9.0'           // Use this Graph API version for this call.
-	  });
-
-
-	  FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
-	  statusChangeCallback(response);        // Returns the login status.
-	  });
-  };
-
-  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-	  console.log('Welcome!  Fetching your information.... ');
-	  FB.api('/me', function(response) {
-	  console.log('Successful login for: ' + response.name);
-	  });
-  }
-$(document).ready(function() {
-     
-
-    function validateMail(ourForm,email) {
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        var email = $('#reg-email').val();
-        if(reg.test(email) == false || email == '') {
-           alert('Введите корректный e-mail');
-           return false;
-        }
-     }
-    function validateSoname(ourForm,soname) {
-        var reg = /^[А-Яа-яЁё\s]+$/;
-        var soname = $('#reg-soname').val();
-        if(reg.test(soname) == false || soname == '') {
-           alert('Введите корректную фамилию');
-           return false;
-        }
-     }
-    function validateName(ourForm,name) {
-        var reg = /^[А-Яа-яЁё\s]+$/;
-        var name = $('#reg-name').val();
-        if(reg.test(name) == false || name == '') {
-           alert('Введите корректное имя');
-           return false;
-        }
-     }
-    function validatePatronymic(ourForm,patronymic) {
-        var reg = /^[А-Яа-яЁё\s]+$/;
-        var patronymic = $('#reg-patronymic').val();
-        if(reg.test(patronymic) == false || patronymic == '') {
-           alert('Введите корректное отчество');
-           return false;
-        }
-     }
-    function validateTel(ourForm, tel) {
-        var reg = /^\+\d{2}\d{3}\d{3}-\d{2}-\d{2}$/;
-        var tel = $('#reg-tel').val();
-        if(reg.test(tel) == false || tel == '') {
-           alert('Введите корректный телефон');
-           return false;
-        }
-     }
-
-
-    var sendQuery = $('#sendReg');
-
-    
-
-    sendQuery.click(function(e) {
-        e.preventDefault();
-        var userName = $('#reg-name');
-        var userSoname = $('#reg-soname');
-        var userPatronymic = $('#reg-patronymic');
-        var userTel = $('#reg-tel');
-        var userEmail = $('#reg-email');
-        var userPassword = $('#reg-password');
-        // var data = $(this).parents('form').serialize();    
-         if (validateName() == false || validatePatronymic() == false || validateSoname() == false || validateTel() == false || validateMail() == false) {
-            //   alert("Заполните все поля");
-            } else {
-                $.ajax({
-                    url: 'registration.php',
-                    type: "POST",
-                    contentType: "application/x-www-form-urlencoded;charset=ISO-8859-5",
-                    cache: false,
-                    data: {
-                        name: userName.val(),
-                        patronymic: userPatronymic.val(),
-                        soname: userSoname.val(),
-                        tel: userTel.val(),
-                        email: userEmail.val(),
-                        password: userPassword.val()
-                    },
-                    success: function(data) {
-                        if (data) {
-                            $('#error').text("Вы успешно зарегистрировались").removeClass('error').addClass('success').show().delay(4000).fadeOut(300);
-                            $('.reg__btn-enter').addClass('active').click();
-                        } else {
-                            $('#error').text("Ошибка, повторите еще раз").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
-                        }
-                    }, error: function() {
-                        $('#error').text("Ошибка, повторите еще раз").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
-                    }
-                });
-            }
-    })
-
- });
-$(document).ready(function(){
-
-    function validateTel(ourForm, authTel) {
-        var reg = /^\+\d{2}\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
-        if(reg.test(authTel) == false) {
-           alert('Введите корректный телефон');
-           return false;
-        }
-     }
-
-    $('#authSend').click(function(e){
-        e.preventDefault();
-        var authTel = $('#auth-tel').val();
-        var authPassword = $('#auth-password').val();
-        
-
-
-        if(authTel != '' && validateTel() == true && authPassword != '') {
-            $.ajax({
-                url: "auth.php",
-                method: "POST",
-                dataType: "json",
-                data:{
-                    tel: authTel, 
-                    password: authPassword, 
-                },
-                success: function(data){
-                    var response = JSON.parse(data);
-                    if(response.status == 1){
-                        $('#error').text("Вы успешно авторизировались").removeClass('error').addClass('success').show().delay(4000).fadeOut(300);
-                    }else{
-                        $('#error').text("Ошибка, повторите еще раз").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
-                    }
-                }
-            })
-        }
-        else{
-            $('#error').text("Заполните все поля").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
-        }
-
-    })
-
-
-})
  
 
 
@@ -3751,3 +3624,136 @@ jQuery(function($){
     };
     runSlider(loadQuestionnaries, startSlider);
 })
+$(document).ready(function(){
+
+    function validateTel(ourForm, authTel) {
+        var reg = /^\+\d{2}\(\d{3}\)\d{3}-\d{2}-\d{2}$/;
+        if(reg.test(authTel) == false) {
+           alert('Введите корректный телефон');
+           return false;
+        }
+     }
+
+    $('#authSend').click(function(e){
+        e.preventDefault();
+        var authTel = $('#auth-tel').val();
+        var authPassword = $('#auth-password').val();
+        
+
+
+        if(authTel != '' && validateTel() == true && authPassword != '') {
+            $.ajax({
+                url: "auth.php",
+                method: "POST",
+                dataType: "json",
+                data:{
+                    tel: authTel, 
+                    password: authPassword, 
+                },
+                success: function(data){
+                    var response = JSON.parse(data);
+                    if(response.status == 1){
+                        $('#error').text("Вы успешно авторизировались").removeClass('error').addClass('success').show().delay(4000).fadeOut(300);
+                    }else{
+                        $('#error').text("Ошибка, повторите еще раз").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
+                    }
+                }
+            })
+        }
+        else{
+            $('#error').text("Заполните все поля").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
+        }
+
+    })
+
+
+})
+$(document).ready(function() {
+     
+
+    function validateMail(ourForm,email) {
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        var email = $('#reg-email').val();
+        if(reg.test(email) == false || email == '') {
+           alert('Введите корректный e-mail');
+           return false;
+        }
+     }
+    function validateSoname(ourForm,soname) {
+        var reg = /^[А-Яа-яЁё\s]+$/;
+        var soname = $('#reg-soname').val();
+        if(reg.test(soname) == false || soname == '') {
+           alert('Введите корректную фамилию');
+           return false;
+        }
+     }
+    function validateName(ourForm,name) {
+        var reg = /^[А-Яа-яЁё\s]+$/;
+        var name = $('#reg-name').val();
+        if(reg.test(name) == false || name == '') {
+           alert('Введите корректное имя');
+           return false;
+        }
+     }
+    function validatePatronymic(ourForm,patronymic) {
+        var reg = /^[А-Яа-яЁё\s]+$/;
+        var patronymic = $('#reg-patronymic').val();
+        if(reg.test(patronymic) == false || patronymic == '') {
+           alert('Введите корректное отчество');
+           return false;
+        }
+     }
+    function validateTel(ourForm, tel) {
+        var reg = /^\+\d{2}\d{3}\d{3}-\d{2}-\d{2}$/;
+        var tel = $('#reg-tel').val();
+        if(reg.test(tel) == false || tel == '') {
+           alert('Введите корректный телефон');
+           return false;
+        }
+     }
+
+
+    var sendQuery = $('#sendReg');
+
+    
+
+    sendQuery.click(function(e) {
+        e.preventDefault();
+        var userName = $('#reg-name');
+        var userSoname = $('#reg-soname');
+        var userPatronymic = $('#reg-patronymic');
+        var userTel = $('#reg-tel');
+        var userEmail = $('#reg-email');
+        var userPassword = $('#reg-password');
+        // var data = $(this).parents('form').serialize();    
+         if (validateName() == false || validatePatronymic() == false || validateSoname() == false || validateTel() == false || validateMail() == false) {
+            //   alert("Заполните все поля");
+            } else {
+                $.ajax({
+                    url: 'registration.php',
+                    type: "POST",
+                    contentType: "application/x-www-form-urlencoded;charset=ISO-8859-5",
+                    cache: false,
+                    data: {
+                        name: userName.val(),
+                        patronymic: userPatronymic.val(),
+                        soname: userSoname.val(),
+                        tel: userTel.val(),
+                        email: userEmail.val(),
+                        password: userPassword.val()
+                    },
+                    success: function(data) {
+                        if (data) {
+                            $('#error').text("Вы успешно зарегистрировались").removeClass('error').addClass('success').show().delay(4000).fadeOut(300);
+                            $('.reg__btn-enter').addClass('active').click();
+                        } else {
+                            $('#error').text("Ошибка, повторите еще раз").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
+                        }
+                    }, error: function() {
+                        $('#error').text("Ошибка, повторите еще раз").removeClass('success').addClass('error').show().delay(8000).fadeOut(300);
+                    }
+                });
+            }
+    })
+
+ });
