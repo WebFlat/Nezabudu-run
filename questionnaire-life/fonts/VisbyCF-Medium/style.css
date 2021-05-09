@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Visby CF Medium';
+    src: local('Visby CF Medium'), local('Visby-CF-Medium'),
+        url('VisbyCF-Medium.woff2') format('woff2'),
+        url('VisbyCF-Medium.woff') format('woff'),
+        url('VisbyCF-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
