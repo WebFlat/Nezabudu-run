@@ -13617,6 +13617,56 @@ jQuery(function ($) {
 		$preloader.delay(1000).fadeOut('slow');
 	});
 
+	//Зарегестрірованний юзер
+	var user = true;
+
+	if (user === false) {
+		$('.reg-bg').show().css('display', 'flex');
+		$('body').addClass('no-scroll');
+	};
+
+	//Icon user if login**************************
+	if (user) {
+		$('.enter').removeClass('active');
+		$('.loginIn').addClass('active');
+	} else {
+		$('.enter').addClass('active');
+		$('.loginIn').removeClass('active');
+	};
+	if (!user.avatar === '') {
+		$('.header__user').src = user.avatar;
+	};
+
+	//burger***************************************
+	function burgerShow() {
+		//User or guest
+		if (user) {
+			$('#menu-user').toggleClass('open');
+			$('.burger').toggleClass('closed');
+			$('body').toggleClass('no-scroll');
+			$('.burger__bg-body').toggleClass('show-bgBody');
+		} else {
+			$('#menu-guest').toggleClass('open');
+			$('.burger').toggleClass('closed');
+			$('body').toggleClass('no-scroll');
+			$('.burger__bg-body').toggleClass('show-bgBody');
+		}
+	};
+
+	$('.burger').click(function () {
+		burgerShow();
+
+	});
+	$('.nav__link').click(function () {
+		burgerShow();
+	});
+	$('.burger__bg-body').click(function (e) {
+		var container = $('.burger-wrap');
+		if (container.has(e.target).length === 0) {
+			burgerShow();
+		}
+	});
+
 
 	//calendar init***********************************
 	$('#datepicker').Zebra_DatePicker({

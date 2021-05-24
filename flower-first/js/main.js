@@ -13611,11 +13611,64 @@ jQuery(function ($) {
 	'use strict';
 
 
-	//preloader*****************************************
+
+	//Preloader*****************************
 	$(window).on('load', function () {
 		var $preloader = $('#p_prldr');
 		$preloader.delay(1000).fadeOut('slow');
 	});
+
+	//Зарегестрірованний юзер
+	var user = true;
+
+	//Icon user if login**************************
+	if (user) {
+		$('.enter').removeClass('active');
+		$('.loginIn').addClass('active');
+	} else {
+		$('.enter').addClass('active');
+		$('.loginIn').removeClass('active');
+	};
+	if (!user.avatar === '') {
+		$('.header__user').src = user.avatar;
+	};
+
+	//burger***************************************
+	function burgerShow() {
+		//User or guest
+		if (user) {
+			$('#menu-user').toggleClass('open');
+			$('.burger').toggleClass('closed');
+			$('body').toggleClass('no-scroll');
+			$('.burger__bg-body').toggleClass('show-bgBody');
+		} else {
+			$('#menu-guest').toggleClass('open');
+			$('.burger').toggleClass('closed');
+			$('body').toggleClass('no-scroll');
+			$('.burger__bg-body').toggleClass('show-bgBody');
+		}
+	};
+
+	$('.burger').click(function () {
+		burgerShow();
+
+	});
+	$('.nav__link').click(function () {
+		burgerShow();
+	});
+	$('.burger__bg-body').click(function (e) {
+		var container = $('.burger-wrap');
+		if (container.has(e.target).length === 0) {
+			burgerShow();
+		}
+	});
+
+
+
+	//Open QR if user********************************
+	if (user) {
+		$('.qr__items').css('pointer-events', 'inherit').css('opacity', 1);
+	};
 
 
 	//calendar init***********************************
@@ -13630,7 +13683,7 @@ jQuery(function ($) {
 				// iterate through the active elements in the view
 				elements.each(function () {
 					$(this).css('pointer-events', 'none');
-					if ($(this).data('date').match(/2021-03-24/) || $(this).data('date').match(/2021-04-14/) || $(this).data('date').match(/2021-04-18/) || $(this).data('date').match(/2021-04-19/)) {
+					if ($(this).data('date').match(/2021-05-24/) || $(this).data('date').match(/2021-06-14/) || $(this).data('date').match(/2021-07-18/) || $(this).data('date').match(/2021-08-19/)) {
 						$(this).css({
 							'background': 'green',
 							'color': '#FFF',

@@ -32,32 +32,33 @@
 	<header class="header">
 	    <div class="wrapper">
 	        <div class="burger__bg-body"></div>
-	        <div class="burger-wrap">
+	        <div class="burger-wrap" id="menu-guest">
 	            <div class="burger-wrap__links">
 	                <ul>
 	                    <li>
 	                        <div class="burger-wrap__wrap-icon">
 	                            <img class="burger-wrap__icon" src="./img/008-user.svg" alt="persons">
 	                        </div>
-	                        <a href="#" class="nav__link enter">Сохранить память</a>
+	                        <a href="#" class="nav__link enter">Создать анкету
+	                        </a>
 	                    </li>
 	                    <li>
 	                        <div class="burger-wrap__wrap-icon">
 	                            <img class="burger-wrap__icon" src="./img/007-eye.svg" alt="star">
 	                        </div>
-	                        <a href="all-person-page/index.html" class="nav__link">Смотреть все анкеты</a>
+	                        <a href="all-person-page/index.html" class="nav__link">Поиск по всем анкетам</a>
 	                    </li>
-	                    <li>
+	                    <!-- <li>
 	                        <div class="burger-wrap__wrap-icon">
 	                            <img class="burger-wrap__icon" src="./img/003-placeholder.svg" alt="like">
 	                        </div>
 	                        <a href="#search" class="nav__link">Найти место захоронения</a>
-	                    </li>
+	                    </li> -->
 	                    <li>
 	                        <div class="burger-wrap__wrap-icon">
 	                            <img class="burger-wrap__icon" src="./img/005-favorites.svg" alt="persons">
 	                        </div>
-	                        <a href="person-page/index.html" class="nav__link">Читать про известные личности и монументы</a>
+	                        <a href="person-page/index.html" class="nav__link">Известные личности</a>
 	                    </li>
 	                </ul>
 	                <ul class="withBorder">
@@ -65,14 +66,15 @@
 	                        <div class="burger-wrap__wrap-icon">
 	                            <img class="burger-wrap__icon" src="./img/001-ecology.svg" alt="peace">
 	                        </div>
-	                        <a href="care-page/index.html" class="nav__link">Уход за захоронениями</a>
+	                        <a href="care-page/index.html" class="nav__link">Уход захоронений</a>
 	                    </li>
 	                    <li>
 	                        <div class="burger-wrap__wrap-icon">
 	
 	                            <img class="burger-wrap__icon" src="./img/qr-code-small.svg" alt="qr code">
 	                        </div>
-	                        <a href="qr-page/index.html" class="nav__link">Заказать QR код на памятник</a>
+	                        <a href="qr-page/index.html" class="nav__link">QR код Наклейка
+	                        </a>
 	                    </li>
 	                    <li>
 	                        <div class="burger-wrap__wrap-icon">
@@ -89,10 +91,75 @@
 	                        <a href="#volunteers" class="nav__link">Стать волонтером</a>
 	                    </li>
 	                </ul>
-	                <!-- <div class="burger__wrap-img">
-	                    <img class="burger__img" src="./img/lists-human.png" alt="list">
-	                </div> -->
-	                <!-- <a href="#" class="btn burger__btn">Заполнить анкету</a> -->
+	            </div>
+	        </div>
+	        <div class="burger-wrap" id="menu-user">
+	            <div class="burger-wrap__links">
+	                <form action="GET" class="burger-search">
+	                    <input class="burger-search__input" type="text" placeholder="Поиск по всем анкетам">
+	                    <img src="./img/search-burger.png" alt="search" class="burger-search__search">
+	                </form>
+	                <ul class="withBorder">
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/icon-questionar.png" alt="questionar">
+	                        </div>
+	                        <a href="cabinet-page/index.html" class="nav__link enter">Мои анктеты</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/bookmark.png" alt="bookmark">
+	                        </div>
+	                        <a href="cabinet-page/index.html" class="nav__link">Анкеты в закладках</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/alarm-bell.png" alt="alarm">
+	                        </div>
+	                        <a href="cabinet-page/index.html" class="nav__link">Уведомления</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/icon-all-questionar.png" alt="questionar">
+	                        </div>
+	                        <a href="person-page/index.html" class="nav__link">Все анкеты</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/icon-popular.png" alt="popular">
+	                        </div>
+	                        <a href="person-page/index.html" class="nav__link">Известные личности</a>
+	                    </li>
+	                </ul>
+	                <ul class="withBorder">
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/qr-code-small.svg" alt="qr code">
+	                        </div>
+	                        <a href="qr-page/index.html" class="nav__link">QR код Наклейка</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/001-ecology.svg" alt="peace">
+	                        </div>
+	                        <a href="care-page/index.html" class="nav__link">Уборка захоронений</a>
+	                    </li>
+	                </ul>
+	                <ul class="withBorder">
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/icon-settings.png" alt="settings">
+	                        </div>
+	                        <a href="cabinet-page/index.html" class="nav__link">Настройки</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	
+	                            <img class="burger-wrap__icon" src="./img/icon-logout.png" alt="logout">
+	                        </div>
+	                        <a href="#" id="logout" class="nav__link">Выход</a>
+	                    </li>
+	                </ul>
 	            </div>
 	        </div>
 	        <div class="header__wrap">
@@ -106,85 +173,24 @@
 	                    <h1 class="header__link">НЕЗАБУДУ</h1>
 	                </a>
 	            </div>
-	            <nav class="header__social">
-	                <a href="https://www.facebook.com/nezabudu.com.ua/" class="header__soc-link" target="_blank">
-	                    <!-- facebook -->
-	                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-	                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96.124px" height="96.123px"
-	                        viewBox="0 0 96.124 96.123" style="enable-background:new 0 0 96.124 96.123;"
-	                        xml:space="preserve">
-	                        <g>
-	                            <path
-	                                d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803
-	                                c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654
-	                                c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246
-	                                c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z" />
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                        <g>
-	                        </g>
-	                    </svg>
-	
-	                    <!-- <img alt="facebook" src="data:image/svg+xml;base64,PHN2ZyBpZD0iQm9sZCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjQgMjQiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTE1Ljk5NyAzLjk4NWgyLjE5MXYtMy44MTZjLS4zNzgtLjA1Mi0xLjY3OC0uMTY5LTMuMTkyLS4xNjktMy4xNTkgMC01LjMyMyAxLjk4Ny01LjMyMyA1LjYzOXYzLjM2MWgtMy40ODZ2NC4yNjZoMy40ODZ2MTAuNzM0aDQuMjc0di0xMC43MzNoMy4zNDVsLjUzMS00LjI2NmgtMy44Nzd2LTIuOTM5Yy4wMDEtMS4yMzMuMzMzLTIuMDc3IDIuMDUxLTIuMDc3eiIvPjwvc3ZnPg==" /> -->
-	                </a>
-	                <a href="https://www.instagram.com/nezabudu.com.ua" target="_blank" class="header__soc-link">
-	                    <!-- insta -->
-	                    <svg viewBox="0 0 512.00096 512.00096" xmlns="http://www.w3.org/2000/svg">
-	                        <path
-	                            d="m373.40625 0h-234.8125c-76.421875 0-138.59375 62.171875-138.59375 138.59375v234.816406c0 76.417969 62.171875 138.589844 138.59375 138.589844h234.816406c76.417969 0 138.589844-62.171875 138.589844-138.589844v-234.816406c0-76.421875-62.171875-138.59375-138.59375-138.59375zm-117.40625 395.996094c-77.195312 0-139.996094-62.800782-139.996094-139.996094s62.800782-139.996094 139.996094-139.996094 139.996094 62.800782 139.996094 139.996094-62.800782 139.996094-139.996094 139.996094zm143.34375-246.976563c-22.8125 0-41.367188-18.554687-41.367188-41.367187s18.554688-41.371094 41.367188-41.371094 41.371094 18.558594 41.371094 41.371094-18.558594 41.367187-41.371094 41.367187zm0 0" />
-	                        <path
-	                            d="m256 146.019531c-60.640625 0-109.980469 49.335938-109.980469 109.980469 0 60.640625 49.339844 109.980469 109.980469 109.980469 60.644531 0 109.980469-49.339844 109.980469-109.980469 0-60.644531-49.335938-109.980469-109.980469-109.980469zm0 0" />
-	                        <path
-	                            d="m399.34375 96.300781c-6.257812 0-11.351562 5.09375-11.351562 11.351563 0 6.257812 5.09375 11.351562 11.351562 11.351562 6.261719 0 11.355469-5.089844 11.355469-11.351562 0-6.261719-5.09375-11.351563-11.355469-11.351563zm0 0" />
-	                    </svg>
-	                </a>
-	                <a href="#" class="header__soc-link" target="_blank">
-	                    <!-- youtube -->
-	                    <svg height="682pt" viewBox="-21 -117 682.66672 682" width="682pt"
-	                        xmlns="http://www.w3.org/2000/svg">
-	                        <path
-	                            d="m626.8125 64.035156c-7.375-27.417968-28.992188-49.03125-56.40625-56.414062-50.082031-13.703125-250.414062-13.703125-250.414062-13.703125s-200.324219 0-250.40625 13.183593c-26.886719 7.375-49.03125 29.519532-56.40625 56.933594-13.179688 50.078125-13.179688 153.933594-13.179688 153.933594s0 104.378906 13.179688 153.933594c7.382812 27.414062 28.992187 49.027344 56.410156 56.410156 50.605468 13.707031 250.410156 13.707031 250.410156 13.707031s200.324219 0 250.40625-13.183593c27.417969-7.378907 49.03125-28.992188 56.414062-56.40625 13.175782-50.082032 13.175782-153.933594 13.175782-153.933594s.527344-104.382813-13.183594-154.460938zm-370.601562 249.878906v-191.890624l166.585937 95.945312zm0 0" />
-	                    </svg>
-	
-	                </a>
-	            </nav>
 	            <select class="select__options--lang" id="lang">
 	                <option value="hide">RU</option>
 	                <option value="Український" rel="icon-temperature"><a href="#">UKR</a></option>
 	                <option value="Русский">RU</option>
 	            </select>
-	            <span class="header__enter-link enter">
+	            <span class="header__enter-link enter active">
 	                <span>Вход</span>
 	                <img alt="enter"
 	                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzg0Ljk3IDM4NC45NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzg0Ljk3IDM4NC45NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGcgaWQ9IlNpZ25fSW4iPg0KCQk8cGF0aCBkPSJNMzcyLjkzOSwwSDIwNC41MTVjLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE1Ni4zOTR2MzM2Ljg0OEgyMDQuNTE1DQoJCQljLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE2OC40MjRjNi42NDEsMCwxMi4wMy01LjM5LDEyLjAzLTEyLjAzVjEyLjAzDQoJCQlDMzg0Ljk3LDUuMzksMzc5LjU4LDAsMzcyLjkzOSwweiIvPg0KCQk8cGF0aCBkPSJNMTk3LjIxMywyNjguMjc2Yy00LjcwNCw0Ljc1Mi00LjcwNCwxMi40MzksMCwxNy4xNzljNC43MDQsNC43NTIsMTIuMzE5LDQuNzUyLDE3LjAxMSwwbDgyLjk5Ny04NC4yDQoJCQljNC42MzItNC42OCw0LjY4LTEyLjUxMiwwLTE3LjE5MWwtODMuMDA5LTg0LjJjLTQuNzA0LTQuNzUyLTEyLjMxOS00Ljc0LTE3LjAxMSwwYy00LjcwNCw0Ljc0LTQuNzA0LDEyLjQzOSwwLDE3LjE3OQ0KCQkJbDYyLjU1OCw2My40NkgxMi4wM0M1LjM5LDE4MC41MDMsMCwxODUuOTQsMCwxOTIuNjUzYzAsNi43MTMsNS4zOSwxMi4xNTEsMTIuMDMsMTIuMTUxaDI0Ny43NEwxOTcuMjEzLDI2OC4yNzZ6Ii8+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
 	            </span>
+	            <a href="cabinet-page/index.html" class="header__enter-link loginIn">
+	                <!-- <span>Вход</span> -->
+	                <div class="header__user-wrap">
+	                    <img class="header__user" src="./img/user-def-black.png" alt="user">
+	                </div>
+	                <img class="header__user-enter" alt="enter"
+	                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzg0Ljk3IDM4NC45NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzg0Ljk3IDM4NC45NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGcgaWQ9IlNpZ25fSW4iPg0KCQk8cGF0aCBkPSJNMzcyLjkzOSwwSDIwNC41MTVjLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE1Ni4zOTR2MzM2Ljg0OEgyMDQuNTE1DQoJCQljLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE2OC40MjRjNi42NDEsMCwxMi4wMy01LjM5LDEyLjAzLTEyLjAzVjEyLjAzDQoJCQlDMzg0Ljk3LDUuMzksMzc5LjU4LDAsMzcyLjkzOSwweiIvPg0KCQk8cGF0aCBkPSJNMTk3LjIxMywyNjguMjc2Yy00LjcwNCw0Ljc1Mi00LjcwNCwxMi40MzksMCwxNy4xNzljNC43MDQsNC43NTIsMTIuMzE5LDQuNzUyLDE3LjAxMSwwbDgyLjk5Ny04NC4yDQoJCQljNC42MzItNC42OCw0LjY4LTEyLjUxMiwwLTE3LjE5MWwtODMuMDA5LTg0LjJjLTQuNzA0LTQuNzUyLTEyLjMxOS00Ljc0LTE3LjAxMSwwYy00LjcwNCw0Ljc0LTQuNzA0LDEyLjQzOSwwLDE3LjE3OQ0KCQkJbDYyLjU1OCw2My40NkgxMi4wM0M1LjM5LDE4MC41MDMsMCwxODUuOTQsMCwxOTIuNjUzYzAsNi43MTMsNS4zOSwxMi4xNTEsMTIuMDMsMTIuMTUxaDI0Ny43NEwxOTcuMjEzLDI2OC4yNzZ6Ii8+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
+	            </a>
 	        </div>
 	    </div>
 	</header>
@@ -470,7 +476,7 @@
 	                </div>
 	                <div class="services__text">
 	                    <span>Венки, гробнички 600 грн и 900 грн</span>
-	                    <span>Вырубка многолетней травы + 100,
+	                    <span>Вырубка многолетней травы + 100,<br>
 	                        кустарника 150, деревьев 300 </span>
 	                    <span>
 	                        Окрашивание 200 (лавка, памятник или оградка)</span>
@@ -594,11 +600,11 @@
 	                <h6 class="footer__title">Документы</h6>
 	                <a href="privacy.html" target="_blank" class="footer__doc-link">Политика конфиденциальности</a>
 	                <a href="terms.html" target="_blank" class="footer__doc-link">Пользовательское соглашение</a>
-	                <a href="ethics.html" target="_blank" class="footer__doc-link">Этика заполения анкет</a>
+	                <a href="#" class="footer__doc-link">Этика заполения анкет</a>
 	            </div>
 	        </div>
 	        <div class="footer__copy">
-	            <p class="footer__copy-text">Copyright © 2020 Незабуду. Все права защищены.</p>
+	            <p class="footer__copy-text">Copyright © 2021 Незабуду. Все права защищены.</p>
 	        </div>
 	    </div>
 	</footer>
