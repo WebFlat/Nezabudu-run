@@ -10603,12 +10603,12 @@ function loadQuestionnaries() {
         var out = '';
         for (var key in data) {
             if (data[key].avatar == '') {
-                data[key].avatar = "./img/user-def.svg";
-                if (data[key].isPubl == true) {
-                    out += '<div class="user item"><div class="user__info"><img src="./img/famous.png"  alt="icon star" class="user__isPubl"><div class="user__avatar-wrap"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span> - </span><span class="user__die">' + data[key].die + '</span><span>гг</span></div><div class="user__text"><p class="user__about">' + data[key].about + '</p></div><div class="user__btns"><div class="user__likes"><img class="user__like-icon" src="./img/heart.svg" alt="heart"><span class="user__likeCount">' + data[key].likesCount + '</span></div><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a><img class="user__bookmark" src="./img/bookmark.svg" alt="bookmark"></div></div></div>';
+                data[key].avatar = "./img/user-def.png";
+                if (data[key].isLife == true) {
+                    out += '<div class="user item"><div class="user__info"><div class="user__avatar-wrap user__avatar-wrap--life"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span></div><div class="user__btns"><div class="user__likes"><img class="user__like-icon" src="./img/heart.svg" alt="heart"><span class="user__likeCount">' + data[key].likesCount + '</span></div><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
                 }
             } else {
-                out += '<div class="user item"><div class="user__info"><div class="user__avatar-wrap"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span> - </span><span class="user__die">' + data[key].die + '</span><span>гг</span></div><div class="user__text"><p class="user__about">' + data[key].about + '</p></div><div class="user__btns"><div class="user__likes"><img class="user__like-icon" src="./img/heart.svg" alt="heart"><span class="user__likeCount">' + data[key].likesCount + '</span></div><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a><img class="user__bookmark" src="./img/bookmark.svg" alt="bookmark"></div></div></div>';
+                out += '<div class="user item"><div class="user__info"><div class="user__avatar-wrap"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span> - </span><span class="user__die">' + data[key].die + '</span></div><img class="user__candle" src="./img/candle.png" alt="candle"><img class="user__candle-fire" src="./img/candle-fire.png" alt="candle-fire"></div><div class="user__btns"><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
             }
         }
         $('.personality-person__wrap').html(out);
@@ -10617,13 +10617,11 @@ function loadQuestionnaries() {
 
 
         //change icon like anb bookmarks when click*********
-        $('.user__bookmark').on('click', function () {
-            if ($(this).hasClass('active')) {
-                $(this).toggleClass('active');
-                $(this).attr('src', './img/bookmark.svg');
+        $('.user__candle').on('click', function () {
+            if ($(this).next().hasClass('active')) {
+                $(this).next().toggleClass('active');
             } else {
-                $(this).attr('src', './img/bookmark-black.svg');
-                $(this).toggleClass('active');
+                $(this).next().toggleClass('active');
 
             }
         })
@@ -10650,7 +10648,7 @@ function loadQuestionnaries() {
 
 loadQuestionnaries();
 
-
+//Init pagination**************************************
 setTimeout(function () {
 
     var items = $('.user');
@@ -11082,7 +11080,51 @@ jQuery(function ($) {
 		$preloader.delay(1000).fadeOut('slow');
 	});
 
+	//Зарегестрірованний юзер
+	var user = false;
 
+
+	//Icon user if login**************************
+	if (user) {
+		$('.enter').removeClass('active');
+		$('.loginIn').addClass('active');
+	} else {
+		$('.enter').addClass('active');
+		$('.loginIn').removeClass('active');
+	};
+	if (!user.avatar === '') {
+		$('.header__user').src = user.avatar;
+	};
+
+	//burger***************************************
+	function burgerShow() {
+		//User or guest
+		if (user) {
+			$('#menu-user').toggleClass('open');
+			$('.burger').toggleClass('closed');
+			$('body').toggleClass('no-scroll');
+			$('.burger__bg-body').toggleClass('show-bgBody');
+		} else {
+			$('#menu-guest').toggleClass('open');
+			$('.burger').toggleClass('closed');
+			$('body').toggleClass('no-scroll');
+			$('.burger__bg-body').toggleClass('show-bgBody');
+		}
+	};
+
+	$('.burger').click(function () {
+		burgerShow();
+
+	});
+	$('.nav__link').click(function () {
+		burgerShow();
+	});
+	$('.burger__bg-body').click(function (e) {
+		var container = $('.burger-wrap');
+		if (container.has(e.target).length === 0) {
+			burgerShow();
+		}
+	});
 
 
 
@@ -11108,27 +11150,6 @@ jQuery(function ($) {
 	})
 
 
-
-	//burger***************************************
-	function burgerShow() {
-		$('.burger-wrap').toggleClass('open');
-		$('.burger').toggleClass('closed');
-		$('body').toggleClass('no-scroll');
-		$('.burger__bg-body').toggleClass('show-bgBody');
-	}
-	$('.burger').click(function () {
-		burgerShow();
-
-	});
-	$('.nav__link').click(function () {
-		burgerShow();
-	});
-	$('.burger__bg-body').click(function (e) {
-		var container = $('.burger-wrap');
-		if (container.has(e.target).length === 0) {
-			burgerShow();
-		}
-	});
 
 
 
