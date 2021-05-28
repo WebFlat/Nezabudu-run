@@ -10606,6 +10606,67 @@ jQuery(function ($) {
 	});
 
 
+	//Зарегестрірованний юзер
+	var user = false;
+
+
+	//Icon user if login**************************
+	if (user) {
+		$('.enter').removeClass('active');
+		$('.loginIn').addClass('active');
+	} else {
+		$('.enter').addClass('active');
+		$('.loginIn').removeClass('active');
+	};
+	if (!user.avatar === '') {
+		$('.header__user').src = user.avatar;
+	};
+
+	//burger***************************************
+	function burgerShow() {
+		//User or guest
+		if (user) {
+			$('#menu-user').toggleClass('open');
+			$('.burger').toggleClass('closed');
+			$('body').toggleClass('no-scroll');
+			$('.burger__bg-body').toggleClass('show-bgBody');
+		} else {
+			$('#menu-guest').toggleClass('open');
+			$('.burger').toggleClass('closed');
+			$('body').toggleClass('no-scroll');
+			$('.burger__bg-body').toggleClass('show-bgBody');
+		}
+	};
+
+	$('.burger').click(function () {
+		burgerShow();
+
+	});
+	$('.nav__link').click(function () {
+		burgerShow();
+	});
+	$('.burger__bg-body').click(function (e) {
+		var container = $('.burger-wrap');
+		if (container.has(e.target).length === 0) {
+			burgerShow();
+		}
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	$('.data__relative').each(function () {
 		var $this = $(this), numberOfOptions = $(this).children('option').length;
 
@@ -10791,30 +10852,6 @@ jQuery(function ($) {
 
 
 
-
-	//burger***************************************
-	function burgerShow() {
-		$('.burger-wrap').toggleClass('open');
-		$('.burger').toggleClass('closed');
-		$('body').toggleClass('no-scroll');
-		$('.burger__bg-body').toggleClass('show-bgBody');
-	}
-	$('.burger').click(function () {
-		burgerShow();
-
-	});
-	$('.nav__link').click(function () {
-		burgerShow();
-	});
-	$('.burger__bg-body').click(function (e) {
-		var container = $('.burger-wrap');
-		if (container.has(e.target).length === 0) {
-			burgerShow();
-		}
-	});
-
-
-
 	//Search show***************************************
 
 	$('.search__btn-showHide').click(function () {
@@ -10826,12 +10863,14 @@ jQuery(function ($) {
 
 	//Set data to input from calendar******************
 	$('#user-both').change(function () {
-		var data = $('#user-both').val();
-		$('.user__both').val(data);
+		var dataBoth = $('#user-both').val();
+		dataBoth = dataBoth.split('-').reverse().join('-');
+		$('.user__both').val(dataBoth);
 	});
 	$('#user-die').change(function () {
-		var data = $('#user-die').val();
-		$('.user__die').val(data);
+		var dataDie = $('#user-die').val();
+		dataDie = dataDie.split('-').reverse().join('-');
+		$('.user__die').val(dataDie);
 	});
 
 
@@ -10894,7 +10933,7 @@ jQuery(function ($) {
 		} else {
 			$('.about__gal-wrap--def').show();
 		}
-	}
+	};
 
 	$('#addFoto').change(function (e) {
 		var input = e.target;
@@ -10910,7 +10949,14 @@ jQuery(function ($) {
 		reader.readAsDataURL(input.files[0]);
 
 
-	})
+	});
+
+
+
+	$('.user__remind').click(function (e) {
+		e.preventDefault();
+		$(this).toggleClass('active');
+	});
 
 
 
