@@ -10607,7 +10607,8 @@ jQuery(function ($) {
 
 
 	//Зарегестрірованний юзер
-	var user = false;
+	var user = true;
+	var user_data = false;
 
 
 	//Icon user if login**************************
@@ -10615,12 +10616,17 @@ jQuery(function ($) {
 		$('.enter').removeClass('active');
 		$('.loginIn').addClass('active');
 	} else {
-		$('.enter').addClass('active');
-		$('.loginIn').removeClass('active');
+		window.location.href = '../index.html';
 	};
+	//If not empty foto user
 	if (!user.avatar === '') {
 		$('.header__user').src = user.avatar;
 	};
+
+
+
+	//Icon not active*****************************
+
 
 	//burger***************************************
 	function burgerShow() {
@@ -10667,50 +10673,50 @@ jQuery(function ($) {
 
 
 
-	$('.data__relative').each(function () {
-		var $this = $(this), numberOfOptions = $(this).children('option').length;
+	// $('.data__relative').each(function () {
+	// 	var $this = $(this), numberOfOptions = $(this).children('option').length;
 
-		$this.addClass('select-hidden');
-		$this.wrap('<div class="select"></div>');
-		$this.after('<div class="select-styled"></div>');
+	// 	$this.addClass('select-hidden');
+	// 	$this.wrap('<div class="select"></div>');
+	// 	$this.after('<div class="select-styled"></div>');
 
-		var $styledSelect = $this.next('div.select-styled');
-		$styledSelect.text($this.children('option').eq(0).text());
+	// 	var $styledSelect = $this.next('div.select-styled');
+	// 	$styledSelect.text($this.children('option').eq(0).text());
 
-		var $list = $('<ul />', {
-			'class': 'select-options'
-		}).insertAfter($styledSelect);
+	// 	var $list = $('<ul />', {
+	// 		'class': 'select-options'
+	// 	}).insertAfter($styledSelect);
 
-		for (var i = 0; i < numberOfOptions; i++) {
-			$('<li />', {
-				text: $this.children('option').eq(i).text(),
-				rel: $this.children('option').eq(i).val()
-			}).appendTo($list);
-		}
+	// 	for (var i = 0; i < numberOfOptions; i++) {
+	// 		$('<li />', {
+	// 			text: $this.children('option').eq(i).text(),
+	// 			rel: $this.children('option').eq(i).val()
+	// 		}).appendTo($list);
+	// 	}
 
-		var $listItems = $list.children('li');
+	// 	var $listItems = $list.children('li');
 
-		$styledSelect.click(function (e) {
-			e.stopPropagation();
-			$('div.select-styled.select-active').not(this).each(function () {
-				$(this).removeClass('select-active').next('ul.select-options').hide().css('height', '0');
-			});
-			$(this).toggleClass('select-active').next('ul.select-options').toggle().css('height', 'auto');
-		});
+	// 	$styledSelect.click(function (e) {
+	// 		e.stopPropagation();
+	// 		$('div.select-styled.select-active').not(this).each(function () {
+	// 			$(this).removeClass('select-active').next('ul.select-options').hide().css('height', '0');
+	// 		});
+	// 		$(this).toggleClass('select-active').next('ul.select-options').toggle().css('height', 'auto');
+	// 	});
 
-		$listItems.click(function (e) {
-			e.stopPropagation();
-			$styledSelect.text($(this).text()).removeClass('select-active');
-			$this.val($(this).attr('rel'));
-			$list.hide();
-		});
+	// 	$listItems.click(function (e) {
+	// 		e.stopPropagation();
+	// 		$styledSelect.text($(this).text()).removeClass('select-active');
+	// 		$this.val($(this).attr('rel'));
+	// 		$list.hide();
+	// 	});
 
-		$(document).click(function () {
-			$styledSelect.removeClass('select-active');
-			$list.hide();
-		});
+	// 	$(document).click(function () {
+	// 		$styledSelect.removeClass('select-active');
+	// 		$list.hide();
+	// 	});
 
-	});
+	// });
 	$('#lang').each(function () {
 		var $this = $(this), numberOfOptions = $(this).children('option').length;
 
@@ -10885,11 +10891,11 @@ jQuery(function ($) {
 	// 	$('.profile__about').toggleClass('settings');
 	// })
 
-	$('.about__show-item').click(function (event) {
-		$(this).addClass('active');
-		$(this).siblings().removeClass('active');
-		$(this).next($(this)[0]).addClass('active');
-	});
+	// $('.about__show-item').click(function (event) {
+	// 	$(this).addClass('active');
+	// 	$(this).siblings().removeClass('active');
+	// 	$(this).next($(this)[0]).addClass('active');
+	// });
 
 
 
@@ -10897,18 +10903,22 @@ jQuery(function ($) {
 
 	//show questionnarie item menu right********************
 	$('.data__form').not(':first').hide();
-	$('.menu__item').click(function () {
-		if ($(window).width() < 935) {
-			$('.profile__about').hide();
-		}
-		$(this).addClass('active-items').siblings().removeClass('active-items');
-		$('.data__form').hide().eq($(this).index()).fadeIn();
-		// $('.data__form-text').focus();
-		if ($(this).index() == 0) {
-			$('.profile__about').show();
-		}
-
-	});
+	if ($(window).width() < 935) {
+		$('.profile__about').hide();
+	};
+	//Opacity tabs when not data user******************************
+	if (user_data) {
+		$('.menu__item').click(function () {
+			$(this).addClass('active-items').siblings().removeClass('active-items');
+			$('.data__form').hide().eq($(this).index()).fadeIn();
+			// $('.data__form-text').focus();
+			if ($(this).index() == 0) {
+				$('.profile__about').show();
+			}
+		});
+	} else {
+		$('.menu__item').not('.main').css('opacity', '.3').css('pointer-events', 'none');
+	};
 
 	//upload avatar*************************************
 	$('.about__upload-inpt--ava').change(function (e) {
@@ -10952,10 +10962,21 @@ jQuery(function ($) {
 	});
 
 
-
+	//Remind both and die*****************************************
 	$('.user__remind').click(function (e) {
 		e.preventDefault();
 		$(this).toggleClass('active');
+	});
+
+	$('.user__die').click(function (e) {
+		e.preventDefault();
+		$('#user-die').click();
+
+	});
+	$('.user__both').click(function (e) {
+		e.preventDefault();
+		$('#user-both').click();
+
 	});
 
 

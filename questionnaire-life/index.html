@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>НЕЗАБУДУ-сервис с помощью которого ты легко можешь найти место захоронения ушедших близких, знакомых и значимых людей твоего города, страны и сохранить информацию о месте захоронения и жизни.</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#92e4fc">
+	<meta name="theme-color" content="#ffffff">
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	
+	<link rel="stylesheet" href="css/styles.min.css">
+		
+	<meta name="description" content="НЕЗАБУДУ-сервис с помощью которого ты легко можешь найти место захоронения ушедших близких, знакомых и значимых людей твоего города, страны и сохранить информацию о месте захоронения и жизни.">
+</head>
+
+<body>
+
+	<header class="header">
+	    <div class="wrapper">
+	        <div class="burger__bg-body"></div>
+	        <div class="burger-wrap" id="menu-guest">
+	            <div class="burger-wrap__links">
+	                <ul>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/008-user.svg" alt="persons">
+	                        </div>
+	                        <a href="#" class="nav__link enter">Создать анкету
+	                        </a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/007-eye.svg" alt="star">
+	                        </div>
+	                        <a href="all-person-page/index.html" class="nav__link">Поиск по всем анкетам</a>
+	                    </li>
+	                    <!-- <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/003-placeholder.svg" alt="like">
+	                        </div>
+	                        <a href="#search" class="nav__link">Найти место захоронения</a>
+	                    </li> -->
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/005-favorites.svg" alt="persons">
+	                        </div>
+	                        <a href="person-page/index.html" class="nav__link">Известные личности</a>
+	                    </li>
+	                </ul>
+	                <ul class="withBorder">
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/001-ecology.svg" alt="peace">
+	                        </div>
+	                        <a href="care-page/index.html" class="nav__link">Уход захоронений</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	
+	                            <img class="burger-wrap__icon" src="./img/qr-code-small.svg" alt="qr code">
+	                        </div>
+	                        <a href="qr-page/index.html" class="nav__link">QR код Наклейка
+	                        </a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	
+	                            <img class="burger-wrap__icon" src="./img/009-molecule.svg" alt="people">
+	                        </div>
+	                        <a href="#volunteers" class="nav__link">Стать партнером</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	
+	                            <img class="burger-wrap__icon" src="./img/010-.svg" alt="people">
+	                        </div>
+	                        <a href="#volunteers" class="nav__link">Стать волонтером</a>
+	                    </li>
+	                </ul>
+	            </div>
+	        </div>
+	        <div class="burger-wrap" id="menu-user">
+	            <div class="burger-wrap__links">
+	                <form action="GET" class="burger-search">
+	                    <input class="burger-search__input" type="text" placeholder="Поиск по всем анкетам">
+	                    <img src="./img/search-burger.png" alt="search" class="burger-search__search">
+	                </form>
+	                <ul class="withBorder">
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/icon-questionar.png" alt="questionar">
+	                        </div>
+	                        <a href="cabinet-page/index.html" class="nav__link enter">Мои анктеты</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/bookmark.png" alt="bookmark">
+	                        </div>
+	                        <a href="cabinet-page/index.html" class="nav__link">Анкеты в закладках</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/alarm-bell.png" alt="alarm">
+	                        </div>
+	                        <a href="cabinet-page/index.html" class="nav__link">Уведомления</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/icon-all-questionar.png" alt="questionar">
+	                        </div>
+	                        <a href="person-page/index.html" class="nav__link">Все анкеты</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/icon-popular.png" alt="popular">
+	                        </div>
+	                        <a href="person-page/index.html" class="nav__link">Известные личности</a>
+	                    </li>
+	                </ul>
+	                <ul class="withBorder">
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/qr-code-small.svg" alt="qr code">
+	                        </div>
+	                        <a href="qr-page/index.html" class="nav__link">QR код Наклейка</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/001-ecology.svg" alt="peace">
+	                        </div>
+	                        <a href="care-page/index.html" class="nav__link">Уборка захоронений</a>
+	                    </li>
+	                </ul>
+	                <ul class="withBorder">
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/icon-settings.png" alt="settings">
+	                        </div>
+	                        <a href="cabinet-page/index.html" class="nav__link">Настройки</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	
+	                            <img class="burger-wrap__icon" src="./img/icon-logout.png" alt="logout">
+	                        </div>
+	                        <a href="#" id="logout" class="nav__link">Выход</a>
+	                    </li>
+	                </ul>
+	            </div>
+	        </div>
+	        <div class="header__wrap">
+	            <div class="wrap-menu">
+	                <div class="burger">
+	                    <div class="burger__line"></div>
+	                    <div class="burger__line"></div>
+	                    <div class="burger__line"></div>
+	                </div>
+	                <a href="#" class="header__title">
+	                    <h1 class="header__link">НЕЗАБУДУ</h1>
+	                </a>
+	            </div>
+	            <select class="select__options--lang" id="lang">
+	                <option value="hide">RU</option>
+	                <option value="Український" rel="icon-temperature"><a href="#">UKR</a></option>
+	                <option value="Русский">RU</option>
+	            </select>
+	            <span class="header__enter-link enter active">
+	                <span>Вход</span>
+	                <img alt="enter"
+	                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzg0Ljk3IDM4NC45NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzg0Ljk3IDM4NC45NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGcgaWQ9IlNpZ25fSW4iPg0KCQk8cGF0aCBkPSJNMzcyLjkzOSwwSDIwNC41MTVjLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE1Ni4zOTR2MzM2Ljg0OEgyMDQuNTE1DQoJCQljLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE2OC40MjRjNi42NDEsMCwxMi4wMy01LjM5LDEyLjAzLTEyLjAzVjEyLjAzDQoJCQlDMzg0Ljk3LDUuMzksMzc5LjU4LDAsMzcyLjkzOSwweiIvPg0KCQk8cGF0aCBkPSJNMTk3LjIxMywyNjguMjc2Yy00LjcwNCw0Ljc1Mi00LjcwNCwxMi40MzksMCwxNy4xNzljNC43MDQsNC43NTIsMTIuMzE5LDQuNzUyLDE3LjAxMSwwbDgyLjk5Ny04NC4yDQoJCQljNC42MzItNC42OCw0LjY4LTEyLjUxMiwwLTE3LjE5MWwtODMuMDA5LTg0LjJjLTQuNzA0LTQuNzUyLTEyLjMxOS00Ljc0LTE3LjAxMSwwYy00LjcwNCw0Ljc0LTQuNzA0LDEyLjQzOSwwLDE3LjE3OQ0KCQkJbDYyLjU1OCw2My40NkgxMi4wM0M1LjM5LDE4MC41MDMsMCwxODUuOTQsMCwxOTIuNjUzYzAsNi43MTMsNS4zOSwxMi4xNTEsMTIuMDMsMTIuMTUxaDI0Ny43NEwxOTcuMjEzLDI2OC4yNzZ6Ii8+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
+	            </span>
+	            <a href="cabinet-page/index.html" class="header__enter-link loginIn">
+	                <!-- <span>Вход</span> -->
+	                <div class="header__user-wrap">
+	                    <img class="header__user" src="./img/user-def-black.png" alt="user">
+	                </div>
+	                <img class="header__user-enter" alt="enter"
+	                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzg0Ljk3IDM4NC45NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzg0Ljk3IDM4NC45NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGcgaWQ9IlNpZ25fSW4iPg0KCQk8cGF0aCBkPSJNMzcyLjkzOSwwSDIwNC41MTVjLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE1Ni4zOTR2MzM2Ljg0OEgyMDQuNTE1DQoJCQljLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE2OC40MjRjNi42NDEsMCwxMi4wMy01LjM5LDEyLjAzLTEyLjAzVjEyLjAzDQoJCQlDMzg0Ljk3LDUuMzksMzc5LjU4LDAsMzcyLjkzOSwweiIvPg0KCQk8cGF0aCBkPSJNMTk3LjIxMywyNjguMjc2Yy00LjcwNCw0Ljc1Mi00LjcwNCwxMi40MzksMCwxNy4xNzljNC43MDQsNC43NTIsMTIuMzE5LDQuNzUyLDE3LjAxMSwwbDgyLjk5Ny04NC4yDQoJCQljNC42MzItNC42OCw0LjY4LTEyLjUxMiwwLTE3LjE5MWwtODMuMDA5LTg0LjJjLTQuNzA0LTQuNzUyLTEyLjMxOS00Ljc0LTE3LjAxMSwwYy00LjcwNCw0Ljc0LTQuNzA0LDEyLjQzOSwwLDE3LjE3OQ0KCQkJbDYyLjU1OCw2My40NkgxMi4wM0M1LjM5LDE4MC41MDMsMCwxODUuOTQsMCwxOTIuNjUzYzAsNi43MTMsNS4zOSwxMi4xNTEsMTIuMDMsMTIuMTUxaDI0Ny43NEwxOTcuMjEzLDI2OC4yNzZ6Ii8+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
+	            </a>
+	        </div>
+	    </div>
+	</header>
+	<div id="p_prldr">
+	    <div class="contpre">
+	        <span class="contpre__logo">НЕЗАБУДУ</span></br>
+	        <span class="svg_anm"></span>
+	    </div>
+	</div>
+	<!-- контент страницы -->
+	<section class="life">
+		<div class="life-profile">
+		    <section class="profile__menu profile__menu--mob">
+		        <section class="profile__menu profile__menu--mob">
+		            <div class="menu__items menu__items--mob">
+		                <a href="#" class="menu__item menu__item--mob active-items main">
+		                    <img src="./img/item1.png" alt="icon" class="menu__img menu__img--mob">
+		                </a>
+		                <a href="#" class="menu__item menu__item--mob">
+		                    <img src="./img/item2.png" alt="icon" class="menu__img menu__img--mob">
+		                </a>
+		                <a href="#" class="menu__item menu__item--mob">
+		                    <img src="./img/item3.png" alt="icon" class="menu__img menu__img--mob">
+		                </a>
+		                <a href="#" class="menu__item menu__item--mob">
+		                    <img src="./img/icon4.png" alt="icon" class="menu__img menu__img--mob">
+		                </a>
+		                <a href="#" class="menu__item menu__item--mob">
+		                    <img src="./img/icon5.png" alt="icon" class="menu__img menu__img--mob">
+		                </a>
+		                <a href="#" class="menu__item menu__item--mob">
+		                    <img src="./img/icon6.png" alt="icon" class="menu__img menu__img--mob">
+		                </a>
+		                <a href="#" class="menu__item menu__item--mob">
+		                    <img src="./img/icon7.png" alt="icon" class="menu__img menu__img--mob">
+		                </a>
+		            </div>
+		        </section>
+		    </section>
+		    <div class="profile__wrap">
+		        <section class="profile__data">
+		            <div class="data__form-tabs">
+		                <article class="brief data__tab">
+		                    <div class="wrapper">
+		                        <div class="brief__user">
+		                            <div class="brief__img-wrap">
+		                                <img class="brief__icon" src="./img/dad.jpg" alt=" user">
+		                            </div>
+		                            <div class="brief__info">
+		                                <img src="./img/candle.png" alt="candle" class="brief__candle" id="candle">
+		                                <img src="./img/candle-fire.png" alt="candle" class="brief__candle brief__candle--fire"
+		                                    id="candleFire">
+		                                <h6 class="brief__titles">
+		                                    <span class="brief__name-user" id="user-surname">Савельев</span>
+		                                    <span class="brief__surname" id="user-name">Илья</span>
+		                                    <span class="brief__patronimyc" id="user-patronimyc">Михайлович
+		                                    </span>
+		                                </h6>
+		                                <div class="brief__years">
+		                                    <span class="brief__both">11.10.1952</span>
+		                                    <span> - </span>
+		                                    <span class="brief__die">11.10.1952</span>
+		                                    <span class="brief__life-long">
+		                                        (
+		                                        <span class="brief__life-val" id="user-old">35</span>
+		                                        )
+		                                    </span>
+		                                </div>
+		                                <p class="brief__text" id="user-about-short">
+		                                    Художник, любящий дедушка,
+		                                    путешественник, который
+		                                    занимался любимым делом.
+		                                </p>
+		                                <div class="brief__bookmarks">
+		                                    <img class="brief__bookmark brief__bookmark--small" src="./img/my-boockmark.png"
+		                                        alt="bookmark">
+		                                    <img class="brief__bookmark" src="./img/bookmark.svg" alt="bookmark" id="bookmark">
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="brief__timelaps">
+		                        <span class="brief__start">
+		                            Рождение
+		                            <span class="brief__start-both">11.10.1952</span>
+		                            <span>,</span>
+		                            <span class="brief__city">
+		                                Мариуполь
+		                            </span>
+		                        </span>
+		                        <div class="brief__section">
+		                            <div class="brief__block1">
+		                                <span class="brief__period">
+		                                    0-7
+		                                </span>
+		                            </div>
+		                            <div class="brief__block2">
+		                                <a href="#childhood" class="brief__name">
+		                                    Детство
+		                                </a>
+		                            </div>
+		                            <div class="brief__block3">
+		
+		                            </div>
+		                            <div class="brief__block4">
+		                                <div class="brief__gall">
+		                                    <div class="brief__photo-wrap">
+		                                        <img src="./img/dad.jpg" alt="photo" class="brief__photo">
+		                                    </div>
+		                                    <div class="brief__photo-wrap">
+		                                        <img src="./img/dad.jpg" alt="photo" class="brief__photo">
+		                                    </div>
+		                                    <div class="brief__photo-wrap">
+		                                        <img src="./img/dad.jpg" alt="photo" class="brief__photo">
+		                                    </div>
+		                                    <div class="brief__photo-wrap">
+		                                        <img src="./img/dad.jpg" alt="photo" class="brief__photo">
+		                                    </div>
+		                                    <div class="brief__photo-wrap">
+		                                        <img src="./img/dad.jpg" alt="photo" class="brief__photo">
+		                                    </div>
+		                                </div>
+		                                <p class="brief__descr">
+		                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque adipisci provident
+		                                    inventore, exercitationem quod accusamus sequi similique? Repellendus pariatur
+		                                    magnam placeat, velit repudiandae consequatur quod voluptatum a amet ex libero esse
+		                                    commodi, delectus facilis deserunt accusamus officia iste quia reprehenderit enim?
+		                                    Nostrum, dolorum
+		                                </p>
+		                            </div>
+		                        </div>
+		                        <div class="brief__section">
+		                            <div class="brief__block1">
+		                                <span class="brief__period">
+		                                    8-21
+		                                </span>
+		                            </div>
+		                            <div class="brief__block2">
+		                                <a href="#preyouth" class="brief__name">
+		                                    Юность
+		                                </a>
+		                            </div>
+		                            <div class="brief__block3">
+		
+		                            </div>
+		                            <div class="brief__block4">
+		
+		                            </div>
+		                        </div>
+		                        <div class="brief__section">
+		                            <div class="brief__block1">
+		                                <span class="brief__period">
+		                                    22-40
+		                                </span>
+		                            </div>
+		                            <div class="brief__block2">
+		                                <a href="#youth" class="brief__name">
+		                                    Молодость
+		                                </a>
+		                            </div>
+		                            <div class="brief__block3">
+		
+		                            </div>
+		                            <div class="brief__block4">
+		                                <div class="brief__gall">
+		                                    <div class="brief__photo-wrap">
+		                                        <img src="./img/dad.jpg" alt="photo" class="brief__photo">
+		                                    </div>
+		                                    <div class="brief__photo-wrap">
+		                                        <img src="./img/dad.jpg" alt="photo" class="brief__photo">
+		                                    </div>
+		                                    <div class="brief__photo-wrap">
+		                                        <img src="./img/dad.jpg" alt="photo" class="brief__photo">
+		                                    </div>
+		                                </div>
+		                                <p class="brief__descr">
+		                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque adipisci provident
+		                                    inventore, exercitationem quod accusamus sequi similique? Repellendus pariatur
+		                                    magnam placeat, velit repudiandae consequatur quod voluptatum a amet ex libero esse
+		                                    commodi, delectus facilis deserunt accusamus officia iste quia reprehenderit enim?
+		                                    Nostrum, dolorum
+		                                </p>
+		                            </div>
+		                        </div>
+		                        <div class="brief__section">
+		                            <div class="brief__block1">
+		                                <span class="brief__period">
+		                                    41-65
+		                                </span>
+		                            </div>
+		                            <div class="brief__block2">
+		                                <a href="#ripeness" class="brief__name">
+		                                    Зрелость
+		                                </a>
+		                            </div>
+		                            <div class="brief__block3">
+		
+		                            </div>
+		                            <div class="brief__block4">
+		                                <div class="brief__gall">
+		                                    <div class="brief__photo-wrap">
+		                                        <img src="./img/dad.jpg" alt="photo" class="brief__photo">
+		                                    </div>
+		                                    <div class="brief__photo-wrap">
+		                                        <img src="./img/dad.jpg" alt="photo" class="brief__photo">
+		                                    </div>
+		                                </div>
+		                                <p class="brief__descr">
+		                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque adipisci provident
+		                                    inventore, exercitationem quod accusamus sequi similique? Repellendus pariatur
+		                                    magnam placeat, velit repudiandae consequatur quod voluptatum a amet ex libero esse
+		                                    commodi, delectus facilis deserunt accusamus officia iste quia reprehenderit enim?
+		                                    Nostrum, dolorum
+		                                </p>
+		                            </div>
+		                        </div>
+		                        <div class="brief__section">
+		                            <div class="brief__block1">
+		                                <span class="brief__period">
+		                                    66-99
+		                                </span>
+		                            </div>
+		                            <div class="brief__block2">
+		                                <a href="#elderhood" class="brief__name">
+		                                    Преклонный возраст
+		                                </a>
+		                            </div>
+		                            <div class="brief__block3">
+		                            </div>
+		                            <div class="brief__block4">
+		                                <div class="brief__gall">
+		                                    <div class="brief__photo-wrap">
+		
+		                                    </div>
+		                                </div>
+		                                <p class="brief__descr">
+		                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque adipisci provident
+		                                    inventore, exercitationem quod accusamus sequi similique? Repellendus pariatur
+		                                    magnam placeat, velit repudiandae consequatur quod voluptatum a amet ex libero esse
+		                                    commodi, delectus facilis deserunt accusamus officia iste quia reprehenderit enim?
+		                                    Nostrum, dolorum
+		                                </p>
+		                            </div>
+		                        </div>
+		                        <span class="brief__end">
+		                            Смерть
+		                            <span class="brief__start-both">11.10.1952</span>
+		                            <span>,</span>
+		                            <span class="brief__city">
+		                                Мариуполь
+		                            </span>
+		                        </span>
+		                        <span class="brief__end">
+		                            Причина смерти:
+		                            <span class="brief__cause" id="cause">
+		                                Рак
+		                            </span>
+		                        </span>
+		                    </div>
+		                    <div class="wrapper">
+		                        <div class="brief__location">
+		                            <span class="brief__cemetery">
+		                                Кладбище:
+		                                <span id="cemetery">Старокрымское</span>
+		                            </span>
+		                            <p class="brief__values">
+		                                <span>Сектор: <span id="sector">25</span></span>
+		                                <span>Квадрат: <span id="sector">133</span></span>
+		                                <br>
+		                                <span>Ряд: <span id="sector">734</span></span>
+		                                <span>Номер: <span id="sector">555555</span></span>
+		
+		                            </p>
+		                            <div class="brief__loc-wrap">
+		                                <!-- <a href=" https://goo.gl/maps/HV2Njc5PkkuMWdDM8" class="brief__google-link" target="_blank"></a> -->
+		                                <div class="brief__loc-prev">
+		                                    <iframe
+		                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2355.255729576177!2d37.4893909254376!3d47.141695095960316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDA4JzMwLjIiTiAzN8KwMjknMjguOCJF!5e0!3m2!1sru!2sua!4v1620509552115!5m2!1sru!2sua"
+		                                        style="border:0;" allowfullscreen="true" loading="lazy"></iframe>
+		                                </div>
+		                            </div>
+		                        </div>
+		
+		                    </div>
+		                </article>
+		                <article class="story data__tab wrapper">
+		                    <span class="brief__start">
+		                        Рождение
+		                        <span class="brief__start-both">11.10.1952</span>
+		                        <span>,</span>
+		                        <span class="brief__city">
+		                            Мариуполь
+		                        </span>
+		                    </span>
+		                    <div class="story__section" id="childhood">
+		                        <h6 class="story__title">
+		                            Детство
+		                        </h6>
+		                        <div class="story__text">
+		                            <p class="story__descr">
+		                                Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.
+		                            </p>
+		                            <button class="more">Подробнее</button>
+		                        </div>
+		                        <div class="story__content">
+		                            <span class="story__date">
+		                                18.05.1987
+		                            </span>
+		                            <div class="story__img-wrap">
+		                                <img src="./img/dad.jpg" alt="photo" class="story__pict">
+		                            </div>
+		                            <span class="story__content-title">
+		                                В детском садике
+		                            </span>
+		                            <div class="story__text story__text--content">
+		                                <p class="story__descr">
+		                                    Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.
+		                                </p>
+		                                <button class="more">Подробнее</button>
+		                            </div>
+		                        </div>
+		                        <div class="story__content">
+		                            <span class="story__date">
+		                                18.05.1987
+		                            </span>
+		                            <span class="story__content-title">
+		                                У бабушки в деревне
+		                            </span>
+		                            <div class="story__text story__text--content">
+		                                <p class="story__descr">
+		                                    Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.
+		                                </p>
+		                                <button class="more">Подробнее</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="story__section" id="preyouth">
+		                        <h6 class="story__title">
+		                            Юность
+		                        </h6>
+		                        <div class="story__text">
+		                            <p class="story__descr">
+		                                Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.
+		                            </p>
+		                            <button class="more">Подробнее</button>
+		                        </div>
+		                        <div class="story__content">
+		                            <span class="story__date">
+		                                18.05.1987
+		                            </span>
+		                            <div class="story__img-wrap">
+		                                <img src="./img/dad.jpg" alt="photo" class="story__pict">
+		                            </div>
+		                            <span class="story__content-title">
+		                                В детском садике
+		                            </span>
+		                            <div class="story__text story__text--content">
+		                                <p class="story__descr">
+		                                    Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.
+		                                </p>
+		                                <button class="more">Подробнее</button>
+		                            </div>
+		                        </div>
+		                        <div class="story__content">
+		                            <span class="story__date">
+		                                18.05.1987
+		                            </span>
+		                            <span class="story__content-title">
+		                                У бабушки в деревне
+		                            </span>
+		                            <div class="story__text story__text--content">
+		                                <p class="story__descr">
+		                                    Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.
+		                                </p>
+		                                <button class="more">Подробнее</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="story__section" id="youth">
+		                        <h6 class="story__title">
+		                            Молодость
+		                        </h6>
+		                        <div class="story__text">
+		                            <p class="story__descr">
+		                                Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.
+		                            </p>
+		                            <button class="more">Подробнее</button>
+		                        </div>
+		                        <div class="story__content">
+		                            <span class="story__date">
+		                                18.05.1987
+		                            </span>
+		                            <div class="story__img-wrap">
+		                                <img src="./img/dad.jpg" alt="photo" class="story__pict">
+		                            </div>
+		                            <span class="story__content-title">
+		                                В детском садике
+		                            </span>
+		                            <div class="story__text story__text--content">
+		                                <p class="story__descr">
+		                                    Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.
+		                                </p>
+		                                <button class="more">Подробнее</button>
+		                            </div>
+		                        </div>
+		                        <div class="story__content">
+		                            <span class="story__date">
+		                                18.05.1987
+		                            </span>
+		                            <span class="story__content-title">
+		                                У бабушки в деревне
+		                            </span>
+		                            <div class="story__text story__text--content">
+		                                <p class="story__descr">
+		                                    Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.
+		                                </p>
+		                                <button class="more">Подробнее</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="story__section" id="ripeness">
+		                        <h6 class="story__title">
+		                            Зрелость
+		                        </h6>
+		                        <div class="story__text">
+		                            <p class="story__descr">
+		                                Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.
+		                            </p>
+		                            <button class="more">Подробнее</button>
+		                        </div>
+		                        <div class="story__content">
+		                            <span class="story__date">
+		                                18.05.1987
+		                            </span>
+		                            <div class="story__img-wrap">
+		                                <img src="./img/dad.jpg" alt="photo" class="story__pict">
+		                            </div>
+		                            <span class="story__content-title">
+		                                В детском садике
+		                            </span>
+		                            <div class="story__text story__text--content">
+		                                <p class="story__descr">
+		                                    Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.
+		                                </p>
+		                                <button class="more">Подробнее</button>
+		                            </div>
+		                        </div>
+		                        <div class="story__content">
+		                            <span class="story__date">
+		                                18.05.1987
+		                            </span>
+		                            <span class="story__content-title">
+		                                У бабушки в деревне
+		                            </span>
+		                            <div class="story__text story__text--content">
+		                                <p class="story__descr">
+		                                    Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.
+		                                </p>
+		                                <button class="more">Подробнее</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="story__section" id="elderhood">
+		                        <h6 class="story__title">
+		                            Преклонный возраст
+		                        </h6>
+		                        <div class="story__text">
+		                            <p class="story__descr">
+		                                Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                школу, учился 9 классов, на выходных
+		                                был у бабушки с дедушкой.
+		                            </p>
+		                            <button class="more">Подробнее</button>
+		                        </div>
+		                        <div class="story__content">
+		                            <span class="story__date">
+		                                18.05.1987
+		                            </span>
+		                            <div class="story__img-wrap">
+		                                <img src="./img/dad.jpg" alt="photo" class="story__pict">
+		                            </div>
+		                            <span class="story__content-title">
+		                                В детском садике
+		                            </span>
+		                            <div class="story__text story__text--content">
+		                                <p class="story__descr">
+		                                    Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.
+		                                </p>
+		                                <button class="more">Подробнее</button>
+		                            </div>
+		                        </div>
+		                        <div class="story__content">
+		                            <span class="story__date">
+		                                18.05.1987
+		                            </span>
+		                            <span class="story__content-title">
+		                                У бабушки в деревне
+		                            </span>
+		                            <div class="story__text story__text--content">
+		                                <p class="story__descr">
+		                                    Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.
+		                                </p>
+		                                <button class="more">Подробнее</button>
+		                            </div>
+		                        </div>
+		                        <div class="story__content">
+		                            <span class="story__date">
+		                                18.05.1987
+		                            </span>
+		                            <span class="story__content-title">
+		                                У бабушки в деревне
+		                            </span>
+		                            <div class="story__text story__text--content">
+		                                <p class="story__descr">
+		                                    Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.
+		                                </p>
+		                                <button class="more">Подробнее</button>
+		                            </div>
+		                        </div>
+		                        <div class="story__content">
+		                            <span class="story__date">
+		                                18.05.1987
+		                            </span>
+		                            <span class="story__content-title">
+		                                У бабушки в деревне
+		                            </span>
+		                            <div class="story__text story__text--content">
+		                                <p class="story__descr">
+		                                    Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.Детство прошло возле моря, ходил в
+		                                    школу, учился 9 классов, на выходных
+		                                    был у бабушки с дедушкой.
+		                                </p>
+		                                <button class="more">Подробнее</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <span class="brief__end">
+		                        Смерть
+		                        <span class="brief__start-both">11.10.1952</span>
+		                        <span>,</span>
+		                        <span class="brief__city">
+		                            Мариуполь
+		                        </span>
+		                    </span>
+		                </article>
+		            </div>
+		        </section>
+		        <section class="profile__menu">
+		            <div class="menu__items">
+		                <a href="#" class="menu__item active-items main">
+		                    <div class="menu__description">
+		                        <span>Форма с данными</span>
+		                    </div>
+		                    <img src="./img/item1.png" alt="icon" class="menu__img">
+		                </a>
+		                <a href="#" class="menu__item">
+		                    <div class="menu__description">
+		                        <span>Родственники</span>
+		                    </div>
+		                    <img src="./img/item2.png" alt="icon" class="menu__img">
+		                </a>
+		                <a href="#" class="menu__item">
+		                    <div class="menu__description">
+		                        <span>Главные увлечения в жизни</span>
+		                    </div>
+		                    <img src="./img/item3.png" alt="icon" class="menu__img">
+		                </a>
+		                <a href="#" class="menu__item">
+		                    <div class="menu__description">
+		                        <span>Характер,каким был для семьи</span>
+		                    </div>
+		                    <img src="./img/icon4.png" alt="icon" class="menu__img">
+		                </a>
+		                <a href="#" class="menu__item">
+		                    <div class="menu__description">
+		                        <span>Какие ценности нес и чему научил</span>
+		                    </div>
+		                    <img src="./img/icon5.png" alt="icon" class="menu__img">
+		                </a>
+		                <a href="#" class="menu__item">
+		                    <div class="menu__description">
+		                        <span>Интересные истории,что запомнилось</span>
+		                    </div>
+		                    <img src="./img/icon6.png" alt="icon" class="menu__img">
+		                </a>
+		                <a href="#" class="menu__item">
+		                    <div class="menu__description">
+		                        <span>Чем гордитесь</span>
+		                    </div>
+		                    <img src="./img/icon7.png" alt="icon" class="menu__img">
+		                </a>
+		            </div>
+		        </section>
+		    </div>
+		</div>
+		<footer class="footer">
+		    <div class="wrapper">
+		        <div class="footer__info">
+		            <div class="footer__contacts">
+		                <h6 class="footer__title">Контакты</h6>
+		                <nav class="footer__social">
+		                    <a href="https://www.facebook.com/nezabudu.com.ua/" target="_blank" class="footer__soc-link">
+		                        <!-- facebook -->
+		                        <!-- <img alt="facebook" src="data:image/svg+xml;base64,PHN2ZyBpZD0iQm9sZCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjQgMjQiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTE1Ljk5NyAzLjk4NWgyLjE5MXYtMy44MTZjLS4zNzgtLjA1Mi0xLjY3OC0uMTY5LTMuMTkyLS4xNjktMy4xNTkgMC01LjMyMyAxLjk4Ny01LjMyMyA1LjYzOXYzLjM2MWgtMy40ODZ2NC4yNjZoMy40ODZ2MTAuNzM0aDQuMjc0di0xMC43MzNoMy4zNDVsLjUzMS00LjI2NmgtMy44Nzd2LTIuOTM5Yy4wMDEtMS4yMzMuMzMzLTIuMDc3IDIuMDUxLTIuMDc3eiIvPjwvc3ZnPg==" /> -->
+		                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+		                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96.124px"
+		                            height="96.123px" viewBox="0 0 96.124 96.123"
+		                            style="enable-background:new 0 0 96.124 96.123;" xml:space="preserve">
+		                            <g>
+		                                <path
+		                                    d="M72.089,0.02L59.624,0C45.62,0,36.57,9.285,36.57,23.656v10.907H24.037c-1.083,0-1.96,0.878-1.96,1.961v15.803
+		                                c0,1.083,0.878,1.96,1.96,1.96h12.533v39.876c0,1.083,0.877,1.96,1.96,1.96h16.352c1.083,0,1.96-0.878,1.96-1.96V54.287h14.654
+		                                c1.083,0,1.96-0.877,1.96-1.96l0.006-15.803c0-0.52-0.207-1.018-0.574-1.386c-0.367-0.368-0.867-0.575-1.387-0.575H56.842v-9.246
+		                                c0-4.444,1.059-6.7,6.848-6.7l8.397-0.003c1.082,0,1.959-0.878,1.959-1.96V1.98C74.046,0.899,73.17,0.022,72.089,0.02z" />
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                            <g>
+		                            </g>
+		                        </svg>
+		                    </a>
+		                    <a href="https://www.instagram.com/nezabudu.com.ua" target="_blank" class="footer__soc-link">
+		                        <!-- insta -->
+		                        <svg viewBox="0 0 512.00096 512.00096" xmlns="http://www.w3.org/2000/svg">
+		                            <path
+		                                d="m373.40625 0h-234.8125c-76.421875 0-138.59375 62.171875-138.59375 138.59375v234.816406c0 76.417969 62.171875 138.589844 138.59375 138.589844h234.816406c76.417969 0 138.589844-62.171875 138.589844-138.589844v-234.816406c0-76.421875-62.171875-138.59375-138.59375-138.59375zm-117.40625 395.996094c-77.195312 0-139.996094-62.800782-139.996094-139.996094s62.800782-139.996094 139.996094-139.996094 139.996094 62.800782 139.996094 139.996094-62.800782 139.996094-139.996094 139.996094zm143.34375-246.976563c-22.8125 0-41.367188-18.554687-41.367188-41.367187s18.554688-41.371094 41.367188-41.371094 41.371094 18.558594 41.371094 41.371094-18.558594 41.367187-41.371094 41.367187zm0 0" />
+		                            <path
+		                                d="m256 146.019531c-60.640625 0-109.980469 49.335938-109.980469 109.980469 0 60.640625 49.339844 109.980469 109.980469 109.980469 60.644531 0 109.980469-49.339844 109.980469-109.980469 0-60.644531-49.335938-109.980469-109.980469-109.980469zm0 0" />
+		                            <path
+		                                d="m399.34375 96.300781c-6.257812 0-11.351562 5.09375-11.351562 11.351563 0 6.257812 5.09375 11.351562 11.351562 11.351562 6.261719 0 11.355469-5.089844 11.355469-11.351562 0-6.261719-5.09375-11.351563-11.355469-11.351563zm0 0" />
+		                        </svg>
+		                        <!-- <img alt="instagram" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMXB0IiB2aWV3Qm94PSIwIDAgNTExIDUxMS45IiB3aWR0aD0iNTExcHQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTUxMC45NDkyMTkgMTUwLjVjLTEuMTk5MjE5LTI3LjE5OTIxOS01LjU5NzY1Ny00NS44OTg0MzgtMTEuODk4NDM4LTYyLjEwMTU2Mi02LjUtMTcuMTk5MjE5LTE2LjUtMzIuNTk3NjU3LTI5LjYwMTU2Mi00NS4zOTg0MzgtMTIuODAwNzgxLTEzLTI4LjMwMDc4MS0yMy4xMDE1NjItNDUuMzAwNzgxLTI5LjUtMTYuMjk2ODc2LTYuMzAwNzgxLTM0Ljg5ODQzOC0xMC42OTkyMTktNjIuMDk3NjU3LTExLjg5ODQzOC0yNy40MDIzNDMtMS4zMDA3ODEtMzYuMTAxNTYyLTEuNjAxNTYyLTEwNS42MDE1NjItMS42MDE1NjJzLTc4LjE5OTIxOS4zMDA3ODEtMTA1LjUgMS41Yy0yNy4xOTkyMTkgMS4xOTkyMTktNDUuODk4NDM4IDUuNjAxNTYyLTYyLjA5NzY1NyAxMS44OTg0MzgtMTcuMjAzMTI0IDYuNS0zMi42MDE1NjIgMTYuNS00NS40MDIzNDMgMjkuNjAxNTYyLTEzIDEyLjgwMDc4MS0yMy4wOTc2NTcgMjguMzAwNzgxLTI5LjUgNDUuMzAwNzgxLTYuMzAwNzgxIDE2LjMwMDc4MS0xMC42OTkyMTkgMzQuODk4NDM4LTExLjg5ODQzOCA2Mi4wOTc2NTctMS4zMDA3ODEgMjcuNDAyMzQzLTEuNjAxNTYyIDM2LjEwMTU2Mi0xLjYwMTU2MiAxMDUuNjAxNTYycy4zMDA3ODEgNzguMTk5MjE5IDEuNSAxMDUuNWMxLjE5OTIxOSAyNy4xOTkyMTkgNS42MDE1NjIgNDUuODk4NDM4IDExLjkwMjM0MyA2Mi4xMDE1NjIgNi41IDE3LjE5OTIxOSAxNi41OTc2NTcgMzIuNTk3NjU3IDI5LjU5NzY1NyA0NS4zOTg0MzggMTIuODAwNzgxIDEzIDI4LjMwMDc4MSAyMy4xMDE1NjIgNDUuMzAwNzgxIDI5LjUgMTYuMzAwNzgxIDYuMzAwNzgxIDM0Ljg5ODQzOCAxMC42OTkyMTkgNjIuMTAxNTYyIDExLjg5ODQzOCAyNy4yOTY4NzYgMS4yMDMxMjQgMzYgMS41IDEwNS41IDEuNXM3OC4xOTkyMTktLjI5Njg3NiAxMDUuNS0xLjVjMjcuMTk5MjE5LTEuMTk5MjE5IDQ1Ljg5ODQzOC01LjU5NzY1NyA2Mi4wOTc2NTctMTEuODk4NDM4IDM0LjQwMjM0My0xMy4zMDA3ODEgNjEuNjAxNTYyLTQwLjUgNzQuOTAyMzQzLTc0Ljg5ODQzOCA2LjI5Njg3Ni0xNi4zMDA3ODEgMTAuNjk5MjE5LTM0LjkwMjM0MyAxMS44OTg0MzgtNjIuMTAxNTYyIDEuMTk5MjE5LTI3LjMwMDc4MSAxLjUtMzYgMS41LTEwNS41cy0uMTAxNTYyLTc4LjE5OTIxOS0xLjMwMDc4MS0xMDUuNXptLTQ2LjA5NzY1NyAyMDljLTEuMTAxNTYyIDI1LTUuMzAwNzgxIDM4LjUtOC44MDA3ODEgNDcuNS04LjYwMTU2MiAyMi4zMDA3ODEtMjYuMzAwNzgxIDQwLTQ4LjYwMTU2MiA0OC42MDE1NjItOSAzLjUtMjIuNTk3NjU3IDcuNjk5MjE5LTQ3LjUgOC43OTY4NzYtMjcgMS4yMDMxMjQtMzUuMDk3NjU3IDEuNS0xMDMuMzk4NDM4IDEuNXMtNzYuNS0uMjk2ODc2LTEwMy40MDIzNDMtMS41Yy0yNS0xLjA5NzY1Ny0zOC41LTUuMjk2ODc2LTQ3LjUtOC43OTY4NzYtMTEuMDk3NjU3LTQuMTAxNTYyLTIxLjE5OTIxOS0xMC42MDE1NjItMjkuMzk4NDM4LTE5LjEwMTU2Mi04LjUtOC4zMDA3ODEtMTUtMTguMzAwNzgxLTE5LjEwMTU2Mi0yOS4zOTg0MzgtMy41LTktNy42OTkyMTktMjIuNjAxNTYyLTguNzk2ODc2LTQ3LjUtMS4yMDMxMjQtMjctMS41LTM1LjEwMTU2Mi0xLjUtMTAzLjQwMjM0M3MuMjk2ODc2LTc2LjUgMS41LTEwMy4zOTg0MzhjMS4wOTc2NTctMjUgNS4yOTY4NzYtMzguNSA4Ljc5Njg3Ni00Ny41IDQuMTAxNTYyLTExLjEwMTU2MiAxMC42MDE1NjItMjEuMTk5MjE5IDE5LjIwMzEyNC0yOS40MDIzNDMgOC4yOTY4NzYtOC41IDE4LjI5Njg3Ni0xNSAyOS4zOTg0MzgtMTkuMDk3NjU3IDktMy41IDIyLjYwMTU2Mi03LjY5OTIxOSA0Ny41LTguODAwNzgxIDI3LTEuMTk5MjE5IDM1LjEwMTU2Mi0xLjUgMTAzLjM5ODQzOC0xLjUgNjguNDAyMzQzIDAgNzYuNS4zMDA3ODEgMTAzLjQwMjM0MyAxLjUgMjUgMS4xMDE1NjIgMzguNSA1LjMwMDc4MSA0Ny41IDguODAwNzgxIDExLjA5NzY1NyA0LjA5NzY1NyAyMS4xOTkyMTkgMTAuNTk3NjU3IDI5LjM5ODQzOCAxOS4wOTc2NTcgOC41IDguMzAwNzgxIDE1IDE4LjMwMDc4MSAxOS4xMDE1NjIgMjkuNDAyMzQzIDMuNSA5IDcuNjk5MjE5IDIyLjU5NzY1NyA4LjgwMDc4MSA0Ny41IDEuMTk5MjE5IDI3IDEuNSAzNS4wOTc2NTcgMS41IDEwMy4zOTg0MzhzLS4zMDA3ODEgNzYuMzAwNzgxLTEuNSAxMDMuMzAwNzgxem0wIDAiLz48cGF0aCBkPSJtMjU2LjQ0OTIxOSAxMjQuNWMtNzIuNTk3NjU3IDAtMTMxLjUgNTguODk4NDM4LTEzMS41IDEzMS41czU4LjkwMjM0MyAxMzEuNSAxMzEuNSAxMzEuNWM3Mi42MDE1NjIgMCAxMzEuNS01OC44OTg0MzggMTMxLjUtMTMxLjVzLTU4Ljg5ODQzOC0xMzEuNS0xMzEuNS0xMzEuNXptMCAyMTYuODAwNzgxYy00Ny4wOTc2NTcgMC04NS4zMDA3ODEtMzguMTk5MjE5LTg1LjMwMDc4MS04NS4zMDA3ODFzMzguMjAzMTI0LTg1LjMwMDc4MSA4NS4zMDA3ODEtODUuMzAwNzgxYzQ3LjEwMTU2MiAwIDg1LjMwMDc4MSAzOC4xOTkyMTkgODUuMzAwNzgxIDg1LjMwMDc4MXMtMzguMTk5MjE5IDg1LjMwMDc4MS04NS4zMDA3ODEgODUuMzAwNzgxem0wIDAiLz48cGF0aCBkPSJtNDIzLjg1MTU2MiAxMTkuMzAwNzgxYzAgMTYuOTUzMTI1LTEzLjc0NjA5MyAzMC42OTkyMTktMzAuNzAzMTI0IDMwLjY5OTIxOS0xNi45NTMxMjYgMC0zMC42OTkyMTktMTMuNzQ2MDk0LTMwLjY5OTIxOS0zMC42OTkyMTkgMC0xNi45NTcwMzEgMTMuNzQ2MDkzLTMwLjY5OTIxOSAzMC42OTkyMTktMzAuNjk5MjE5IDE2Ljk1NzAzMSAwIDMwLjcwMzEyNCAxMy43NDIxODggMzAuNzAzMTI0IDMwLjY5OTIxOXptMCAwIi8+PC9zdmc+" /> -->
+		                    </a>
+		                    <a href="#" targt="_blank" class="footer__soc-link">
+		                        <!-- youtube -->
+		                        <!-- <img alt="youtube" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMXB0IiB2aWV3Qm94PSIwIC03MSA1MTEuOTk5MTIgNTExIiB3aWR0aD0iNTExcHQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTI1NS45ODA0NjkgMzcwLjQ5MjE4OGMtLjA0Mjk2OSAwLS4wODk4NDQgMC0uMTM2NzE5IDAtMTUuNDQ5MjE5LS4xMDU0NjktMTUyLjAyNzM0NC0xLjM1MTU2My0xOTAuNzIyNjU2LTExLjgxNjQwNy0yNy4wNDI5NjktNy4yNjk1MzEtNDguMzkwNjI1LTI4LjU5Mzc1LTU1LjY3OTY4OC01NS42NDA2MjUtMTAuMTI1LTM4LjAxMTcxOC05LjQ4MDQ2ODUtMTExLjE5NTMxMi05LjQxMDE1Ni0xMTcuMDM5MDYyLS4wNjY0MDYyLTUuODE2NDA2LS43MTg3NS03OS42MDU0NjkgOS4zNzg5MDYtMTE3LjkyOTY4OC4wMTE3MTktLjAzNTE1Ni4wMTk1MzItLjA3NDIxOC4wMzEyNS0uMTA5Mzc1IDcuMjA3MDMyLTI2LjczODI4MSAyOS4wMzUxNTYtNDguNzIyNjU2IDU1LjYxMzI4Mi01Ni4wMTE3MTkuMDY2NDA2LS4wMTk1MzEuMTM2NzE4LS4wMzUxNTYuMjAzMTI0LS4wNTQ2ODcgMzguMjU3ODEzLTEwLjA1NDY4NyAxNzUuMTA1NDY5LTExLjI4NTE1NiAxOTAuNTg1OTM4LTExLjM5MDYyNWguMjc3MzQ0YzE1LjQ4ODI4MS4xMDU0NjkgMTUyLjQyOTY4NyAxLjM1MTU2MiAxOTAuNzY5NTMxIDExLjgzMjAzMSAyNi45NzI2NTYgNy4yNSA0OC4zMDQ2ODcgMjguNTQ2ODc1IDU1LjYxMzI4MSA1NS41NTg1OTQgMTAuNTAzOTA2IDM4LjM1MTU2MyA5LjUzMTI1IDExMi4zMDA3ODEgOS40MjU3ODIgMTE4LjU0Mjk2OS4wNzQyMTggNi4xNDg0MzcuNjg3NSA3OC42NzU3ODEtOS4zNzg5MDcgMTE2Ljg3ODkwNi0uMDA3ODEyLjAzOTA2Mi0uMDE5NTMxLjA3NDIxOS0uMDI3MzQzLjEwOTM3NS03LjI5Mjk2OSAyNy4wNDY4NzUtMjguNjM2NzE5IDQ4LjM3MTA5NC01NS43MTA5MzggNTUuNjQ4NDM3LS4wMzUxNTYuMDExNzE5LS4wNzQyMTkuMDE5NTMyLS4xMDkzNzUuMDMxMjUtMzguMjUzOTA2IDEwLjA1MDc4Mi0xNzUuMTA1NDY5IDExLjI4MTI1LTE5MC41ODIwMzEgMTEuMzkwNjI2LS4wNDY4NzUgMC0uMDkzNzUgMC0uMTQwNjI1IDB6bS0yMDcuOTA2MjUtMjkyLjE2Nzk2OWMtOC44OTA2MjUgMzMuODI4MTI1LTguMDUwNzgxIDEwNi42NzU3ODEtOC4wNDI5NjkgMTA3LjQxMDE1NnYuNTI3MzQ0Yy0uMjY1NjI1IDIwLjIwMzEyNS42Njc5NjkgNzguNzEwOTM3IDguMDQ2ODc1IDEwNi40MjE4NzUgMy41NzgxMjUgMTMuMjY5NTMxIDE0LjEwNTQ2OSAyMy43ODEyNSAyNy40NTcwMzEgMjcuMzcxMDk0IDI4LjU1MDc4MiA3LjcyMjY1NiAxMzkuNzg5MDYzIDEwLjE1MjM0MyAxODAuNDQ1MzEzIDEwLjQzNzUgNDAuNzYxNzE5LS4yODUxNTcgMTUyLjE2NDA2Mi0yLjY0ODQzOCAxODAuNTAzOTA2LTEwLjA2MjUgMTMuMzA4NTk0LTMuNjAxNTYzIDIzLjgwMDc4MS0xNC4wNzgxMjYgMjcuNDAyMzQ0LTI3LjM2MzI4MiA3LjM4NjcxOS0yOC4xMTcxODcgOC4zMTI1LTg2LjMzOTg0NCA4LjA0Mjk2OS0xMDYuNDE0MDYyIDAtLjIxMDkzOCAwLS40MjE4NzUuMDAzOTA2LS42MzI4MTMuMzY3MTg3LTIwLjQ0NTMxMi0uMzU1NDY5LTc5LjYzNjcxOS04LjAxMTcxOS0xMDcuNTcwMzEyLS4wMDc4MTMtLjAyNzM0NC0uMDE1NjI1LS4wNTQ2ODgtLjAxOTUzMS0uMDgyMDMxLTMuNTkzNzUtMTMuMzI4MTI2LTE0LjEyNS0yMy44Mzk4NDQtMjcuNDc2NTYzLTI3LjQyOTY4OC0yOC4yNzM0MzctNy43MzA0NjktMTM5LjY5MTQwNi0xMC4xNTIzNDQtMTgwLjQ0NTMxMi0xMC40Mzc1LTQwLjczNDM3NS4yODUxNTYtMTUyLjAyNzM0NCAyLjY0NDUzMS0xODAuNDUzMTI1IDEwLjA1MDc4MS0xMy4wOTc2NTYgMy42MzI4MTMtMjMuODYzMjgyIDE0LjUxOTUzMS0yNy40NTMxMjUgMjcuNzczNDM4em00MzUuMTM2NzE5IDIxOS44OTQ1MzFoLjAxMTcxOHptLTI3OC4yMTA5MzgtMzEuNzI2NTYydi0xNjEuOTk2MDk0bDE0MCA4MXptMCAwIi8+PC9zdmc+" /> -->
+		                        <svg height="682pt" viewBox="-21 -117 682.66672 682" width="682pt"
+		                            xmlns="http://www.w3.org/2000/svg">
+		                            <path
+		                                d="m626.8125 64.035156c-7.375-27.417968-28.992188-49.03125-56.40625-56.414062-50.082031-13.703125-250.414062-13.703125-250.414062-13.703125s-200.324219 0-250.40625 13.183593c-26.886719 7.375-49.03125 29.519532-56.40625 56.933594-13.179688 50.078125-13.179688 153.933594-13.179688 153.933594s0 104.378906 13.179688 153.933594c7.382812 27.414062 28.992187 49.027344 56.410156 56.410156 50.605468 13.707031 250.410156 13.707031 250.410156 13.707031s200.324219 0 250.40625-13.183593c27.417969-7.378907 49.03125-28.992188 56.414062-56.40625 13.175782-50.082032 13.175782-153.933594 13.175782-153.933594s.527344-104.382813-13.183594-154.460938zm-370.601562 249.878906v-191.890624l166.585937 95.945312zm0 0" />
+		                        </svg>
+		
+		                    </a>
+		                </nav>
+		                <a href="tel:+380965636858" class="footer__link-tel">+38 (096) 563-68-58</a>
+		                <a href="mailto:nezabudu.team@gmail.com" class="footer__link-mail">nezabudu.team@gmail.com</a>
+		            </div>
+		            <div class="footer__docs">
+		                <h6 class="footer__title">Документы</h6>
+		                <a href="privacy.html" target="_blank" class="footer__doc-link">Политика конфиденциальности</a>
+		                <a href="terms.html" target="_blank" class="footer__doc-link">Пользовательское соглашение</a>
+		                <a href="#" class="footer__doc-link">Этика заполения анкет</a>
+		            </div>
+		        </div>
+		        <div class="footer__copy">
+		            <p class="footer__copy-text">Copyright © 2021 Незабуду. Все права защищены.</p>
+		        </div>
+		    </div>
+		</footer>
+
+	</section>
+	<!-- скрипты -->
+	<script src="js/main.min.js"></script>
+
+
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1CqxmxvB0H0I_KZJArCWzNvdFmegf0Qo"></script> -->
+</body>
+
+</html>

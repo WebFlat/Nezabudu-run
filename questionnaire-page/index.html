@@ -204,7 +204,7 @@
 	        </div>
 	        <section class="profile__menu profile__menu--mob">
 	            <div class="menu__items menu__items--mob">
-	                <a href="#" class="menu__item menu__item--mob active-items">
+	                <a href="#" class="menu__item menu__item--mob active-items main">
 	                    <img src="./img/item1.png" alt="icon" class="menu__img menu__img--mob">
 	                </a>
 	                <a href="#" class="menu__item menu__item--mob">
@@ -233,14 +233,16 @@
 	                    <div class="wrapper">
 	                        <div class="data__form-tabs">
 	                            <form method="POST" class="data__form-default data__form">
-	                                <select name=" user" id="relative-data" class="data__relative">
+	                                <!-- <select name=" user" id="relative-data" class="data__relative">
 	                                    <option value="hide">Кем вы ему(ей) приходитесь?</option>
 	                                    <option value="Родственник">Родственник</option>
 	                                    <option value="Родственник">Знакомый</option>
 	                                    <option value="Семья">Семья</option>
 	                                    <option value="Родственник">Родственник</option>
 	                                    <option value="Друг">Друг</option>
-	                                </select>
+	                                </select> -->
+	                                <input type="text" name="whois" id="whois" placeholder="Кем вы ему(ей) приходитесь?"
+	                                    class="data__relative">
 	                                <div class="about__subsettings">
 	                                    <div class="about__show">
 	                                        <div class="about__show-wrap">
@@ -284,7 +286,7 @@
 	                                        <div class="user__names">
 	                                            <input type="text" class="user__name" required placeholder="Имя">
 	                                        </div>
-	                                        <input type="text" class="user__patronymic" required placeholder="Отчество">
+	                                        <input type="text" class="user__patronymic" placeholder="Отчество">
 	                                        <input type="text" class="user__soname-girl" placeholder="Девичья фамилия">
 	                                    </div>
 	                                    <div class="user__lives-data">
@@ -307,9 +309,8 @@
 	                                        </div>
 	                                    </div>
 	                                    <div class="user__lives-loc">
-	                                        <input type="text" class="user__both-loc" required
-	                                            placeholder="Где родился(ась)">
-	                                        <input type="text" class="user__die-loc" required placeholder="Где умер(ла)">
+	                                        <input type="text" class="user__both-loc" placeholder="Место рождения">
+	                                        <input type="text" class="user__die-loc" placeholder="Место смерти">
 	                                    </div>
 	                                    <label class="user__title-second" for="area-lives">
 	                                        Расскажите основную информацию:
@@ -318,9 +319,8 @@
 	                                </div>
 	                                <h6 class="data__title-location">Где покоится:</h6>
 	                                <div class="data__locations">
-	                                    <input type="text" name="city" id="city" class="data__loc-city" required
-	                                        placeholder="Город">
-	                                    <input type="text" name="cemetery" id="cemetery" class="data__loc-cemetery" required
+	                                    <input type="text" name="city" id="city" class="data__loc-city" placeholder="Город">
+	                                    <input type="text" name="cemetery" id="cemetery" class="data__loc-cemetery"
 	                                        placeholder="Кладбище">
 	                                </div>
 	                                <div class="data__loc-wrap">
@@ -495,7 +495,7 @@
 	                </section>
 	                <section class="profile__menu">
 	                    <div class="menu__items">
-	                        <a href="#" class="menu__item active-items">
+	                        <a href="#" class="menu__item active-items main">
 	                            <div class="menu__description">
 	                                <span>Форма с данными</span>
 	                            </div>

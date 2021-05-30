@@ -10606,6 +10606,90 @@ jQuery(function ($) {
 	});
 
 
+
+	function loadQuestionnaries() {
+		$.getJSON('user_data.json', function (data) {
+			var out = '';
+			$.each(data, function (key, val) {
+				console.log(data[key]);
+			};
+			// if (data.avatar == '') {
+			// 	data.avatar = "./img/user-def.svg";
+			// };
+			// if (data.candle) {
+			// 	$('#candleFire').addClass('active');
+			// };
+			// if (data[key].bookmark) {
+			// 	$('#bookmark').attr('src', './img/bookmark-black.svg').addClass('active');
+			// };
+
+
+			out += '<div class="brief__img-wrap"><img class="brief__icon" src="" alt="user"></div><div class="brief__info"><img src="./img/candle.png" alt="candle" class="brief__candle" id="candle"><img src="./img/candle-fire.png" alt="candle" class="brief__candle brief__candle--fire" id="candleFire"><h6 class="brief__titles"><span class="brief__name-user" id="user-surname">Савельев</span><span class="brief__surname" id="user-name">Илья</span><span class="brief__patronimyc" id="user-patronimyc">Михайлович</span></h6><div class="brief__years"><span class="brief__both">11.10.1952</span><span> - </span><span class="brief__die">11.10.1952</span><span class="brief__life-long">( <span class="brief__life-val" id="user-old">35</span> )</span></div><p class="brief__text" id="user-about-short">Художник, любящий дедушка,путешественник, которызанимался любимым делом.</p><div class="brief__bookmarks"><img class="brief__bookmark brief__bookmark--small" src="./img/my-boockmark.png"alt="bookmark"><img class="brief__bookmark" src="./img/bookmark.svg" alt="bookmark" id="bookmark"></div></div>';
+
+
+			// out+= '<div class="user item"><div class="user__info"><img src="./img/famous.png"  alt="icon star" class="user__isPubl"><div class="user__avatar-wrap"><img src="'+data[key].avatar+'" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">'+data[key].surname+'</span><span></span><span class="user__name">'+data[key].name+'</span><span class="user__patronymic">'+data[key].patronymic+'</span></div><div class="user__lives"><span class="user__both">'+data[key].both+'</span><span> - </span><span class="user__die">'+data[key].die+'</span><span>гг</span></div><div class="user__text"><p class="user__about">'+data[key].about+'</p></div><div class="user__btns"><div class="user__likes"><img class="user__like-icon" src="./img/heart.svg" alt="heart"><span class="user__likeCount">'+data[key].likesCount+'</span></div><a href="'+data[key].link+'" class="user__link-more">Читать дальше...</a><img class="user__bookmark" src="./img/bookmark.svg" alt="bookmark"></div></div></div>';
+
+			$('.brief__user').html(out);
+		});
+	};
+	loadQuestionnaries();
+
+
+
+
+
+
+
+
+
+
+	//Зарегестрірованний юзер
+	var user = false;
+
+
+	//Icon user if login**************************
+	if (user) {
+		$('.enter').removeClass('active');
+		$('.loginIn').addClass('active');
+	} else {
+		$('.enter').addClass('active');
+		$('.loginIn').removeClass('active');
+	};
+	if (!user.avatar === '') {
+		$('.header__user').src = user.avatar;
+	};
+
+	//burger***************************************
+	function burgerShow() {
+		//User or guest
+		if (user) {
+			$('#menu-user').toggleClass('open');
+			$('.burger').toggleClass('closed');
+			$('body').toggleClass('no-scroll');
+			$('.burger__bg-body').toggleClass('show-bgBody');
+		} else {
+			$('#menu-guest').toggleClass('open');
+			$('.burger').toggleClass('closed');
+			$('body').toggleClass('no-scroll');
+			$('.burger__bg-body').toggleClass('show-bgBody');
+		}
+	};
+
+	$('.burger').click(function () {
+		burgerShow();
+
+	});
+	$('.nav__link').click(function () {
+		burgerShow();
+	});
+	$('.burger__bg-body').click(function (e) {
+		var container = $('.burger-wrap');
+		if (container.has(e.target).length === 0) {
+			burgerShow();
+		}
+	});
+
+
 	$('.data__relative').each(function () {
 		var $this = $(this), numberOfOptions = $(this).children('option').length;
 
@@ -10791,27 +10875,6 @@ jQuery(function ($) {
 
 
 
-
-	//burger***************************************
-	function burgerShow() {
-		$('.burger-wrap').toggleClass('open');
-		$('.burger').toggleClass('closed');
-		$('body').toggleClass('no-scroll');
-		$('.burger__bg-body').toggleClass('show-bgBody');
-	}
-	$('.burger').click(function () {
-		burgerShow();
-
-	});
-	$('.nav__link').click(function () {
-		burgerShow();
-	});
-	$('.burger__bg-body').click(function (e) {
-		var container = $('.burger-wrap');
-		if (container.has(e.target).length === 0) {
-			burgerShow();
-		}
-	});
 
 
 
