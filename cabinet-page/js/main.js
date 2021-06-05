@@ -11000,28 +11000,26 @@ function loadQuestionnaries() {
     $.getJSON('questionnaries.json', function (data) {
         var out = '';
         for (var key in data) {
-            if (data[key].avatar === '') {
-                data[key].avatar = "./img/user-def.svg";
-                if (data[key].isPubl == true) {
-                    out += '<div class="user item"><div class="user__info"><img src="./img/famous.png"  alt="icon star" class="user__isPubl"><div class="user__avatar-wrap"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span> - </span><span class="user__die">' + data[key].die + '</span><span>гг</span></div><div class="user__text"><p class="user__about">' + data[key].about + '</p></div><div class="user__btns"><div class="user__likes"><img class="user__like-icon" src="./img/heart.svg" alt="heart"><span class="user__likeCount">' + data[key].likesCount + '</span></div><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a><img class="user__bookmark" src="./img/bookmark.svg" alt="bookmark"></div></div></div>';
+            if (data[key].avatar == '') {
+                data[key].avatar = "./img/user-def.png";
+                if (data[key].isLife == true) {
+                    out += '<div class="user item"><div class="user__info"><div class="user__avatar-wrap user__avatar-wrap--life"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span></div><div class="user__btns"><div class="user__likes"><img class="user__like-icon" src="./img/heart.svg" alt="heart"><span class="user__likeCount">' + data[key].likesCount + '</span></div><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
                 }
             } else {
-                out += '<div class="user item"><div class="user__info"><div class="user__avatar-wrap"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span> - </span><span class="user__die">' + data[key].die + '</span><span>гг</span></div><div class="user__text"><p class="user__about">' + data[key].about + '</p></div><div class="user__btns"><div class="user__likes"><img class="user__like-icon" src="./img/heart.svg" alt="heart"><span class="user__likeCount">' + data[key].likesCount + '</span></div><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a><img class="user__bookmark" src="./img/bookmark.svg" alt="bookmark"></div></div></div>';
+                out += '<div class="user item"><div class="user__info"><div class="user__avatar-wrap"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span> - </span><span class="user__die">' + data[key].die + '</span></div><img class="user__candle" src="./img/candle.png" alt="candle"><img class="user__candle-fire" src="./img/candle-fire.png" alt="candle-fire"></div><div class="user__btns"><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
             }
         }
-        $('.personality-person__wrap').html(out);
+        $('.profile__created').html(out);
 
 
 
 
         //change icon like anb bookmarks when click*********
-        $('.user__bookmark').on('click', function () {
-            if ($(this).hasClass('active')) {
-                $(this).toggleClass('active');
-                $(this).attr('src', './img/bookmark.svg');
+        $('.user__candle').on('click', function () {
+            if ($(this).next().hasClass('active')) {
+                $(this).next().toggleClass('active');
             } else {
-                $(this).attr('src', './img/bookmark-black.svg');
-                $(this).toggleClass('active');
+                $(this).next().toggleClass('active');
 
             }
         })
@@ -11046,36 +11044,166 @@ function loadQuestionnaries() {
     });
 }
 
+
 loadQuestionnaries();
 
 
-setTimeout(function () {
-
-    var items = $('.user');
-    var numItems = items.length;
-    var perPage = 6;
-
-
-    items.slice(perPage).hide();
-
-    $('#pagination-container').pagination({
-        items: numItems,
-        itemsOnPage: perPage,
-        edges: 1,
-        displayedPages: 3,
-        prevText: '<',
-        nextText: '>',
-        cssStyle: 'light-theme',
-        onPageClick: function (pageNumber) {
-            var showFrom = perPage * (pageNumber - 1);
-            var showTo = showFrom + perPage;
-            items.hide().slice(showFrom, showTo).show();
+function loadQuestionnaries2() {
+    $.getJSON('questionnaries.json', function (data) {
+        var out = '';
+        for (var key in data) {
+            if (data[key].avatar == '') {
+                data[key].avatar = "./img/user-def.png";
+                if (data[key].isLife == true) {
+                    out += '<div class="user item"><div class="user__info"><div class="user__avatar-wrap user__avatar-wrap--life"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span></div><div class="user__btns"><div class="user__likes"><img class="user__like-icon" src="./img/heart.svg" alt="heart"><span class="user__likeCount">' + data[key].likesCount + '</span></div><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
+                }
+            } else {
+                out += '<div class="user item"><div class="user__info"><div class="user__avatar-wrap"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span> - </span><span class="user__die">' + data[key].die + '</span></div><img class="user__candle" src="./img/candle.png" alt="candle"><img class="user__candle-fire" src="./img/candle-fire.png" alt="candle-fire"></div><div class="user__btns"><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
+            }
         }
+        $('.profile__bookmarks').html(out);
+
+
+        //change icon like anb bookmarks when click*********
+        $('.user__candle').on('click', function () {
+            if ($(this).next().hasClass('active')) {
+                $(this).next().toggleClass('active');
+            } else {
+                $(this).next().toggleClass('active');
+
+            }
+        })
+        $('.user__like-icon').on('click', function () {
+            var countNum = $(this).next('.user__likeCount');
+            var count = countNum.text();
+            count = parseInt(count);
+            if ($(this).hasClass('active')) {
+                $(this).toggleClass('active');
+                $(this).attr('src', './img/heart.svg');
+                if (count > 0) {
+                    count = count - 1;
+                    countNum.html(count);
+                }
+            } else {
+                $(this).attr('src', './img/heart-black.svg');
+                $(this).toggleClass('active');
+                count = count + 1;
+                countNum.html(count);
+            }
+        });
     });
-}, 1000);
+};
+
+
+//Init pagination**************************************
+function pagin() {
+    setTimeout(function () {
+
+        var items = $('.user');
+        var numItems = items.length;
+        var perPage = 4;
+
+
+        items.slice(perPage).hide();
+
+        $('#pagination-container').pagination({
+            items: numItems,
+            itemsOnPage: perPage,
+            edges: 1,
+            displayedPages: 3,
+            prevText: '<',
+            nextText: '>',
+            cssStyle: 'light-theme',
+            onPageClick: function (pageNumber) {
+                var showFrom = perPage * (pageNumber - 1);
+                var showTo = showFrom + perPage;
+                items.hide().slice(showFrom, showTo).show();
+            }
+        });
+    }, 1000);
+
+};
+// function pagin2() {
+//     setTimeout(function () {
+
+//         var items = $('.user');
+//         var numItems = items.length;
+//         var perPage = 4;
+
+
+//         items.slice(perPage).hide();
+
+//         $('#pagination-container2').pagination({
+//             items: numItems,
+//             itemsOnPage: perPage,
+//             edges: 1,
+//             displayedPages: 3,
+//             prevText: '<',
+//             nextText: '>',
+//             cssStyle: 'light-theme',
+//             onPageClick: function (pageNumber) {
+//                 var showFrom = perPage * (pageNumber - 1);
+//                 var showTo = showFrom + perPage;
+//                 items.hide().slice(showFrom, showTo).show();
+//             }
+//         });
+//     }, 1000);
+
+// };
 jQuery(function ($) {
 	'use strict';
 
+
+	$(window).on('load', function () {
+		var $preloader = $('#p_prldr');
+		$preloader.delay(1000).fadeOut('slow');
+	});
+
+
+	//Зарегестрірованний юзер
+	var user = true;
+	var user_data = false;
+
+
+	//Icon user if login**************************
+	if (user) {
+		$('.enter').removeClass('active');
+		$('.loginIn').addClass('active');
+	} else {
+		window.location.href = '../index.html';
+	};
+	//If not empty foto user
+	if (!user.avatar === '') {
+		$('.header__user').src = user.avatar;
+	};
+
+	//burger***************************************
+	function burgerShow() {
+		//User or guest
+		if (user) {
+			$('#menu-user').toggleClass('open');
+			$('.burger').toggleClass('closed');
+			$('body').toggleClass('no-scroll');
+			$('.burger__bg-body').toggleClass('show-bgBody');
+		}
+	};
+
+	$('.burger').click(function () {
+		burgerShow();
+
+	});
+	$('.nav__link').click(function () {
+		burgerShow();
+	});
+	$('.burger__bg-body').click(function (e) {
+		var container = $('.burger-wrap');
+		if (container.has(e.target).length === 0) {
+			burgerShow();
+		}
+	});
+
+
+	//selects***********************************************
 
 	$('#lang').each(function () {
 		var $this = $(this), numberOfOptions = $(this).children('option').length;
@@ -11146,29 +11274,31 @@ jQuery(function ($) {
 	// })
 
 	//show tabs in menu cabinet******************************
-	$(".questionnaire__tabs").not(":first").hide();
+	$(".profile__tabs").not(":first").hide();
 	$(".nav-tab").not(":first").removeClass("active-tab");
 
 	$(".nav-tab1").click(function () {
 		$(".nav-tab").removeClass("active-tab");
 		$(".nav-tab1").addClass("active-tab");
-		$(".tab1").fadeIn().siblings('.questionnaire__tabs').hide();
+		$(".tab1").fadeIn().siblings('.profile__tabs').hide();
 	});
 	$(".nav-tab2").click(function () {
+		$(".tab2").fadeIn().siblings('.profile__tabs').hide();
 		$(".nav-tab").removeClass("active-tab");
 		$(".nav-tab2").addClass("active-tab");
-		$(".tab2").fadeIn().siblings('.questionnaire__tabs').hide();
+		loadQuestionnaries2();
+	});
+	$(".nav-tab3").click(function () {
+		$(".nav-tab").removeClass("active-tab");
+		$(".nav-tab3").addClass("active-tab");
+		$(".tab3").fadeIn().siblings('.profile__tabs').hide();
 	});
 	$(".nav-tab4").click(function () {
 		$(".nav-tab").removeClass("active-tab");
 		$(".nav-tab4").addClass("active-tab");
-		$(".tab4").fadeIn().siblings('.questionnaire__tabs').hide();
+		$(".tab4").fadeIn().siblings('.profile__tabs').hide();
 	});
-	$(".nav-tab8").click(function () {
-		$(".nav-tab").removeClass("active-tab");
-		$(".nav-tab8").addClass("active-tab");
-		$(".tab8").fadeIn().siblings('.questionnaire__tabs').hide();
-	});
+
 
 
 
@@ -11185,5 +11315,12 @@ jQuery(function ($) {
 		reader.readAsDataURL(foto.files[0]);
 	});
 
+
+	//add date input of both***************************
+	$('#userBoth').change(function () {
+		var date = $('#userBoth').val();
+		date = date.split('-').reverse().join('-');
+		$('#userBothDate').val(date);
+	})
 
 });

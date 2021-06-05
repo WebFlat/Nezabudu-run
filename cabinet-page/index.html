@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>НЕЗАБУДУ-сервис с помощью которого ты легко можешь найти место захоронения ушедших близких, знакомых и значимых людей твоего города, страны и сохранить информацию о месте захоронения и жизни.</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#92e4fc">
+	<meta name="theme-color" content="#ffffff">
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	
+	<link rel="stylesheet" href="css/styles.min.css">
+		
+	<meta name="description" content="НЕЗАБУДУ-сервис с помощью которого ты легко можешь найти место захоронения ушедших близких, знакомых и значимых людей твоего города, страны и сохранить информацию о месте захоронения и жизни.">
+</head>
+
+<body>
+	<div id="p_prldr">
+	    <div class="contpre">
+	        <span class="contpre__logo">НЕЗАБУДУ</span></br>
+	        <span class="svg_anm"></span>
+	    </div>
+	</div>
+	<header class="header">
+	    <div class="wrapper">
+	        <div class="burger__bg-body"></div>
+	
+	        <div class="burger-wrap" id="menu-user">
+	            <div class="burger-wrap__links">
+	                <form action="GET" class="burger-search">
+	                    <input class="burger-search__input" type="text" placeholder="Поиск по всем анкетам">
+	                    <img src="./img/search-burger.png" alt="search" class="burger-search__search">
+	                </form>
+	                <ul class="withBorder">
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/icon-questionar.png" alt="questionar">
+	                        </div>
+	                        <a class="nav__link enter nav-tab nav-tab1">Мои анктеты</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/bookmark.png" alt="bookmark">
+	                        </div>
+	                        <a class="nav__link nav-tab nav-tab2">Анкеты в закладках</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/alarm-bell.png" alt="alarm">
+	                        </div>
+	                        <a class="nav__link nav-tab nav-tab3">Уведомления</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/icon-all-questionar.png" alt="questionar">
+	                        </div>
+	                        <a href="../all-person-page/index.html" class="nav__link">Все анкеты</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/icon-popular.png" alt="popular">
+	                        </div>
+	                        <a href="../person-page/index.html" class="nav__link">Известные личности</a>
+	                    </li>
+	                </ul>
+	                <ul class="withBorder">
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/qr-code-small.svg" alt="qr code">
+	                        </div>
+	                        <a href="../qr-page/index.html" class="nav__link">QR код Наклейка</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/001-ecology.svg" alt="peace">
+	                        </div>
+	                        <a href="../care-page/index.html" class="nav__link">Уборка захоронений</a>
+	                    </li>
+	                </ul>
+	                <ul class="withBorder">
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	                            <img class="burger-wrap__icon" src="./img/icon-settings.png" alt="settings">
+	                        </div>
+	                        <a class="nav__link nav-tab nav-tab4">Настройки</a>
+	                    </li>
+	                    <li>
+	                        <div class="burger-wrap__wrap-icon">
+	
+	                            <img class="burger-wrap__icon" src="./img/icon-logout.png" alt="logout">
+	                        </div>
+	                        <a href="#" id="logout" class="nav__link">Выход</a>
+	                    </li>
+	                </ul>
+	            </div>
+	        </div>
+	        <div class="header__wrap">
+	            <div class="wrap-menu">
+	                <div class="burger">
+	                    <div class="burger__line"></div>
+	                    <div class="burger__line"></div>
+	                    <div class="burger__line"></div>
+	                </div>
+	                <a href="#" class="header__title">
+	                    <h1 class="header__link">НЕЗАБУДУ</h1>
+	                </a>
+	            </div>
+	            <select class="select__options--lang" id="lang">
+	                <option value="hide">RU</option>
+	                <option value="Український" rel="icon-temperature"><a href="#">UKR</a></option>
+	                <option value="Русский">RU</option>
+	            </select>
+	            <span class="header__enter-link enter active">
+	                <span>Вход</span>
+	                <img alt="enter"
+	                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzg0Ljk3IDM4NC45NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzg0Ljk3IDM4NC45NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGcgaWQ9IlNpZ25fSW4iPg0KCQk8cGF0aCBkPSJNMzcyLjkzOSwwSDIwNC41MTVjLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE1Ni4zOTR2MzM2Ljg0OEgyMDQuNTE1DQoJCQljLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE2OC40MjRjNi42NDEsMCwxMi4wMy01LjM5LDEyLjAzLTEyLjAzVjEyLjAzDQoJCQlDMzg0Ljk3LDUuMzksMzc5LjU4LDAsMzcyLjkzOSwweiIvPg0KCQk8cGF0aCBkPSJNMTk3LjIxMywyNjguMjc2Yy00LjcwNCw0Ljc1Mi00LjcwNCwxMi40MzksMCwxNy4xNzljNC43MDQsNC43NTIsMTIuMzE5LDQuNzUyLDE3LjAxMSwwbDgyLjk5Ny04NC4yDQoJCQljNC42MzItNC42OCw0LjY4LTEyLjUxMiwwLTE3LjE5MWwtODMuMDA5LTg0LjJjLTQuNzA0LTQuNzUyLTEyLjMxOS00Ljc0LTE3LjAxMSwwYy00LjcwNCw0Ljc0LTQuNzA0LDEyLjQzOSwwLDE3LjE3OQ0KCQkJbDYyLjU1OCw2My40NkgxMi4wM0M1LjM5LDE4MC41MDMsMCwxODUuOTQsMCwxOTIuNjUzYzAsNi43MTMsNS4zOSwxMi4xNTEsMTIuMDMsMTIuMTUxaDI0Ny43NEwxOTcuMjEzLDI2OC4yNzZ6Ii8+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
+	            </span>
+	            <a href="cabinet-page/index.html" class="header__enter-link loginIn">
+	                <!-- <span>Вход</span> -->
+	                <div class="header__user-wrap">
+	                    <img class="header__user" src="./img/user-def-black.png" alt="user">
+	                </div>
+	                <img class="header__user-enter" alt="enter"
+	                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzg0Ljk3IDM4NC45NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzg0Ljk3IDM4NC45NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGcgaWQ9IlNpZ25fSW4iPg0KCQk8cGF0aCBkPSJNMzcyLjkzOSwwSDIwNC41MTVjLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE1Ni4zOTR2MzM2Ljg0OEgyMDQuNTE1DQoJCQljLTYuNjQxLDAtMTIuMDMsNS4zOS0xMi4wMywxMi4wM3M1LjM5LDEyLjAzLDEyLjAzLDEyLjAzaDE2OC40MjRjNi42NDEsMCwxMi4wMy01LjM5LDEyLjAzLTEyLjAzVjEyLjAzDQoJCQlDMzg0Ljk3LDUuMzksMzc5LjU4LDAsMzcyLjkzOSwweiIvPg0KCQk8cGF0aCBkPSJNMTk3LjIxMywyNjguMjc2Yy00LjcwNCw0Ljc1Mi00LjcwNCwxMi40MzksMCwxNy4xNzljNC43MDQsNC43NTIsMTIuMzE5LDQuNzUyLDE3LjAxMSwwbDgyLjk5Ny04NC4yDQoJCQljNC42MzItNC42OCw0LjY4LTEyLjUxMiwwLTE3LjE5MWwtODMuMDA5LTg0LjJjLTQuNzA0LTQuNzUyLTEyLjMxOS00Ljc0LTE3LjAxMSwwYy00LjcwNCw0Ljc0LTQuNzA0LDEyLjQzOSwwLDE3LjE3OQ0KCQkJbDYyLjU1OCw2My40NkgxMi4wM0M1LjM5LDE4MC41MDMsMCwxODUuOTQsMCwxOTIuNjUzYzAsNi43MTMsNS4zOSwxMi4xNTEsMTIuMDMsMTIuMTUxaDI0Ny43NEwxOTcuMjEzLDI2OC4yNzZ6Ii8+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
+	            </a>
+	        </div>
+	    </div>
+	</header>
+
+	<!-- контент страницы -->
+	<section class="profile">
+	    <div class="profile__tabs tab1">
+	        <div class="wrapper">
+	            <h3>
+	                Сохрани свою историю и историю своих предков
+	            </h3>
+	            <div class="profile__add-quest">
+	                <a href="../questionnaire-page/index.html">
+	                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49"
+	                        height="49" viewBox="0 0 49 49">
+	                        <image id="Фигура_5" data-name="Фигура 5" width="49" height="49"
+	                            xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAxCAYAAABznEEcAAACWUlEQVRoge2au2sUURSHv0xCFLTYYVSMooUIQsDKQgstLBSMgg8Sg41lwAcWCkFsTAgEbQTBwj9A8LE+Iprgf6AWVlYWaUTNkrDsihYSVOTEM5IsM5tJZi97Ru5X7eMy9/vtzN55nNNRqcyRQDdwGjgJ9ALbgHVJAx0zD8wA74BnwCP9bAlJIUR+HNgCTAJvgC9AYlrHbFSPfcBR9bimYf7Rteh1J3AHGALuAqPAbBvE09gEXAfuAweBi8AvGkLcBM4Cp4DnhuRj5Ae9ALwAngC/9T2BDhgELgNnjAZYzCv1PKfeC/+JtcC0yp83o7o8t4F+YIfsiQEg1P9AkRhT7wHZE49VvL9gIQRx75A9sVuX0ZZTrdV7HYd4DewJdB3+5GiSTkfbjfkM9EiI9cA3x5O5Qry7g/bM3Vp8CCv4EFbwIazgQ1jhvwjRlWFMKtVaPdeYKCzl1P9L5hDVWn2XXmethJ365CRtm2lfzUVh6WPLQ0Rh6cMKJGLk8cr7JtvMOn1Tch1Oy0lIyFaJNsOvTlbwIazgQ1jBh7CCD2EF1yEyX8TlwWmIKCx9dZ7AH06GkBDfgTUF9Rfv+UDLqtsNCK0Gqa/PBHrntb94/gsckEJ9oAXHPq0TF4kNwBFgQkKUgRowUrAQ0lkgN/llCfFDa9jSSXDIgFwWxPMScEX84yX2odaFnwLHbftzWD3F9wEN54lh4J4OuCUn3PZ5JhKp15R6DseD0rpsbgCbgZfAWwNdNnuBY0AFuNrYZdOs30n6Jk5InRjYmvcZ1Sr5qWVe6Xea0MN+ab8T8AcdI3xvt/QcLAAAAABJRU5ErkJggg==" />
+	                    </svg>
+	                </a>
+	            </div>
+	
+	            <h3 class="profile__title">
+	                Моя анкета
+	            </h3>
+	            <div class="profile__my">
+	
+	            </div>
+	            <h3 class="profile__title">
+	                Созданные анкеты
+	            </h3>
+	            <div class="profile__items">
+	                <div class="profile__created">
+	
+	                </div>
+	                <div id="pagination-container"></div>
+	
+	            </div>
+	        </div>
+	    </div>
+	    <div class="profile__tabs tab2">
+	        <div class="wrapper">
+	            <h3>
+	                Анкеты в закладках
+	            </h3>
+	            <div class="profile__bookmarks">
+	            </div>
+	            <div id="pagination-container2"></div>
+	
+	        </div>
+	    </div>
+	    <div class="profile__tabs tab3">
+	        <div class="wrapper">
+	            <div class="profile__alarm">
+	                <p class="profile__message-empty">
+	                    Уведомлений нет
+	                </p>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="profile__tabs tab4">
+	        <div class="wrapper wrapper--set">
+	            <form class="settings">
+	                <h3 class="settings__title">
+	                    Личная информация
+	                </h3>
+	                <div class="settings__line">
+	                    <div class="settings__user-wrap">
+	                        <img class="header__user" src="./img/user-def-black.png" alt="user" id="user-icon">
+	                    </div>
+	                    <label class="settings__upload-label" for="editFoto">Изменить фото</label>
+	                    <input type="file" class="settings__upload" id="editFoto">
+	                </div>
+	                <div class="settings__line">
+	                    <label for="userName" class="settings__label">Имя</label>
+	                    <input type="text" name="userName" id="userName" class="settings__input">
+	                </div>
+	                <div class="settings__line">
+	                    <label for="userSurname" class="settings__label">Фамилия</label>
+	                    <input type="text" name="userSurname" id="userSurname" class="settings__input">
+	                </div>
+	                <div class="settings__line">
+	                    <label for="userEmail" class="settings__label">Эл. почта</label>
+	                    <input type="email" name="userEmail" id="userEmail" class="settings__input">
+	                </div>
+	                <div class="settings__line">
+	                    <label for="userTel" class="settings__label">Телефон</label>
+	                    <input type="tel" name="userTel" id="userTel" class="settings__input">
+	                </div>
+	                <div class="settings__line">
+	                    <label for="userBoth" class="settings__label">Дата рождения</label>
+	                    <div class="settings__helps">
+	                        <input type="date" name="userBoth" id="userBoth" class="settings__date settings__input">
+	                        <input type="text" class="settings__input" id="userBothDate">
+	
+	                    </div>
+	                </div>
+	                <div class="security">
+	
+	                    <h3 class="settings__title">
+	                        Безопасность
+	                    </h3>
+	                    <div class="security__wrap">
+	                        <label for="password" class="settings__label">Сменить пароль</label>
+	                        <div class="settings__line security__input">
+	                            <input type="password" name="password" id="password" class="settings__input security__input"
+	                                placeholder="Текущий пароль">
+	                            <input type="password" name="newPassword" id="newPassword"
+	                                class="settings__input security__input" placeholder="Новый пароль">
+	                            <input type="password" name="confirmPassword" id="confirmPassword"
+	                                class="settings__input security__input" placeholder="Новый пароль еще раз">
+	                        </div>
+	                    </div>
+	                    <div class="settings__btns">
+	
+	                        <button type="submit" class="settings__save">Сохранить</button>
+	                    </div>
+	                </div>
+	            </form>
+	            <form action="sendProblem.php" class="problem__mail">
+	                <h3 class="settings__title">Сообщить о проблеме</h3>
+	                <div class="settings__line">
+	                    <textarea name="problemText" id="problemText" class="settings__info"></textarea>
+	                </div>
+	                <div class="settings__btns">
+	
+	                    <button type="submit" class="edit-btn settings__save">Отправить</button>
+	                </div>
+	            </form>
+	        </div>
+	    </div>
+	    <!-- <footer class="footer">
+	        <div class="wrapper">
+	            <div class="footer__copy">
+	                <p class="footer__copy-text">Copyright © 2021 Незабуду. Все права защищены.</p>
+	            </div>
+	        </div>
+	    </footer> -->
+	
+	
+	</section>
+	<!-- скрипты -->
+	<script src="js/main.min.js"></script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1CqxmxvB0H0I_KZJArCWzNvdFmegf0Qo"></script> -->
+</body>
+
+</html>
