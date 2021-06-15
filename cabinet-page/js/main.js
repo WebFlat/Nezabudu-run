@@ -10995,21 +10995,22 @@ return jQuery;
 
 })(jQuery);
 
-
-function loadQuestionnaries() {
+var sectionCreate = $('#createItmes');
+var sectionAdded = $('#addItems');
+function loadQuestionnaries(section, users) {
     $.getJSON('questionnaries.json', function (data) {
         var out = '';
         for (var key in data) {
             if (data[key].avatar == '') {
                 data[key].avatar = "./img/user-def.png";
                 if (data[key].isLife == true) {
-                    out += '<div class="user item"><div class="user__info"><div class="user__avatar-wrap user__avatar-wrap--life"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span></div><div class="user__btns"><div class="user__likes"><img class="user__like-icon" src="./img/heart.svg" alt="heart"><span class="user__likeCount">' + data[key].likesCount + '</span></div><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
+                    out += '<div class="' + users + ' user item"><div class="user__info"><div class="user__avatar-wrap user__avatar-wrap--life"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span></div><div class="user__btns"><div class="user__likes"><img class="user__like-icon" src="./img/heart.svg" alt="heart"><span class="user__likeCount">' + data[key].likesCount + '</span></div><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
                 }
             } else {
-                out += '<div class="user item"><div class="user__info"><div class="user__avatar-wrap"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span> - </span><span class="user__die">' + data[key].die + '</span></div><img class="user__candle" src="./img/candle.png" alt="candle"><img class="user__candle-fire" src="./img/candle-fire.png" alt="candle-fire"></div><div class="user__btns"><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
+                out += '<div class="' + users + ' user  item"><div class="user__info"><div class="user__avatar-wrap"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span> - </span><span class="user__die">' + data[key].die + '</span></div><img class="user__candle" src="./img/candle.png" alt="candle"><img class="user__candle-fire" src="./img/candle-fire.png" alt="candle-fire"></div><div class="user__btns"><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
             }
         }
-        $('.profile__created').html(out);
+        section.html(out);
 
 
 
@@ -11045,61 +11046,63 @@ function loadQuestionnaries() {
 }
 
 
-loadQuestionnaries();
+loadQuestionnaries(sectionCreate, 'user-relative');
+loadQuestionnaries(sectionAdded, 'user-added');
 
 
-function loadQuestionnaries2() {
-    $.getJSON('questionnaries.json', function (data) {
-        var out = '';
-        for (var key in data) {
-            if (data[key].avatar == '') {
-                data[key].avatar = "./img/user-def.png";
-                if (data[key].isLife == true) {
-                    out += '<div class="user item"><div class="user__info"><div class="user__avatar-wrap user__avatar-wrap--life"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span></div><div class="user__btns"><div class="user__likes"><img class="user__like-icon" src="./img/heart.svg" alt="heart"><span class="user__likeCount">' + data[key].likesCount + '</span></div><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
-                }
-            } else {
-                out += '<div class="user item"><div class="user__info"><div class="user__avatar-wrap"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span> - </span><span class="user__die">' + data[key].die + '</span></div><img class="user__candle" src="./img/candle.png" alt="candle"><img class="user__candle-fire" src="./img/candle-fire.png" alt="candle-fire"></div><div class="user__btns"><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
-            }
-        }
-        $('.profile__bookmarks').html(out);
+
+// function loadQuestionnaries2() {
+//     $.getJSON('questionnaries.json', function (data) {
+//         var out = '';
+//         for (var key in data) {
+//             if (data[key].avatar == '') {
+//                 data[key].avatar = "./img/user-def.png";
+//                 if (data[key].isLife == true) {
+//                     out += '<div class="user-bookmark user item"><div class="user__info"><div class="user__avatar-wrap user__avatar-wrap--life"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span></div><div class="user__btns"><div class="user__likes"><img class="user__like-icon" src="./img/heart.svg" alt="heart"><span class="user__likeCount">' + data[key].likesCount + '</span></div><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
+//                 }
+//             } else {
+//                 out += '<div class="user-bookmark user item"><div class="user__info"><div class="user__avatar-wrap"><img src="' + data[key].avatar + '" alt="face" class="user__avatar"></div><div class="user__title"><span class="user__surname">' + data[key].surname + '</span><span></span><span class="user__name">' + data[key].name + '</span><span class="user__patronymic">' + data[key].patronymic + '</span></div><div class="user__lives"><span class="user__both">' + data[key].both + '</span><span> - </span><span class="user__die">' + data[key].die + '</span></div><img class="user__candle" src="./img/candle.png" alt="candle"><img class="user__candle-fire" src="./img/candle-fire.png" alt="candle-fire"></div><div class="user__btns"><a href="' + data[key].link + '" class="user__link-more">Читать дальше...</a></div></div></div>';
+//             }
+//         }
+//         $('.profile__bookmarks').html(out);
 
 
-        //change icon like anb bookmarks when click*********
-        $('.user__candle').on('click', function () {
-            if ($(this).next().hasClass('active')) {
-                $(this).next().toggleClass('active');
-            } else {
-                $(this).next().toggleClass('active');
+//         //change icon like anb bookmarks when click*********
+//         $('.user__candle').on('click', function () {
+//             if ($(this).next().hasClass('active')) {
+//                 $(this).next().toggleClass('active');
+//             } else {
+//                 $(this).next().toggleClass('active');
 
-            }
-        })
-        $('.user__like-icon').on('click', function () {
-            var countNum = $(this).next('.user__likeCount');
-            var count = countNum.text();
-            count = parseInt(count);
-            if ($(this).hasClass('active')) {
-                $(this).toggleClass('active');
-                $(this).attr('src', './img/heart.svg');
-                if (count > 0) {
-                    count = count - 1;
-                    countNum.html(count);
-                }
-            } else {
-                $(this).attr('src', './img/heart-black.svg');
-                $(this).toggleClass('active');
-                count = count + 1;
-                countNum.html(count);
-            }
-        });
-    });
-};
+//             }
+//         })
+//         $('.user__like-icon').on('click', function () {
+//             var countNum = $(this).next('.user__likeCount');
+//             var count = countNum.text();
+//             count = parseInt(count);
+//             if ($(this).hasClass('active')) {
+//                 $(this).toggleClass('active');
+//                 $(this).attr('src', './img/heart.svg');
+//                 if (count > 0) {
+//                     count = count - 1;
+//                     countNum.html(count);
+//                 }
+//             } else {
+//                 $(this).attr('src', './img/heart-black.svg');
+//                 $(this).toggleClass('active');
+//                 count = count + 1;
+//                 countNum.html(count);
+//             }
+//         });
+//     });
+// };
 
 
 //Init pagination**************************************
 function pagin() {
     setTimeout(function () {
 
-        var items = $('.user');
+        var items = $('.user-relative');
         var numItems = items.length;
         var perPage = 4;
 
@@ -11123,6 +11126,63 @@ function pagin() {
     }, 1000);
 
 };
+function pagin2() {
+    setTimeout(function () {
+
+        var items = $('.user-bookmark');
+        var numItems = items.length;
+        var perPage = 6;
+
+
+        items.slice(perPage).hide();
+
+        $('#pagination-container3').pagination({
+            items: numItems,
+            itemsOnPage: perPage,
+            edges: 1,
+            displayedPages: 3,
+            prevText: '<',
+            nextText: '>',
+            cssStyle: 'light-theme',
+            onPageClick: function (pageNumber) {
+                var showFrom = perPage * (pageNumber - 1);
+                var showTo = showFrom + perPage;
+                items.hide().slice(showFrom, showTo).show();
+            }
+        });
+    }, 100);
+
+};
+function pagin3() {
+    setTimeout(function () {
+
+        var items = $('.user-added');
+        var numItems = items.length;
+        var perPage = 4;
+
+
+        items.slice(perPage).hide();
+
+        $('#pagination-container2').pagination({
+            items: numItems,
+            itemsOnPage: perPage,
+            edges: 1,
+            displayedPages: 3,
+            prevText: '<',
+            nextText: '>',
+            cssStyle: 'light-theme',
+            onPageClick: function (pageNumber) {
+                var showFrom = perPage * (pageNumber - 1);
+                var showTo = showFrom + perPage;
+                items.hide().slice(showFrom, showTo).show();
+            }
+        });
+    }, 1000);
+
+};
+pagin();
+pagin3();
+
 // function pagin2() {
 //     setTimeout(function () {
 
@@ -11286,7 +11346,10 @@ jQuery(function ($) {
 		$(".tab2").fadeIn().siblings('.profile__tabs').hide();
 		$(".nav-tab").removeClass("active-tab");
 		$(".nav-tab2").addClass("active-tab");
-		loadQuestionnaries2();
+		var sectionBookmark = $('.profile__bookmarks');
+		loadQuestionnaries(sectionBookmark, 'user-bookmark');
+		pagin2();
+
 	});
 	$(".nav-tab3").click(function () {
 		$(".nav-tab").removeClass("active-tab");
@@ -11321,6 +11384,25 @@ jQuery(function ($) {
 		var date = $('#userBoth').val();
 		date = date.split('-').reverse().join('-');
 		$('#userBothDate').val(date);
+	});
+
+
+	//Show popup choice questionnaries***************
+	$('#createQuestionnaries').click(function (e) {
+		e.preventDefault();
+		$('#popup-choice').addClass('opened');
+		$('body').toggleClass('no-scroll');
+
+	});
+	//Close popup***********************************
+	$('.closeChoice').click(function () {
+		$('#popup-choice').removeClass('opened');
+		$('body').toggleClass('no-scroll');
+	});
+
+	//Read more*************************************
+	$('#user-about').click(function () {
+		$('#user-about-short').toggleClass('more');
 	})
 
 });

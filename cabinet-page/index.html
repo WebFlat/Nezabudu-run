@@ -28,6 +28,14 @@
 	        <span class="svg_anm"></span>
 	    </div>
 	</div>
+	<div id="popup-choice">
+	    <div class="choice">
+	        <a href="../questionnaire-page-customer/index.html" class="choice__link" id="customer">Свою</a>
+	        <a href="../questionnaire-page-relative-live/index.html" class="choice__link">Живого</a>
+	        <a href="../questionnaire-page/index.html" class="choice__link">Ушедшего</a>
+	        <button class="closeChoice">x</button>
+	    </div>
+	</div>
 	<header class="header">
 	    <div class="wrapper">
 	        <div class="burger__bg-body"></div>
@@ -142,7 +150,7 @@
 	                Сохрани свою историю и историю своих предков
 	            </h3>
 	            <div class="profile__add-quest">
-	                <a href="../questionnaire-page/index.html">
+	                <a id="createQuestionnaries" href="../questionnaire-page/index.html">
 	                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49"
 	                        height="49" viewBox="0 0 49 49">
 	                        <image id="Фигура_5" data-name="Фигура 5" width="49" height="49"
@@ -154,17 +162,63 @@
 	            <h3 class="profile__title">
 	                Моя анкета
 	            </h3>
-	            <div class="profile__my">
-	
+	            <div class="profile__my" id="myItems">
+	                <div class="brief__user">
+	                    <div class="brief__img-wrap">
+	                        <img class="brief__icon" src="./img/pensioner2.jpg" alt="user">
+	                    </div>
+	                    <div class="brief__info">
+	                        <h6 class="brief__titles">
+	                            <span class="brief__name-user" id="user-surname">Савельев</span>
+	                            <span class="brief__surname" id="user-name">Илья</span>
+	                            <span class="brief__patronimyc" id="user-patronimyc">Михайлович
+	                            </span>
+	                        </h6>
+	                        <div class="brief__years">
+	                            <span class="brief__both">11.10.1952</span>
+	                            <span>
+	                                <span class="brief__life-long">
+	                                    (
+	                                    <span class="brief__life-val" id="user-old">35</span>
+	                                    )
+	                                </span>
+	                        </div>
+	                        <p class="brief__text" id="user-about-short">
+	                            Художник, любящий дедушка,
+	                            путешественник, который
+	                            занимался любимым делом.
+	                            Художник, любящий дедушка,
+	                            путешественник, который
+	                            занимался любимым делом.
+	                            Художник, любящий дедушка,
+	                            путешественник, который
+	                            занимался любимым делом.
+	                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio asperiores delectus odit
+	                            dignissimos nulla quia, aspernatur provident consequatur odio corporis doloremque
+	                            accusantium fugit id et illum exercitationem eos, sed maiores.
+	                        </p>
+	                        <p id="user-about">читать дальше...</p>
+	                    </div>
+	                </div>
 	            </div>
 	            <h3 class="profile__title">
 	                Созданные анкеты
 	            </h3>
 	            <div class="profile__items">
-	                <div class="profile__created">
+	                <div id="createItmes" class="profile__created">
 	
 	                </div>
 	                <div id="pagination-container"></div>
+	
+	            </div>
+	            <h3 class="profile__title">
+	                Добавленные анкеты
+	            </h3>
+	            <div class="profile__items">
+	                <div id="addItems" class="profile__created">
+	
+	                </div>
+	                <div id="pagination-container2"></div>
 	
 	            </div>
 	        </div>
@@ -176,7 +230,7 @@
 	            </h3>
 	            <div class="profile__bookmarks">
 	            </div>
-	            <div id="pagination-container2"></div>
+	            <div id="pagination-container3"></div>
 	
 	        </div>
 	    </div>
